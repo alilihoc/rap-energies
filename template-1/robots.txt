@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /merci.html
+Disallow: /admin/
+Sitemap: https://rap-energies.fr/sitemap.xml

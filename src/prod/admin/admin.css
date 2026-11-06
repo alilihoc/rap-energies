@@ -1,0 +1,121 @@
+/* Administration Rap Énergies : même système que le site « Plein midi » (Blanc de midi, Encre, une couleur par
+   équipement, Bricolage Grotesque et Hanken Grotesk, rayons nuls, filets de 1 px), pensé pour un téléphone. */
+@font-face { font-family: "Bricolage Grotesque"; src: url("../fonts/bricolage-grotesque-latin-opsz-normal.woff2") format("woff2-variations"); font-weight: 200 800; font-display: swap; }
+@font-face { font-family: "Hanken Grotesk"; src: url("../fonts/hanken-grotesk-latin-wght-normal.woff2") format("woff2-variations"); font-weight: 100 900; font-display: swap; }
+
+:root {
+  --fond: #fcfbf7; --encre: #14171c; --second: #4b5361; --filet: #e4e1d9; --blanc: #ffffff;
+  --soleil: #f2b41a; --chaleur: #ef6b1c; --eau: #1f66cc;
+  --sur-encre: #fcfbf7; --sur-encre-second: #b8b2a6;
+  --titres: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --texte: "Hanken Grotesk", "Segoe UI", system-ui, sans-serif;
+  --marge: clamp(1rem, 4vw, 2.5rem); --largeur: 64rem; --sortie: cubic-bezier(0.16, 1, 0.3, 1);
+  color-scheme: light;
+}
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scrollbar-color: var(--encre) var(--fond); accent-color: var(--encre); }
+body { margin: 0; font: 400 1.125rem/1.5 var(--texte); color: var(--encre); background: var(--fond); }
+::selection { background: var(--encre); color: var(--fond); }
+:focus-visible { outline: 3px solid var(--eau); outline-offset: 3px; }
+.bandeau :focus-visible { outline-color: var(--fond); }
+img { display: block; max-width: 100%; height: auto; }
+a { color: inherit; text-underline-offset: 0.16em; text-decoration-thickness: 1px; }
+p { margin: 0 0 1em; }
+h1, h2 { font-family: var(--titres); font-weight: 800; letter-spacing: -0.02em; line-height: 1.05; margin: 0 0 1rem; text-wrap: balance; }
+h1 { font-size: clamp(1.8rem, 1.3rem + 1.6vw, 2.5rem); }
+.colonne { width: min(100% - 2 * var(--marge), var(--largeur)); margin-inline: auto; }
+.evitement { position: absolute; left: var(--marge); top: -4rem; background: var(--encre); color: var(--sur-encre); padding: 0.75rem 1rem; font-weight: 600; z-index: 20; text-decoration: none; }
+.evitement:focus { top: 0.5rem; }
+.aide { font-weight: 400; color: var(--second); font-size: 0.95rem; }
+mark.pl { background: transparent; color: var(--second); outline: 1px dashed var(--second); outline-offset: 1px; padding: 0.05em 0.3em; font-size: 0.9rem; }
+
+/* Bandeau Encre : symbole, nom, liens */
+.bandeau { background: var(--encre); color: var(--sur-encre); }
+.bandeau-grille { display: flex; align-items: center; gap: 1rem 1.5rem; min-height: 4rem; flex-wrap: wrap; padding: 0.5rem 0; }
+.marque { display: inline-flex; align-items: center; gap: 0.7rem; text-decoration: none; font: 800 1.15rem/1.1 var(--titres); letter-spacing: -0.02em; margin-right: auto; }
+.marque img { width: 2.5rem; height: 2.5rem; }
+.marque b { display: block; font-weight: 500; font-size: 0.85rem; color: var(--sur-encre-second); letter-spacing: 0; }
+.nav { display: flex; align-items: center; gap: 1.25rem; font-weight: 600; }
+.nav a, .nav .lien { color: var(--sur-encre); text-decoration: none; padding: 0.6rem 0; min-height: 2.75rem; display: inline-flex; align-items: center; }
+.nav a:hover, .nav .lien:hover { text-decoration: underline; }
+.nav form { margin: 0; }
+.lien { font: inherit; background: none; border: 0; cursor: pointer; padding: 0; }
+
+main { padding: clamp(1.5rem, 4vw, 3rem) 0 5rem; }
+.etat { padding: 0.9rem 1.1rem; margin: 0 0 1.5rem; font-weight: 600; border: 2px solid var(--encre); display: flex; gap: 0.75rem; align-items: start; }
+.etat::before { content: ""; flex: none; width: 0.8em; height: 0.8em; margin-top: 0.3em; background: var(--soleil); }
+.etat.erreur { background: var(--encre); color: var(--sur-encre); }
+.etat.erreur::before { background: var(--chaleur); }
+.etat.info { font-weight: 400; }
+.etat.info::before { background: var(--eau); }
+
+/* Boutons */
+.actions { display: flex; flex-wrap: wrap; gap: 0.75rem 1rem; margin: 0; }
+.bouton { display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; min-height: 3rem; padding: 0.6rem 1.25rem; font: 600 1.05rem/1.1 var(--texte); text-decoration: none; white-space: nowrap; border: 2px solid var(--encre); border-radius: 0; cursor: pointer; background: transparent; color: var(--encre); transition: scale 0.15s var(--sortie), background-color 0.2s, color 0.2s; }
+.bouton-plein { background: var(--encre); color: var(--sur-encre); }
+.bouton-plein:hover { background: var(--fond); color: var(--encre); }
+.bouton-trait:hover { background: rgb(20 23 28 / 0.07); }
+.bouton.petit { min-height: 2.75rem; padding: 0.4rem 0.9rem; font-size: 0.95rem; }
+.lien-danger { border-color: transparent; text-decoration: underline; text-underline-offset: 0.2em; }
+.lien-danger:hover { border-color: var(--encre); text-decoration: none; }
+.bouton:active { scale: 0.98; }
+.bouton[disabled] { opacity: 0.4; cursor: default; scale: none; }
+
+/* Liste des réalisations */
+.tete { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: end; gap: 1rem; margin-bottom: 0.5rem; }
+.tete h1 { margin: 0; }
+.compte { font: 500 0.6em/1 var(--titres); color: var(--second); vertical-align: 0.25em; margin-left: 0.25em; }
+.intro { color: var(--second); max-width: 60ch; margin-bottom: 1.5rem; }
+.vide { padding: 2rem 0; border-top: 1px solid var(--filet); border-bottom: 1px solid var(--filet); }
+.liste { list-style: none; padding: 0; margin: 0; display: grid; gap: 1.5rem 2rem; grid-template-columns: repeat(auto-fill, minmax(19rem, 1fr)); }
+.realisation { display: grid; gap: 0.75rem; border-top: 2px solid var(--encre); padding-top: 0.85rem; --couleur: var(--soleil); }
+.equipement-pompe-a-chaleur { --couleur: var(--chaleur); }
+.equipement-chauffe-eau { --couleur: var(--eau); }
+.photo { aspect-ratio: 4 / 3; background: var(--filet); overflow: hidden; display: grid; place-items: center; color: var(--second); }
+.photo img { width: 100%; height: 100%; object-fit: cover; }
+.texte { min-width: 0; display: grid; gap: 0.25rem; }
+.texte p { margin: 0; }
+.rang { display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; font-size: 0.95rem; color: var(--second); }
+.repere { width: 0.7em; height: 0.7em; background: var(--couleur); flex: none; }
+.legende { font: 800 1.15rem/1.25 var(--titres); letter-spacing: -0.01em; overflow-wrap: anywhere; }
+.detail { color: var(--second); font-size: 1rem; }
+.boutons { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.5rem; }
+.boutons form { margin: 0; }
+.outils { margin-top: 3rem; border-top: 1px solid var(--filet); padding-top: 1rem; color: var(--second); }
+.outils summary { cursor: pointer; font-weight: 600; padding: 0.5rem 0; }
+.outils .actions { margin: 0.75rem 0; }
+
+/* Fiche */
+.retour { margin-bottom: 1rem; font-weight: 600; }
+.fiche { display: grid; gap: 2rem 3rem; }
+.fiche-photo { display: grid; gap: 1rem; align-content: start; }
+.apercu { aspect-ratio: 4 / 3; background: var(--filet); display: grid; place-items: center; color: var(--second); overflow: hidden; }
+.apercu img { width: 100%; height: 100%; object-fit: cover; }
+.depot { display: grid; gap: 0.6rem; padding: 1.1rem; border: 2px dashed var(--second); background: var(--blanc); cursor: pointer; }
+.depot-titre { font: 800 1.1rem/1.2 var(--titres); }
+.depot input[type=file] { font: inherit; font-size: 1rem; max-width: 100%; }
+.regle { margin: 0; }
+.fiche-champs { display: grid; gap: 1.1rem; align-content: start; }
+.champ { margin: 0; display: grid; gap: 0.4rem; }
+.champ label { font-weight: 600; }
+.champ input[type=text], .champ input[type=password], .champ select { font: inherit; padding: 0.7rem 0.9rem; background: var(--blanc); color: var(--encre); border: 2px solid var(--filet); border-radius: 0; width: 100%; margin: 0; min-height: 3rem; }
+.champ input:focus-visible, .champ select:focus-visible { outline: 3px solid var(--eau); outline-offset: 2px; border-color: var(--encre); }
+.champ :user-invalid { border-color: var(--chaleur); }
+.case label { display: flex; align-items: start; gap: 0.6rem; font-weight: 400; min-height: 3rem; }
+.case input { appearance: none; width: 1.35rem; height: 1.35rem; margin: 0.15rem 0 0; flex: none; border: 2px solid var(--encre); background: var(--blanc); display: grid; place-content: center; cursor: pointer; }
+.case input::before { content: ""; width: 0.7rem; height: 0.7rem; background: var(--encre); transform: scale(0); transition: transform 0.12s var(--sortie); }
+.case input:checked::before { transform: scale(1); }
+.deux { display: grid; grid-template-columns: 1fr 1fr; gap: 1.1rem; }
+.fiche .actions { margin-top: 0.5rem; }
+.connexion { max-width: 26rem; }
+.connexion form { display: grid; gap: 1.25rem; }
+
+@media (min-width: 48rem) {
+  .fiche { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); }
+}
+@media (max-width: 40rem) {
+  .deux { grid-template-columns: 1fr; }
+  .bouton-plein, .tete .actions, .tete .actions a { width: 100%; }
+  .bouton.petit { width: auto; }
+  .nav { gap: 1rem; font-size: 1rem; }
+}

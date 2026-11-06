@@ -1,0 +1,17 @@
+import { chromium } from 'playwright';
+import { lancer } from '../outils/navigateur.mjs';
+const b = await lancer(chromium);
+const p = await b.newPage({ viewport: { width: 1440, height: 900 } });
+const erreurs = [];
+p.on('pageerror', (e) => erreurs.push(e.message));
+p.on('console', (m) => { if (m.type() === 'error') erreurs.push(m.text()); });
+await p.goto('http://127.0.0.1:8767/', { waitUntil: 'networkidle' });
+await p.fill('#f-nom', 'Essai Navigateur');
+await p.fill('#f-tel', '06 11 22 33 44');
+await p.fill('#f-commune', 'Baillargues');
+await p.locator('.cases input').nth(1).check();
+await p.locator('.bouton-envoyer').click();
+await p.waitForTimeout(1200);
+const etat = await p.evaluate(() => ({ texte: document.querySelector('.form-etat').textContent, formCache: document.querySelector('.formulaire').hidden }));
+console.log('navigateur (fetch JSON) :', JSON.stringify(etat), '| erreurs console :', JSON.stringify(erreurs));
+await b.close();

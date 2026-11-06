@@ -1,0 +1,21 @@
+{
+  "name": "rap-energies-templates",
+  "private": true,
+  "type": "module",
+  "version": "0.1.0",
+  "description": "Outillage de construction des templates Rap Energies (images, captures, polices)",
+  "scripts": {
+    "images": "node outils/images.mjs",
+    "build": "node outils/build.mjs",
+    "admin": "node admin/serveur.mjs"
+  },
+  "devDependencies": {
+    "@fontsource-variable/bricolage-grotesque": "^5.3.0",
+    "@fontsource-variable/hanken-grotesk": "^5.3.0",
+    "@fontsource-variable/literata": "^5.3.0",
+    "@fontsource-variable/schibsted-grotesk": "^5.3.0",
+    "@phosphor-icons/core": "^2.1.1",
+    "playwright": "^1.64.1",
+    "sharp": "^0.35.5"
+  }
+}

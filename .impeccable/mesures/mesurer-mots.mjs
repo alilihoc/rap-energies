@@ -1,0 +1,15 @@
+import { chromium } from 'playwright';
+import { lancer } from '../outils/navigateur.mjs';
+import { writeFileSync } from 'node:fs';
+import { pathToFileURL } from 'node:url';
+import { resolve } from 'node:path';
+const b = await lancer(chromium);
+const p = await b.newPage();
+await p.goto(pathToFileURL(resolve('.impeccable/mesures/mots.html')).href);
+await p.waitForFunction(() => document.title === 'ok');
+const fonts = await p.evaluate(() => [...document.fonts].map((f) => f.family + ':' + f.status));
+const res = await p.evaluate(() => window.__res);
+await b.close();
+const txt = `polices : ${fonts.join(' | ')}\n${res.join('\n')}\n`;
+writeFileSync('.impeccable/mesures/mots.txt', txt);
+console.log(txt);

@@ -1,0 +1,400 @@
+/* Rap Énergies, template 1 « Plein midi » : page claire, palette complète tirée du logo. */
+
+@font-face {
+  font-family: "Bricolage Grotesque";
+  src: url("fonts/bricolage-grotesque-latin-opsz-normal.woff2") format("woff2-variations");
+  font-weight: 200 800;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Hanken Grotesk";
+  src: url("fonts/hanken-grotesk-latin-wght-normal.woff2") format("woff2-variations");
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+:root {
+  --fond: #fcfbf7;
+  --encre: #14171c;
+  --second: #4b5361;
+  --filet: #e4e1d9;
+  --soleil: #f2b41a;
+  --chaleur: #ef6b1c;
+  --eau: #1f66cc;
+  --sur-encre: #fcfbf7;
+  --sur-encre-second: #b8b2a6;
+  --surligne: #fff1bf;
+  --surligne-sombre: #5a4a12;
+  --titres: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --texte: "Hanken Grotesk", "Segoe UI", system-ui, sans-serif;
+  --marge: clamp(1.25rem, 4vw, 3rem);
+  --largeur: 75rem;
+  --bloc: clamp(3.5rem, 8vw, 6.5rem);
+  --sortie: cubic-bezier(0.16, 1, 0.3, 1);
+  color-scheme: light;
+}
+
+/* Surfaces du navigateur */
+html {
+  scrollbar-color: var(--encre) var(--fond);
+  accent-color: var(--encre);
+  scroll-padding-top: 5rem;
+  -webkit-text-size-adjust: 100%;
+}
+html.motion { scroll-behavior: smooth; }
+::selection { background: var(--encre); color: var(--fond); }
+:focus-visible { outline: 3px solid var(--eau); outline-offset: 3px; }
+.contact :focus-visible, .pied :focus-visible, .visionneuse :focus-visible { outline-color: var(--fond); }
+
+*, *::before, *::after { box-sizing: border-box; }
+body {
+  margin: 0;
+  font: 400 1.125rem/1.55 var(--texte);
+  color: var(--encre);
+  background: var(--fond);
+  font-optical-sizing: auto;
+}
+img { max-width: 100%; height: auto; display: block; }
+a { color: inherit; text-underline-offset: 0.16em; text-decoration-thickness: 1px; }
+p { margin: 0 0 1em; }
+ul, ol { margin: 0; padding-left: 1.25rem; }
+h1, h2, h3, h4 { font-family: var(--titres); letter-spacing: -0.02em; margin: 0; text-wrap: balance; }
+h2 { font-size: clamp(1.8rem, 1.3rem + 1.6vw, 2.75rem); font-weight: 800; line-height: 1.05; margin-bottom: 1.5rem; max-width: 22ch; }
+h3 { font-size: clamp(1.4rem, 1.1rem + 1vw, 2rem); font-weight: 800; line-height: 1.1; }
+h4 { font: 600 1rem/1.4 var(--texte); letter-spacing: 0; margin-bottom: 0.4rem; }
+.note { color: var(--second); font-size: 0.95rem; }
+li::marker { color: var(--second); }
+input, textarea { caret-color: var(--encre); }
+.colonne { width: min(100% - 2 * var(--marge), var(--largeur)); margin-inline: auto; }
+/* Crochets [À CONFIRMER] : une note d'édition encadrée en pointillé, pas une teinte de Soleil (la couleur reste aux équipements). */
+mark.pl { background: transparent; color: var(--second); outline: 1px dashed var(--second); outline-offset: 1px; padding: 0.05em 0.25em; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
+.contact mark.pl, .pied mark.pl { color: var(--sur-encre-second); outline-color: var(--sur-encre-second); }
+
+/* Évitement et sentinelle */
+.evitement { position: absolute; left: var(--marge); top: -4rem; background: var(--encre); color: var(--sur-encre); padding: 0.75rem 1rem; font-weight: 600; z-index: 20; text-decoration: none; }
+.evitement:focus { top: 0.5rem; }
+.sentinelle { position: absolute; top: 0; left: 0; height: 4.5rem; width: 1px; pointer-events: none; }
+
+/* Bandeau */
+.bandeau { position: sticky; top: 0; z-index: 10; background: var(--fond); border-bottom: 1px solid var(--filet); }
+.bandeau-grille { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 0.75rem 2rem; min-height: 4.5rem; }
+.marque { display: inline-flex; align-items: center; gap: 0.7rem; text-decoration: none; font: 800 1.3rem/1 var(--titres); letter-spacing: -0.02em; }
+.marque img { width: 2.75rem; height: 2.75rem; transform-origin: left center; transition: transform 0.35s var(--sortie); }
+/* Bandeau réduit au défilement : seul le symbole change d'échelle (pas de hauteur animée, pas d'à-coup). */
+.bandeau.reduite .marque img { transform: scale(0.75); }
+.nav ul { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 0.25rem 1.6rem; font-weight: 600; justify-content: center; }
+.nav a { text-decoration: none; padding: 0.4rem 0; display: inline-block; }
+.nav a:hover { text-decoration: underline; }
+.nav a[aria-current="true"] { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 0.3em; }
+.tel { display: inline-flex; align-items: center; gap: 0.5rem; min-height: 2.75rem; font-weight: 700; text-decoration: none; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.nav-court { display: none; }
+.tel:hover { text-decoration: underline; }
+.ico { width: 1.25em; height: 1.25em; flex: none; }
+
+/* Boutons */
+.actions { display: flex; flex-wrap: wrap; gap: 0.75rem 1rem; margin: 0 0 0.75rem; }
+.bouton {
+  display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
+  min-height: 3.25rem; padding: 0.75rem 1.5rem;
+  font: 600 1.05rem/1.1 var(--texte); text-decoration: none; white-space: nowrap;
+  border: 2px solid var(--encre); border-radius: 0; cursor: pointer;
+  transition: scale 0.15s var(--sortie), background-color 0.2s;
+}
+.bouton-plein { background: var(--encre); color: var(--sur-encre); }
+.bouton-plein:hover { background: var(--fond); color: var(--encre); }
+.bouton-trait { background: transparent; color: var(--encre); }
+.bouton-trait:hover { background: rgb(20 23 28 / 0.07); }
+.bouton-envoyer { background: var(--fond); color: var(--encre); border-color: var(--fond); }
+.bouton-envoyer:hover { background: #e9e6df; border-color: #e9e6df; }
+.bouton:active { scale: 0.98; }
+
+/* Accroche */
+.accroche { padding-top: clamp(1.5rem, 3vw, 2rem); padding-bottom: 0; }
+.accroche-texte { container-type: inline-size; }
+.accroche h1 {
+  font-weight: 800;
+  font-size: min(clamp(1.9rem, 1.1rem + 2.4vw, 3.25rem), calc(100cqi / 9.4));
+  line-height: 1.02;
+  max-width: 30ch;
+  margin-bottom: 1.25rem;
+}
+.accroche-p { font-size: 1.15rem; max-width: 62ch; margin-bottom: 1.5rem; }
+.ligne { color: var(--second); margin: 0; }
+/* Le moment d'ouverture : le titre, le texte et les boutons se lèvent du même geste que le triptyque, juste avant lui. */
+html.motion .accroche h1, html.motion .accroche-p, html.motion .accroche .actions, html.motion .accroche .ligne { animation: lever 0.6s var(--sortie) both; }
+html.motion .accroche-p { animation-delay: 0.1s; }
+html.motion .accroche .actions { animation-delay: 0.18s; }
+html.motion .accroche .ligne { animation-delay: 0.26s; }
+
+/* Triptyque : trois champs de couleur, photos en bichromie, noms des équipements */
+.tryptique { list-style: none; padding: 0; margin: clamp(1.5rem, 2.5vw, 1.75rem) 0 0; display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 4fr) minmax(0, 3fr); }
+.tryptique li { display: flex; min-width: 0; }
+.tri-soleil picture, .tri-soleil .nom { background: var(--soleil); }
+.tri-chaleur picture, .tri-chaleur .nom { background: var(--chaleur); }
+.tri-eau picture, .tri-eau .nom { background: var(--eau); }
+.tri-eau { color: var(--sur-encre); }
+.tryptique a { display: flex; flex-direction: column; flex: 1; min-width: 0; text-decoration: none; }
+.tryptique picture { display: block; flex: none; height: clamp(12rem, 25.5vh, 16rem); overflow: hidden; }
+.tryptique img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(1) contrast(1.08) brightness(1.04); mix-blend-mode: multiply; transition: filter 0.4s var(--sortie), scale 0.5s var(--sortie); }
+.tryptique .nom { display: block; flex: 1; padding: 1rem var(--marge) 1.35rem; font: 800 clamp(1.2rem, 0.85rem + 1vw, 1.8rem)/1.05 var(--titres); letter-spacing: -0.02em; text-wrap: balance; hyphens: auto; overflow-wrap: anywhere; }
+.tryptique li:first-child .nom { padding-left: max(var(--marge), calc((100vw - var(--largeur)) / 2)); }
+.tryptique li:last-child .nom { padding-right: var(--marge); }
+.tryptique a:hover .nom { text-decoration: underline; text-decoration-thickness: 3px; text-underline-offset: 0.12em; }
+/* À l'approche, la couleur revient sous la teinte : à midi, la photo reprend ses couleurs. */
+.tryptique a:hover img, .tryptique a:focus-visible img { filter: grayscale(0.2) contrast(1.05); scale: 1.03; }
+.tryptique a:focus-visible { outline-offset: -6px; outline-color: var(--encre); }
+.tri-eau a:focus-visible { outline-color: var(--fond); }
+html.motion .tryptique li { animation: lever 0.7s var(--sortie) both; animation-delay: calc(0.2s + var(--i) * 90ms); }
+@keyframes lever { from { clip-path: inset(100% 0 0 0); } to { clip-path: inset(0 0 0 0); } }
+
+/* Sections */
+main > section { padding-top: var(--bloc); padding-bottom: var(--bloc); }
+.intro { max-width: 62ch; }
+/* Rythme : les chapitres (réalisations, services, production, étapes, contact) gardent le bloc entier, les sections de lecture respirent moins. */
+.zone, .pourquoi, .faq { padding-top: calc(var(--bloc) * 0.75); padding-bottom: calc(var(--bloc) * 0.75); }
+
+/* Réalisations : mosaïque sur six colonnes, légendes sous les photos */
+.realisations { padding-top: var(--bloc); }
+.galerie { list-style: none; padding: 0; margin: 2rem auto 0; display: grid; grid-template-columns: repeat(6, 1fr); gap: 1.25rem; }
+.galerie li { grid-column: span var(--c, 2); }
+.galerie figure { margin: 0; }
+.galerie picture { display: block; aspect-ratio: 4 / 3; background: var(--filet); overflow: hidden; }
+.galerie li.large picture { aspect-ratio: 21 / 9; }
+.galerie img { width: 100%; height: 100%; object-fit: cover; transition: scale 0.5s var(--sortie); }
+.photo-lien { display: block; cursor: zoom-in; }
+.photo-lien:hover img, .photo-lien:focus-visible img { scale: 1.03; }
+.galerie figure:hover .legende { text-decoration: underline; text-underline-offset: 0.15em; }
+.galerie-note { margin: 0.25rem 0 0; max-width: 62ch; }
+.galerie figcaption { display: grid; grid-template-columns: auto 1fr; gap: 0.1rem 0.6rem; padding-top: 0.65rem; font-size: 1rem; line-height: 1.4; color: var(--second); }
+.repere { width: 0.7em; height: 0.7em; margin-top: 0.4em; background: var(--soleil); transition: scale 0.25s var(--sortie); }
+.galerie figure:hover .repere { scale: 1.4; }
+.repere-pompe-a-chaleur { background: var(--chaleur); }
+.repere-chauffe-eau { background: var(--eau); }
+.galerie .legende { color: var(--encre); font-weight: 600; }
+.galerie .detail { grid-column: 2; }
+
+/* Visionneuse */
+.visionneuse { border: 0; padding: 0; margin: 0; width: 100vw; height: 100vh; max-width: 100vw; max-height: 100vh; background: rgb(20 23 28 / 0.96); color: var(--sur-encre); inset: 0; }
+.visionneuse::backdrop { background: rgb(20 23 28 / 0.94); }
+.visionneuse-contenu { height: 100%; display: grid; grid-template-rows: 1fr auto auto; gap: 0.5rem; padding: 4.5rem var(--marge) 1.5rem; justify-items: center; align-items: center; }
+.visionneuse-image { min-height: 0; height: 100%; width: 100%; display: flex; justify-content: center; align-items: center; }
+.visionneuse-image picture { display: contents; }
+.visionneuse-image img { max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain; }
+.visionneuse-legende, .visionneuse-compteur { margin: 0; text-align: center; }
+.visionneuse-compteur { font-variant-numeric: tabular-nums; color: var(--sur-encre-second); font-size: 0.95rem; }
+.visionneuse button { position: fixed; width: 3rem; height: 3rem; display: grid; place-items: center; background: var(--fond); color: var(--encre); border: 0; cursor: pointer; padding: 0; }
+.visionneuse button:hover { background: var(--filet); }
+.visionneuse button .ico { width: 1.5rem; height: 1.5rem; }
+.visionneuse-fermer { top: 1rem; right: 1rem; }
+.visionneuse-prec { left: 1rem; top: 50%; translate: 0 -50%; }
+.visionneuse-suiv { right: 1rem; top: 50%; translate: 0 -50%; }
+
+/* Services : une barre de couleur ouvre chaque titre, texte à droite */
+.services { border-top: 1px solid var(--filet); }
+.service { display: grid; grid-template-columns: 5fr 7fr; gap: 1.5rem 4rem; padding-top: 2.5rem; padding-bottom: 2.5rem; border-top: 1px solid var(--filet); }
+.service:first-of-type { border-top: 0; padding-top: 1rem; }
+.service-tete h3::before { content: ""; display: block; width: 3.5rem; height: 0.75rem; margin-bottom: 1.1rem; background: var(--couleur, var(--soleil)); }
+.service-soleil { --couleur: var(--soleil); }
+.service-chaleur { --couleur: var(--chaleur); }
+.service-eau { --couleur: var(--eau); }
+/* La photo du volet du triptyque, en couleur, remplit la colonne du titre. */
+.service-tete picture { display: block; aspect-ratio: 4 / 3; margin-top: 1.5rem; overflow: hidden; background: var(--filet); }
+.service-tete img { width: 100%; height: 100%; object-fit: cover; }
+.service-corps { max-width: 62ch; }
+.service-corps p:last-child { margin-bottom: 0; }
+.faisons { margin-top: 1.5rem; }
+.faisons h4 { display: flex; align-items: center; gap: 0.55rem; font: 800 1.05rem/1.3 var(--titres); letter-spacing: -0.01em; margin-bottom: 0.35rem; }
+.faisons h4::before { content: ""; width: 0.6em; height: 0.6em; flex: none; background: var(--couleur, var(--soleil)); }
+.faisons ul { list-style: none; padding: 0; }
+.faisons li { margin: 0; padding: 0.5rem 0; border-top: 1px solid var(--filet); }
+.faisons li:last-child { border-bottom: 1px solid var(--filet); }
+.faisons .note { margin: 1rem 0 0; }
+.ensemble { margin-top: 2.5rem; padding-top: 2.5rem; border-top: 1px solid var(--filet); }
+.ensemble h3, .ensemble p { max-width: 52rem; }
+.ensemble h3 { margin-bottom: 1rem; }
+.ensemble p { font-size: clamp(1.2rem, 1rem + 0.7vw, 1.5rem); line-height: 1.4; margin: 0; }
+
+/* Bande photo */
+.bande { margin: 0; }
+.bande picture { display: block; height: clamp(16rem, 42vw, 30rem); }
+.bande img { width: 100%; height: 100%; object-fit: cover; }
+
+/* Production PVGIS : douze colonnes Soleil */
+.production-texte { max-width: 62ch; }
+.graphique { margin: 2.5rem 0 0; }
+.chiffre { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.25rem 0.75rem; margin: 0 0 1.25rem; }
+.chiffre strong { font: 800 clamp(2.4rem, 1.6rem + 2.4vw, 3.75rem)/1 var(--titres); letter-spacing: -0.03em; font-variant-numeric: tabular-nums; }
+.chiffre span { color: var(--second); line-height: 1.3; max-width: 26ch; }
+.unite { margin: 0 0 0.35rem; font-size: 0.95rem; color: var(--second); }
+@media (min-width: 64rem) {
+  .production .colonne { display: grid; grid-template-columns: 5fr 7fr; gap: 1rem 4rem; align-items: start; }
+  .production h2 { grid-column: 1 / -1; }
+  .graphique { margin-top: 0; }
+}
+.graphique-vertical .barres { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); grid-template-rows: 17rem; gap: 0.5rem; border-bottom: 1px solid var(--encre); }
+/* Sous 80 rem, la colonne du graphique (7/12) ne porte plus les noms de mois entiers : abréviations. */
+@media (max-width: 80rem) {
+  .graphique-vertical .mois-long { display: none; }
+  .graphique-vertical .mois-court { display: inline; }
+}
+.graphique-vertical .barres li { display: flex; flex-direction: column; justify-content: flex-end; height: 100%; }
+.graphique-vertical .barre { display: block; background: var(--soleil); height: calc(var(--v) / var(--max) * (100% - 3.9rem)); }
+.graphique-vertical .val { order: -1; text-align: center; font-weight: 700; font-size: 1rem; font-variant-numeric: tabular-nums; padding-bottom: 0.3rem; }
+.graphique-vertical .mois { text-align: center; font-size: 1rem; color: var(--second); padding-top: 0.35rem; padding-bottom: 0.3rem; height: 2.1rem; }
+.mois-court { display: none; text-decoration: none; }
+/* La mesure : les barres poussent une fois, à leur entrée dans l'écran (CSS pur ; sans prise en charge, barres fixes). */
+@supports (animation-timeline: view()) {
+  html.motion .graphique-vertical .barre { transform-origin: bottom; animation: mesurer 1s var(--sortie) both; animation-timeline: view(); animation-range: entry 0% cover 25%; }
+  @media (max-width: 40rem) {
+    html.motion .graphique-vertical .barre { transform-origin: left; animation-name: mesurer-h; }
+  }
+}
+@keyframes mesurer { from { scale: 1 0; } to { scale: 1 1; } }
+@keyframes mesurer-h { from { scale: 0 1; } to { scale: 1 1; } }
+.graphique figcaption { margin-top: 1rem; font-size: 0.95rem; color: var(--second); max-width: 70ch; }
+
+/* Comment ça se passe : photo à gauche, six étapes numérotées à droite */
+.etapes { border-top: 1px solid var(--filet); }
+.etapes-grille { display: grid; grid-template-columns: 5fr 7fr; gap: 3rem; align-items: start; }
+.etapes-photo picture { display: block; aspect-ratio: 4 / 5; position: sticky; top: 5.5rem; }
+.etapes-photo img { width: 100%; height: 100%; object-fit: cover; }
+.etapes-liste { list-style: none; padding: 0; counter-reset: etape; }
+.etapes-liste li { counter-increment: etape; display: grid; grid-template-columns: 3rem 1fr; gap: 1rem; padding-top: 1.1rem; padding-bottom: 1.1rem; border-top: 1px solid var(--filet); }
+.etapes-liste li::before { content: counter(etape); font: 800 2rem/1 var(--titres); letter-spacing: -0.03em; font-variant-numeric: tabular-nums; }
+.etapes-liste b { font-weight: 700; }
+.etape { min-width: 0; }
+
+/* Zone : les communes en grand */
+.zone { border-top: 1px solid var(--filet); }
+.zone p { max-width: 62ch; }
+.communes { list-style: none; padding: 0; margin: 1.25rem 0 1.75rem; display: flex; flex-wrap: wrap; gap: 0.35rem 1.1em; font: 700 clamp(1.35rem, 1rem + 1.5vw, 2.3rem)/1.3 var(--titres); letter-spacing: -0.02em; }
+.communes li:first-child { background: var(--encre); color: var(--fond); padding: 0 0.3em; }
+
+/* Pourquoi : liste à filets sur deux colonnes */
+.pourquoi { border-top: 1px solid var(--filet); }
+.points { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 0 3rem; }
+.points li { padding: 1.25rem 0; border-top: 1px solid var(--filet); }
+.points b { display: block; font: 800 1.25rem/1.3 var(--titres); letter-spacing: -0.02em; margin-bottom: 0.35rem; }
+
+/* Questions fréquentes : deux colonnes de replis natifs */
+.faq { border-top: 1px solid var(--filet); }
+.questions { display: grid; grid-template-columns: 1fr 1fr; gap: 0 4rem; align-items: start; }
+details { border-top: 1px solid var(--filet); }
+/* Le retrait est sur summary, pas sur details : toute la hauteur de la question est cliquable. */
+summary { display: flex; justify-content: space-between; gap: 1rem; align-items: start; cursor: pointer; list-style: none; padding: 0.9rem 0; font: 700 1.2rem/1.3 var(--titres); letter-spacing: -0.01em; }
+summary::-webkit-details-marker { display: none; }
+summary:hover { text-decoration: underline; }
+summary .ico { flex: none; margin-top: 0.15em; transition: rotate 0.3s var(--sortie); }
+details[open] summary .ico { rotate: 45deg; }
+details p { margin: 0 0 0.9rem; max-width: 60ch; }
+
+/* Contact : champ Encre pleine largeur */
+.contact { background: var(--encre); color: var(--sur-encre); }
+.contact-grille { display: grid; grid-template-columns: 5fr 7fr; gap: 3rem 4rem; }
+.contact h2 { color: var(--sur-encre); }
+.tel-grand { display: inline-block; font: 800 clamp(1.8rem, 1.2rem + 2vw, 3rem)/1.1 var(--titres); letter-spacing: -0.02em; text-decoration: none; font-variant-numeric: tabular-nums; margin: 0.5rem 0 0.75rem; }
+.tel-grand:hover { text-decoration: underline; text-decoration-thickness: 3px; }
+.contact .coord { color: var(--sur-encre-second); }
+.contact .note { color: var(--sur-encre-second); }
+.formulaire { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem 1.5rem; }
+.champ { margin: 0; display: grid; gap: 0.4rem; }
+.champ-large { grid-column: 1 / -1; }
+.formulaire label, .formulaire legend { font-weight: 600; }
+.aide { font-weight: 400; color: var(--sur-encre-second); font-size: 0.95rem; }
+.formulaire input, .formulaire textarea { font: inherit; padding: 0.7rem 0.9rem; background: var(--fond); color: var(--encre); border: 2px solid transparent; border-radius: 0; width: 100%; margin: 0; }
+.formulaire textarea { resize: vertical; min-height: 7rem; }
+.formulaire ::placeholder { color: var(--second); opacity: 1; }
+/* Champ laissé invalide après saisie : marqué durablement, pas seulement par la bulle du navigateur. */
+.formulaire :user-invalid { border-color: var(--second); background: var(--surligne); }
+.formulaire button[disabled] { opacity: 0.75; cursor: progress; }
+.cases-groupe { border: 0; padding: 0; min-width: 0; }
+.cases-groupe legend { padding: 0; margin-bottom: 0.5rem; }
+.cases { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem 1.25rem; }
+.cases label { display: flex; align-items: center; gap: 0.6rem; font-weight: 400; min-height: 2.75rem; }
+.cases input { appearance: none; width: 1.25rem; height: 1.25rem; margin: 0; flex: none; border: 2px solid var(--sur-encre); background: transparent; display: grid; place-content: center; cursor: pointer; }
+.cases input::before { content: ""; width: 0.65rem; height: 0.65rem; background: var(--sur-encre); transform: scale(0); transition: transform 0.12s var(--sortie); }
+.cases input:checked::before { transform: scale(1); }
+.consentement { display: block; color: var(--sur-encre-second); font-size: 1rem; }
+.production-texte .actions { margin-top: 1.5rem; }
+.envoi { justify-items: start; }
+.form-etat { grid-column: 1 / -1; margin: 1.5rem 0 0; padding: 1rem 1.25rem; background: var(--fond); color: var(--encre); font-weight: 600; }
+.form-etat.info { background: transparent; color: var(--sur-encre); border: 1px solid var(--sur-encre-second); }
+
+/* Pied de page, sur le même champ */
+.pied { background: var(--encre); color: var(--sur-encre-second); padding-top: 2.5rem; padding-bottom: 3rem; border-top: 1px solid rgb(252 251 247 / 0.18); font-size: 0.95rem; }
+.pied-grille { display: grid; grid-template-columns: auto 1fr; gap: 2rem 3rem; align-items: start; }
+.pied-logo { width: 7.5rem; height: auto; }
+.pied-texte p { margin-bottom: 0.6rem; max-width: 60ch; }
+.pied a { color: var(--sur-encre); }
+.pied-liens { font-weight: 600; }
+.pied-liens a { display: inline-block; padding-block: 0.35rem; }
+
+/* Pages légales */
+.legale { padding-top: var(--bloc); padding-bottom: var(--bloc); max-width: 62ch; }
+.legale h1 { font-size: clamp(2rem, 1.4rem + 2vw, 3.2rem); font-weight: 800; line-height: 1.05; margin-bottom: 1.5rem; }
+.confid { margin: 0; }
+.confid dt { font: 800 1.2rem/1.3 var(--titres); margin-top: 1.25rem; }
+.confid dd { margin: 0.35rem 0 0; }
+.retour { margin-top: 2.5rem; font-weight: 600; }
+
+/* Réductions */
+@media (max-width: 64rem) {
+  .service, .etapes-grille, .contact-grille { grid-template-columns: 1fr; gap: 1.5rem; }
+  .etapes-photo picture { position: static; aspect-ratio: 16 / 10; }
+  .points, .questions { grid-template-columns: 1fr; }
+}
+@media (max-width: 48rem) {
+  .tryptique { grid-template-columns: 1fr; }
+  .tryptique a { flex-direction: row; align-items: stretch; }
+  .tryptique picture { flex: 0 0 36%; height: auto; min-height: 6.5rem; aspect-ratio: 4 / 3; }
+  .ligne { display: none; }
+  .service-tete picture { aspect-ratio: 16 / 7; margin-top: 1rem; }
+  .tryptique .nom { display: flex; align-items: center; padding: 1rem var(--marge); font-size: 1.15rem; hyphens: auto; }
+  .tryptique li:first-child .nom, .tryptique li:last-child .nom { padding-left: var(--marge); padding-right: var(--marge); }
+  .galerie { grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .galerie li { grid-column: span 1; }
+  .galerie li.large { grid-column: span 2; }
+  .galerie li.large picture { aspect-ratio: 16 / 9; }
+  .graphique-vertical .barres { grid-template-rows: 13rem; gap: 0.3rem; }
+  .mois-long { display: none; }
+  .mois-court { display: inline; }
+  .formulaire, .cases { grid-template-columns: 1fr; }
+  .pied-grille { grid-template-columns: 1fr; }
+}
+@media (max-width: 40rem) {
+  /* La rangée des ancres défile avec la page (top négatif), la marque et le téléphone restent collés. */
+  .bandeau { --nav-h: 2.95rem; position: sticky; top: calc(-1 * var(--nav-h)); }
+  .bandeau-grille { grid-template-columns: 1fr auto; grid-template-rows: auto 3.5rem; gap: 0 1rem; padding-top: 0; padding-bottom: 0; min-height: 0; }
+  .nav { grid-row: 1; grid-column: 1 / -1; padding: 0.45rem 0 0.2rem; }
+  /* Une seule rangée d'ancres, qui défile latéralement ; le fondu à droite dit qu'il y en a d'autres. */
+  .nav ul { display: flex; flex-wrap: nowrap; gap: 0 0.8rem; white-space: nowrap; justify-content: start; font-size: 0.875rem; overflow-x: auto; scrollbar-width: none; }
+  .nav ul::-webkit-scrollbar { display: none; }
+  .nav.deborde ul { padding-right: 2.5rem; mask-image: linear-gradient(to right, #000 calc(100% - 2.5rem), transparent); }
+  /* Libellés courts (« Chantiers », « Étapes ») pour que les cinq ancres tiennent dans la rangée. */
+  .nav-long { display: none; }
+  .nav-court { display: inline; }
+  .nav a { padding: 0.45rem 0; }
+  .marque { font-size: 1.05rem; grid-row: 2; grid-column: 1; }
+  .marque img { width: 2.25rem; height: 2.25rem; }
+  .tel { grid-row: 2; grid-column: 2; justify-self: end; align-self: stretch; padding-left: 0.5rem; font-size: 0.95rem; }
+  .galerie { grid-template-columns: 1fr; }
+  .galerie li.large { grid-column: span 1; }
+  .galerie li.large picture { aspect-ratio: 4 / 3; }
+  .accroche-p { font-size: 1.1rem; }
+  .bouton { width: 100%; }
+  .graphique-vertical .barres { display: block; border-bottom: 0; }
+  .graphique-vertical .barres li { display: grid; grid-template-columns: 3.4rem 1fr 3rem; align-items: center; gap: 0.6rem; height: auto; padding-top: 0.25rem; padding-bottom: 0.25rem; }
+  .graphique-vertical .barre { height: 1rem; width: calc(var(--v) / var(--max) * 100%); }
+  .graphique-vertical .val { order: 0; text-align: right; padding: 0; }
+  .graphique-vertical .mois { order: -1; text-align: left; height: auto; padding: 0; }
+  .mois-long { display: none; }
+  .mois-court { display: inline; }
+}
+@media (max-width: 22.5rem) {
+  .bandeau { --nav-h: 2.95rem; }
+  .marque span { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+  .tryptique .nom { font-size: 1rem; }
+}
+
+/* Pot de miel du formulaire : champ invisible que seuls les robots remplissent. */
+.piege { display: none !important; }

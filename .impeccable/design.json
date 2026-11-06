@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-03T12:00:00+01:00",
+  "title": "Design System: Rap Énergies, « Plein midi »",
+  "extensions": {
+    "colorMeta": {
+      "blanc": { "role": "neutral", "displayName": "Blanc de midi", "canonical": "#fcfbf7", "tonalRamp": ["#14171c", "#2d3138", "#4b5361", "#6f7785", "#989fab", "#c3c7cf", "#e4e1d9", "#fcfbf7"] },
+      "encre": { "role": "primary", "displayName": "Encre", "canonical": "#14171c", "tonalRamp": ["#0a0c0f", "#14171c", "#2d3138", "#4b5361", "#6f7785", "#989fab", "#c3c7cf", "#e8eaee"] },
+      "second-plan": { "role": "neutral", "displayName": "Second plan", "canonical": "#4b5361", "tonalRamp": ["#14171c", "#2d3138", "#4b5361", "#6f7785", "#989fab", "#b8b2a6", "#c3c7cf", "#e4e1d9"] },
+      "soleil": { "role": "secondary", "displayName": "Soleil", "canonical": "#f2b41a", "tonalRamp": ["#3d2c02", "#6b4d05", "#9a6f08", "#c8900d", "#f2b41a", "#f6c852", "#f9db8d", "#fdf0cc"] },
+      "chaleur": { "role": "secondary", "displayName": "Chaleur", "canonical": "#ef6b1c", "tonalRamp": ["#3f1a04", "#6e2e08", "#9d430d", "#cc5712", "#ef6b1c", "#f48c4f", "#f8b085", "#fcd7c0"] },
+      "eau": { "role": "secondary", "displayName": "Eau", "canonical": "#1f66cc", "tonalRamp": ["#081a36", "#0f3268", "#164b9a", "#1f66cc", "#4a84d9", "#7aa4e4", "#aac4ee", "#dbe6f8"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Titre de page", "purpose": "Bricolage Grotesque 800, borné par 100cqi / 9,4." }
+    },
+    "shadows": [],
+    "motion": [
+      { "name": "sortie", "value": "cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Sortie exponentielle de tous les mouvements." },
+      { "name": "lever", "value": "clip-path inset(100% 0 0 0) → inset(0) ; titre, texte, boutons et ligne 600 ms (décalages 0 / 100 / 180 / 260 ms), puis les trois volets du triptyque 700 ms à partir de 200 ms, décalage 90 ms", "purpose": "Le moment d'ouverture, sous html.motion." },
+      { "name": "appui", "value": "scale 0.98, 150 ms", "purpose": "Réponse des boutons à l'appui." },
+      { "name": "approche", "value": "grayscale(1) → grayscale(0.2) et scale 1.03 sur le volet du triptyque (400 ms), scale 1.03 des photos de galerie (500 ms), repère agrandi, légende soulignée ; bouton plein inversé", "purpose": "La couleur revient sous la teinte, la photo s'approche. Au survol et au focus." },
+      { "name": "mesurer", "value": "scale 0 → 1 des barres PVGIS, animation-timeline: view(), plage entry 0 % → cover 25 %, sous @supports et html.motion", "purpose": "Les barres poussent une fois à leur entrée dans l'écran ; barres fixes sans prise en charge." }
+    ],
+    "breakpoints": [
+      { "name": "colonne unique", "value": "64rem" },
+      { "name": "galerie 2 colonnes", "value": "48rem" },
+      { "name": "bandeau à top négatif, ancres sur une rangée défilante au-dessus de la rangée marque + téléphone", "value": "40rem" },
+      { "name": "nom de marque masqué", "value": "22.5rem" }
+    ]
+  },
+  "components": [
+    { "name": "Bouton plein", "kind": "button", "refersTo": "button-primary", "description": "Appeler le numéro ; le seul bouton plein du premier écran. Inversé au survol.", "html": "<a class=\"ds-btn\" href=\"tel:+33699346686\">Appeler le 06 99 34 66 86</a>", "css": ".ds-btn { display: inline-flex; align-items: center; justify-content: center; min-height: 3.25rem; padding: 0.75rem 1.5rem; font: 600 1.05rem/1.1 'Hanken Grotesk', 'Segoe UI', system-ui, sans-serif; color: #fcfbf7; background: #14171c; border: 2px solid #14171c; border-radius: 0; text-decoration: none; white-space: nowrap; transition: scale 0.15s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.2s, color 0.2s; } .ds-btn:hover { background: #fcfbf7; color: #14171c; } .ds-btn:focus-visible { outline: 3px solid #1f66cc; outline-offset: 3px; } .ds-btn:active { scale: 0.98; }" },
+    { "name": "Bouton au trait", "kind": "button", "refersTo": "button-outline", "description": "Décrire mon projet ; renvoie au formulaire.", "html": "<a class=\"ds-btn-trait\" href=\"#contact\">Décrire mon projet</a>", "css": ".ds-btn-trait { display: inline-flex; align-items: center; justify-content: center; min-height: 3.25rem; padding: 0.75rem 1.5rem; font: 600 1.05rem/1.1 'Hanken Grotesk', 'Segoe UI', system-ui, sans-serif; color: #14171c; background: transparent; border: 2px solid #14171c; border-radius: 0; text-decoration: none; white-space: nowrap; } .ds-btn-trait:hover { background: rgb(20 23 28 / 0.07); } .ds-btn-trait:focus-visible { outline: 3px solid #1f66cc; outline-offset: 3px; } .ds-btn-trait:active { scale: 0.98; }" },
+    { "name": "Champ de formulaire", "kind": "input", "refersTo": "input", "description": "Champ Blanc de midi sur le champ Encre du contact, étiquette au-dessus.", "html": "<label class=\"ds-champ\"><span>Votre nom</span><input type=\"text\" placeholder=\"\"></label>", "css": ".ds-champ { display: grid; gap: 0.4rem; font: 600 1.125rem/1.55 'Hanken Grotesk', 'Segoe UI', system-ui, sans-serif; color: #fcfbf7; background: #14171c; padding: 1rem; } .ds-champ input { font: 400 1.125rem/1.55 'Hanken Grotesk', 'Segoe UI', system-ui, sans-serif; padding: 0.7rem 0.9rem; background: #fcfbf7; color: #14171c; border: 2px solid transparent; border-radius: 0; } .ds-champ input:focus-visible { outline: 3px solid #f2b41a; outline-offset: 2px; }" },
+    { "name": "Navigation", "kind": "nav", "refersTo": "button-outline", "description": "Bandeau clair : symbole, nom, cinq ancres (section courante soulignée), téléphone.", "html": "<nav class=\"ds-nav\"><span class=\"ds-nav-marque\">Rap Énergies</span><a href=\"#realisations\">Réalisations</a><a href=\"#services\">Services</a><a href=\"#etapes\">Comment ça se passe</a><a href=\"#zone\">Communes</a><a href=\"#contact\">Contact</a><a class=\"ds-nav-tel\" href=\"tel:+33699346686\">06 99 34 66 86</a></nav>", "css": ".ds-nav { display: flex; align-items: center; gap: 1.6rem; min-height: 4.5rem; padding: 0 1.5rem; background: #fcfbf7; border-bottom: 1px solid #e4e1d9; font: 600 1.125rem/1.55 'Hanken Grotesk', 'Segoe UI', system-ui, sans-serif; color: #14171c; } .ds-nav a { color: inherit; text-decoration: none; } .ds-nav a:hover { text-decoration: underline; text-underline-offset: 0.16em; } .ds-nav-marque { font: 800 1.3rem/1 'Bricolage Grotesque', 'Segoe UI', system-ui, sans-serif; letter-spacing: -0.02em; margin-right: auto; } .ds-nav-tel { font-weight: 700; font-variant-numeric: tabular-nums; margin-left: auto; }" },
+    { "name": "Légende de galerie", "kind": "card", "refersTo": "input", "description": "Photo nue dans la mosaïque, légende dessous avec le repère carré de la couleur de l'équipement.", "html": "<figure class=\"ds-legende\"><div class=\"ds-legende-photo\"></div><figcaption><span class=\"ds-legende-repere\"></span><span>Panneaux photovoltaïques · toit en tuiles canal · Castries</span></figcaption></figure>", "css": ".ds-legende { margin: 0; width: 20rem; } .ds-legende-photo { aspect-ratio: 4 / 3; background: #e4e1d9; } .ds-legende figcaption { display: grid; grid-template-columns: auto 1fr; gap: 0.1rem 0.6rem; padding-top: 0.65rem; font: 600 1rem/1.4 'Hanken Grotesk', 'Segoe UI', system-ui, sans-serif; color: #14171c; } .ds-legende-repere { width: 0.7em; height: 0.7em; margin-top: 0.4em; background: #f2b41a; }" }
+  ],
+  "narrative": {
+    "northStar": "Un électricien de Castries qui montre ses toits",
+    "overview": "« Plein midi » : blanc chaud et les trois couleurs du logo données chacune à un équipement, avec Bricolage Grotesque et Hanken Grotesk. La page prouve par les chantiers, appelle comme action, dit vrai et local, et refuse la page générique de la catégorie comme celle des générateurs. Le second système, « Le soir, la maison chauffe », est archivé dans archives/template-2/.",
+    "keyCharacteristics": [
+      "Rayons nuls partout, filets de 1 px, grille centrée de 75 rem.",
+      "Un seul bouton plein par vue, un libellé par intention.",
+      "Les photos sont le contenu : légendes sous les photos, jamais de texte dessus.",
+      "Trois moments de lumière, rien de décoratif : l'ouverture, l'approche (survol, focus) et la mesure (barres PVGIS à l'entrée dans l'écran) ; tout visible sans JavaScript et sans mouvement.",
+      "Les crochets [À CONFIRMER] restent visibles jusqu'à validation, encadrés en pointillé Second plan."
+    ],
+    "rules": [
+      { "name": "La règle d'une couleur, un équipement", "body": "Soleil, Chaleur et Eau ne désignent que leur équipement ; le jaune garde une seule exception, prévue par le contrat : les barres de production. Sur le champ Encre, bouton d'envoi, message d'état et cases à cocher sont en Blanc de midi.", "section": "colors" },
+      { "name": "La règle du mot le plus long", "body": "La colonne du titre est un conteneur ; font-size: min(clamp(…), 100cqi / L) avec L mesuré dans le navigateur à petite taille optique.", "section": "typography" },
+      { "name": "La règle du plat", "body": "Pas d'ombre portée, pas de halo, pas de verre dépoli, pas de dégradé ; un changement d'état se dit par la couleur, par l'échelle à l'appui ou par une photo qui s'approche.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do garder une couleur par équipement.",
+      "Do poser les légendes sous les photos, avec l'équipement, le lieu et un détail.",
+      "Do mesurer chaque paire texte/fond avant de l'employer (4,5:1 texte courant, 3:1 grand texte).",
+      "Do laisser les crochets [À CONFIRMER] visibles tant que le client n'a pas répondu."
+    ],
+    "donts": [
+      "Don't ajouter de kicker, de carte à icône, d'ombre portée, de dégradé ou de glyphe en guise d'icône.",
+      "Don't écrire de texte sur une photo, ni poser de voile sur une photo.",
+      "Don't charger une ressource depuis un autre domaine, ni une italique (budget de polices).",
+      "Don't animer autre chose que l'ouverture, la réponse à l'approche ou à l'appui, et la mesure (barres PVGIS) : pas d'entrée de section au défilement, pas de parallaxe, pas de boucle."
+    ]
+  }
+}

@@ -1,0 +1,5 @@
+{
+  "motDePasse": "choisissez-un-mot-de-passe-long",
+  "port": 8080,
+  "hote": "127.0.0.1"
+}

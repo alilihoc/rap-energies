@@ -1,0 +1,11 @@
+# Administration : jamais indexée, jamais mise en cache ; données, configuration et sources jamais servies.
+DirectoryIndex index.php
+<IfModule mod_headers.c>
+  Header always set X-Robots-Tag "noindex, nofollow"
+  <FilesMatch "\.php$">
+    Header set Cache-Control "no-store"
+  </FilesMatch>
+</IfModule>
+<FilesMatch "^(config\.php|lib\.php|realisations\.json|gabarit\.json|tentatives\.json|realisations\.lock)$">
+  Require all denied
+</FilesMatch>

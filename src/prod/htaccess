@@ -1,0 +1,57 @@
+# Hostinger (LiteSpeed) : site statique d'une page, formulaire envoyer.php, pages .html, sitemap.xml fourni.
+ErrorDocument 404 /404.html
+Options -Indexes
+AddDefaultCharset UTF-8
+DirectoryIndex index.html
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # Toujours en HTTPS, une seule adresse : sans www
+  RewriteCond %{HTTPS} off
+  RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+  RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+  RewriteRule ^ https://%1%{REQUEST_URI} [L,R=301]
+
+  # /index.html -> / (et /design2/index.html -> /design2/ dans un sous-dossier : %1 est le dossier demandé)
+  RewriteCond %{THE_REQUEST} \s(/(?:[^\s?]*/)?)index\.html[\s?] [NC]
+  RewriteRule ^ %1 [L,R=301]
+
+  # Le destinataire d'essai du formulaire n'est jamais servi
+  RewriteRule ^config\.php$ - [F,L]
+
+  # Administration : son dossier est servi tel quel (index.php) ; ses sources et sa corbeille jamais
+  RewriteRule ^admin/(sources|corbeille)(/|$) - [F,L]
+  RewriteRule ^admin/ - [L]
+</IfModule>
+
+<IfModule mod_headers.c>
+  # Sécurité et vie privée. Le script d'ouverture (html.motion) est en ligne dans la page, les cadrages de photos sont
+  # des attributs style, d'où 'unsafe-inline' ; tout le reste est servi par le site lui-même.
+  Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; form-action 'self'; frame-ancestors 'none'; base-uri 'self'; object-src 'none'"
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-Frame-Options "DENY"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), interest-cohort=()"
+  Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+  # Pages toujours revalidées ; images, polices et feuilles de style en cache long (les dérivés d'images portent leur largeur dans leur nom)
+  <FilesMatch "\.(html|php|xml|txt)$">
+    Header set Cache-Control "no-cache"
+  </FilesMatch>
+  <FilesMatch "\.(avif|webp|jpg|png|svg|woff2)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+  <FilesMatch "\.(css|js)$">
+    Header set Cache-Control "public, max-age=86400"
+  </FilesMatch>
+  <FilesMatch "^(merci|404|mentions-legales|confidentialite)\.html$">
+    Header set X-Robots-Tag "noindex"
+  </FilesMatch>
+</IfModule>
+
+<IfModule mod_mime.c>
+  AddType font/woff2 .woff2
+  AddType image/webp .webp
+  AddType image/avif .avif
+</IfModule>

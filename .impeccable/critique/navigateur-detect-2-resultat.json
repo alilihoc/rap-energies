@@ -1,0 +1,2950 @@
+[
+  {
+    "template": 1,
+    "url": "http://localhost:8500/template-1/index.html",
+    "detectJs": "http://localhost:8400/detect.js",
+    "statutHttp": 200,
+    "titre": "Panneaux solaires et pompes à chaleur à Castries | Rap Énergies",
+    "consoleAvantInjection": 1,
+    "testInjection": {
+      "titreModifiable": true,
+      "scriptExecute": true,
+      "possible": true,
+      "nbElementsAvant": 500
+    },
+    "injectionDetect": {
+      "ok": true
+    },
+    "consoleImpeccable": [
+      {
+        "type": "startGroup",
+        "texte": "%c[impeccable] 13 anti-patterns found color: oklch(84% 0.19 80.46); font-weight: bold",
+        "source": "http://localhost:8400/detect.js"
+      }
+    ],
+    "consoleApresInjection": [
+      {
+        "type": "startGroup",
+        "texte": "%c[impeccable] 13 anti-patterns found color: oklch(84% 0.19 80.46); font-weight: bold",
+        "source": "http://localhost:8400/detect.js"
+      },
+      {
+        "type": "log",
+        "texte": "%ccramped-padding%c 0px of space above and below the text (need ≥4.6px for 15.2px text) color: oklch(84% 0.19 80.46); font-weight: bold color: inherit JSHandle@node",
+        "source": "http://localhost:8400/detect.js"
+      },
+      {
+        "type": "log",
+        "texte": "%ccramped-padding%c 0px of space above and below the text (need ≥4.6px for 15.2px text) color: oklch(84% 0.19 80.46); font-weight: bold color: inherit JSHandle@node",
+        "source": "http://localhost:8400/detect.js"
+      },
+      {
+        "type": "log",
+        "texte": "%ccramped-padding%c 0px of space above and below the text (need ≥5.4px for 18px text) color: oklch(84% 0.19 80.46); font-weight: bold color: inherit JSHandle@node",
+        "source": "http://localhost:8400/detect.js"
+      },
+      {
+        "type": "log",
+        "texte": "%ccramped-padding%c 0px of space above and below the text (need ≥5.4px for 18px text) color: oklch(84% 0.19 80.46); font-weight: bold color: inherit JSHandle@node",
+        "source": "http://localhost:8400/detect.js"
+      },
+      {
+        "type": "log",
+        "texte": "%ccramped-padding%c 0px of space above and below the text (need ≥4.6px for 15.2px text) color: oklch(84% 0.19 80.46); font-weight: bold color: inherit JSHandle@node",
+        "source": "http://localhost:8400/detect.js"
+      },
+      {
+        "type": "log",
+        "texte": "%ccramped-padding%c <ol> \"barres\": children flush against border-bottom on bottom (no inset) color: oklch(84% 0.19 80.46); font-weight: bold color: inherit JSHandle@node",
+        "source": "http://localhost:8400/detect.js"
+      },
+      {
+        "type": "log",
+        "texte": "%ccramped-padding%c 0px of space above and below the text (need ≥5.4px for 18px text) color: oklch(84% 0.19 80.46); font-weight: bold color: inherit JSHandle@node",
+        "source": "http://localhost:8400/detect.js"
+      },
+      {
+        "type": "log",
+        "texte": "%ccramped-padding%c 0px of space above and below the text (need ≥5.4px for 18px text) color: oklch(84% 0.19 80.46); font-weight: bold color: inherit JSHandle@node",
+        "source": "http://localhost:8400/detect.js"
+      },
+      {
+        "type": "log",
+        "texte": "%ccramped-padding%c 0px of space above and below the text (need ≥5.4px for 18px text) color: oklch(84% 0.19 80.46); font-weight: bold color: inherit JSHandle@node",
+        "source": "http://localhost:8400/detect.js"
+      },
+      {
+        "type": "log",
+        "texte": "%ccramped-padding%c 0px of space above and below the text (need ≥5.4px for 18px text) color: oklch(84% 0.19 80.46); font-weight: bold color: inherit JSHandle@node",
+        "source": "http://localhost:8400/detect.js"
+      },
+      {
+        "type": "log",
+        "texte": "%ccramped-padding%c 0px of space above and below the text (need ≥5.4px for 18px text) color: oklch(84% 0.19 80.46); font-weight: bold color: inherit JSHandle@node",
+        "source": "http://localhost:8400/detect.js"
+      },
+      {
+        "type": "log",
+        "texte": "%ccramped-padding%c 0px of space above and below the text (need ≥5.4px for 18px text) color: oklch(84% 0.19 80.46); font-weight: bold color: inherit JSHandle@node",
+        "source": "http://localhost:8400/detect.js"
+      },
+      {
+        "type": "log",
+        "texte": "%cline-length%c ~86 chars on 2 of 2 rendered lines (aim for <80) color: oklch(84% 0.19 80.46); font-weight: bold color: inherit JSHandle@node",
+        "source": "http://localhost:8400/detect.js"
+      },
+      {
+        "type": "endGroup",
+        "texte": "console.groupEnd",
+        "source": "http://localhost:8400/detect.js"
+      }
+    ],
+    "capture": "C:\\Users\\hali\\dev\\sites-client\\rap-enerigie\\.impeccable\\critique\\captures-2\\overlay-template-1.png",
+    "capturePleinePage": "C:\\Users\\hali\\dev\\sites-client\\rap-enerigie\\.impeccable\\critique\\captures-2\\overlay-template-1-page.png",
+    "apiDetect": {
+      "disponible": true,
+      "fonction": "impeccableDetectAsync",
+      "cles": [
+        "__testInjectionImpeccable",
+        "impeccableDetect",
+        "impeccableDetectAsync",
+        "impeccableScan",
+        "impeccableScanAsync",
+        "impeccableMeasureHiddenText",
+        "impeccableCollectVisualContrastCandidates",
+        "impeccableAnalyzeVisualContrast",
+        "impeccableGetLastVisualContrastAnalyses",
+        "impeccableSnapshotCapture",
+        "impeccableDetectFromSnapshot"
+      ],
+      "resultat": [
+        {
+          "selector": "li.galerie-item:nth-of-type(2) > figure > figcaption > span.legende > mark.pl",
+          "tagName": "mark",
+          "rect": {
+            "x": 670.21875,
+            "y": 1798.65625,
+            "width": 496.78125,
+            "height": 41.28125,
+            "top": 1798.65625,
+            "right": 1167,
+            "bottom": 1839.9375,
+            "left": 670.21875
+          },
+          "isPageLevel": false,
+          "isHidden": false,
+          "findings": [
+            {
+              "type": "cramped-padding",
+              "category": "quality",
+              "severity": "warning",
+              "advisory": false,
+              "detail": "0px of space above and below the text (need ≥4.6px for 15.2px text)",
+              "ignoreValue": "",
+              "name": "Cramped padding",
+              "description": "Text is too close to the edge of its container. Two shapes: (1) an element with its own text where the space between the rendered text and the border box is too small for the font size, and (2) a wrapper whose children's text lands flush against a visible boundary (border, outline, or non-transparent background) with nothing to inset it. Add at least 8px (ideally 12–16px) of space inside bordered, outlined, or colored containers."
+            }
+          ]
+        },
+        {
+          "selector": "li.galerie-item:nth-of-type(3) > figure > figcaption > span.legende > mark.pl",
+          "tagName": "mark",
+          "rect": {
+            "x": 68.21875,
+            "y": 2330.984375,
+            "width": 512.4375,
+            "height": 41.28125,
+            "top": 2330.984375,
+            "right": 580.65625,
+            "bottom": 2372.265625,
+            "left": 68.21875
+          },
+          "isPageLevel": false,
+          "isHidden": false,
+          "findings": [
+            {
+              "type": "cramped-padding",
+              "category": "quality",
+              "severity": "warning",
+              "advisory": false,
+              "detail": "0px of space above and below the text (need ≥4.6px for 15.2px text)",
+              "ignoreValue": "",
+              "name": "Cramped padding",
+              "description": "Text is too close to the edge of its container. Two shapes: (1) an element with its own text where the space between the rendered text and the border box is too small for the font size, and (2) a wrapper whose children's text lands flush against a visible boundary (border, outline, or non-transparent background) with nothing to inset it. Add at least 8px (ideally 12–16px) of space inside bordered, outlined, or colored containers."
+            }
+          ]
+        },
+        {
+          "selector": "li:nth-of-type(4) > mark.pl",
+          "tagName": "mark",
+          "rect": {
+            "x": 578.65625,
+            "y": 3149.109375,
+            "width": 607.4375,
+            "height": 50.890625,
+            "top": 3149.109375,
+            "right": 1186.09375,
+            "bottom": 3200,
+            "left": 578.65625
+          },
+          "isPageLevel": false,
+          "isHidden": false,
+          "findings": [
+            {
+              "type": "cramped-padding",
+              "category": "quality",
+              "severity": "warning",
+              "advisory": false,
+              "detail": "0px of space above and below the text (need ≥5.4px for 18px text)",
+              "ignoreValue": "",
+              "name": "Cramped padding",
+              "description": "Text is too close to the edge of its container. Two shapes: (1) an element with its own text where the space between the rendered text and the border box is too small for the font size, and (2) a wrapper whose children's text lands flush against a visible boundary (border, outline, or non-transparent background) with nothing to inset it. Add at least 8px (ideally 12–16px) of space inside bordered, outlined, or colored containers."
+            }
+          ]
+        },
+        {
+          "selector": "div.service-intro > p > mark.pl",
+          "tagName": "mark",
+          "rect": {
+            "x": 578.65625,
+            "y": 3367.671875,
+            "width": 596.34375,
+            "height": 50.890625,
+            "top": 3367.671875,
+            "right": 1175,
+            "bottom": 3418.5625,
+            "left": 578.65625
+          },
+          "isPageLevel": false,
+          "isHidden": false,
+          "findings": [
+            {
+              "type": "cramped-padding",
+              "category": "quality",
+              "severity": "warning",
+              "advisory": false,
+              "detail": "0px of space above and below the text (need ≥5.4px for 18px text)",
+              "ignoreValue": "",
+              "name": "Cramped padding",
+              "description": "Text is too close to the edge of its container. Two shapes: (1) an element with its own text where the space between the rendered text and the border box is too small for the font size, and (2) a wrapper whose children's text lands flush against a visible boundary (border, outline, or non-transparent background) with nothing to inset it. Add at least 8px (ideally 12–16px) of space inside bordered, outlined, or colored containers."
+            }
+          ]
+        },
+        {
+          "selector": "div.faisons > p.note > mark.pl",
+          "tagName": "mark",
+          "rect": {
+            "x": 578.65625,
+            "y": 3782,
+            "width": 593.171875,
+            "height": 43.5625,
+            "top": 3782,
+            "right": 1171.828125,
+            "bottom": 3825.5625,
+            "left": 578.65625
+          },
+          "isPageLevel": false,
+          "isHidden": false,
+          "findings": [
+            {
+              "type": "cramped-padding",
+              "category": "quality",
+              "severity": "warning",
+              "advisory": false,
+              "detail": "0px of space above and below the text (need ≥4.6px for 15.2px text)",
+              "ignoreValue": "",
+              "name": "Cramped padding",
+              "description": "Text is too close to the edge of its container. Two shapes: (1) an element with its own text where the space between the rendered text and the border box is too small for the font size, and (2) a wrapper whose children's text lands flush against a visible boundary (border, outline, or non-transparent background) with nothing to inset it. Add at least 8px (ideally 12–16px) of space inside bordered, outlined, or colored containers."
+            }
+          ]
+        },
+        {
+          "selector": "ol.barres",
+          "tagName": "ol",
+          "rect": {
+            "x": 578.65625,
+            "y": 5574.109375,
+            "width": 653.34375,
+            "height": 273,
+            "top": 5574.109375,
+            "right": 1232,
+            "bottom": 5847.109375,
+            "left": 578.65625
+          },
+          "isPageLevel": false,
+          "isHidden": false,
+          "findings": [
+            {
+              "type": "cramped-padding",
+              "category": "quality",
+              "severity": "warning",
+              "advisory": false,
+              "detail": "<ol> \"barres\": children flush against border-bottom on bottom (no inset)",
+              "ignoreValue": "",
+              "name": "Cramped padding",
+              "description": "Text is too close to the edge of its container. Two shapes: (1) an element with its own text where the space between the rendered text and the border box is too small for the font size, and (2) a wrapper whose children's text lands flush against a visible boundary (border, outline, or non-transparent background) with nothing to inset it. Add at least 8px (ideally 12–16px) of space inside bordered, outlined, or colored containers."
+            }
+          ]
+        },
+        {
+          "selector": "li:nth-of-type(3) > div.etape > mark.pl",
+          "tagName": "mark",
+          "rect": {
+            "x": 633.328125,
+            "y": 6439.34375,
+            "width": 587.390625,
+            "height": 50.890625,
+            "top": 6439.34375,
+            "right": 1220.71875,
+            "bottom": 6490.234375,
+            "left": 633.328125
+          },
+          "isPageLevel": false,
+          "isHidden": false,
+          "findings": [
+            {
+              "type": "cramped-padding",
+              "category": "quality",
+              "severity": "warning",
+              "advisory": false,
+              "detail": "0px of space above and below the text (need ≥5.4px for 18px text)",
+              "ignoreValue": "",
+              "name": "Cramped padding",
+              "description": "Text is too close to the edge of its container. Two shapes: (1) an element with its own text where the space between the rendered text and the border box is too small for the font size, and (2) a wrapper whose children's text lands flush against a visible boundary (border, outline, or non-transparent background) with nothing to inset it. Add at least 8px (ideally 12–16px) of space inside bordered, outlined, or colored containers."
+            }
+          ]
+        },
+        {
+          "selector": "li:nth-of-type(4) > div.etape > mark.pl",
+          "tagName": "mark",
+          "rect": {
+            "x": 633.328125,
+            "y": 6531.3125,
+            "width": 543.15625,
+            "height": 106.671875,
+            "top": 6531.3125,
+            "right": 1176.484375,
+            "bottom": 6637.984375,
+            "left": 633.328125
+          },
+          "isPageLevel": false,
+          "isHidden": false,
+          "findings": [
+            {
+              "type": "cramped-padding",
+              "category": "quality",
+              "severity": "warning",
+              "advisory": false,
+              "detail": "0px of space above and below the text (need ≥5.4px for 18px text)",
+              "ignoreValue": "",
+              "name": "Cramped padding",
+              "description": "Text is too close to the edge of its container. Two shapes: (1) an element with its own text where the space between the rendered text and the border box is too small for the font size, and (2) a wrapper whose children's text lands flush against a visible boundary (border, outline, or non-transparent background) with nothing to inset it. Add at least 8px (ideally 12–16px) of space inside bordered, outlined, or colored containers."
+            }
+          ]
+        },
+        {
+          "selector": "li:nth-of-type(6) > div.etape > mark.pl",
+          "tagName": "mark",
+          "rect": {
+            "x": 633.328125,
+            "y": 6771.03125,
+            "width": 581.421875,
+            "height": 50.890625,
+            "top": 6771.03125,
+            "right": 1214.75,
+            "bottom": 6821.921875,
+            "left": 633.328125
+          },
+          "isPageLevel": false,
+          "isHidden": false,
+          "findings": [
+            {
+              "type": "cramped-padding",
+              "category": "quality",
+              "severity": "warning",
+              "advisory": false,
+              "detail": "0px of space above and below the text (need ≥5.4px for 18px text)",
+              "ignoreValue": "",
+              "name": "Cramped padding",
+              "description": "Text is too close to the edge of its container. Two shapes: (1) an element with its own text where the space between the rendered text and the border box is too small for the font size, and (2) a wrapper whose children's text lands flush against a visible boundary (border, outline, or non-transparent background) with nothing to inset it. Add at least 8px (ideally 12–16px) of space inside bordered, outlined, or colored containers."
+            }
+          ]
+        },
+        {
+          "selector": "li:nth-of-type(2) > span > mark.pl",
+          "tagName": "mark",
+          "rect": {
+            "x": 458.65625,
+            "y": 7940.015625,
+            "width": 350.484375,
+            "height": 78.78125,
+            "top": 7940.015625,
+            "right": 809.140625,
+            "bottom": 8018.796875,
+            "left": 458.65625
+          },
+          "isPageLevel": false,
+          "isHidden": false,
+          "findings": [
+            {
+              "type": "cramped-padding",
+              "category": "quality",
+              "severity": "warning",
+              "advisory": false,
+              "detail": "0px of space above and below the text (need ≥5.4px for 18px text)",
+              "ignoreValue": "",
+              "name": "Cramped padding",
+              "description": "Text is too close to the edge of its container. Two shapes: (1) an element with its own text where the space between the rendered text and the border box is too small for the font size, and (2) a wrapper whose children's text lands flush against a visible boundary (border, outline, or non-transparent background) with nothing to inset it. Add at least 8px (ideally 12–16px) of space inside bordered, outlined, or colored containers."
+            }
+          ]
+        },
+        {
+          "selector": "details:nth-of-type(2) > p > mark.pl",
+          "tagName": "mark",
+          "rect": {
+            "x": 672,
+            "y": 8559.828125,
+            "width": 499.625,
+            "height": 50.890625,
+            "top": 8559.828125,
+            "right": 1171.625,
+            "bottom": 8610.71875,
+            "left": 672
+          },
+          "isPageLevel": false,
+          "isHidden": true,
+          "findings": [
+            {
+              "type": "cramped-padding",
+              "category": "quality",
+              "severity": "warning",
+              "advisory": false,
+              "detail": "0px of space above and below the text (need ≥5.4px for 18px text)",
+              "ignoreValue": "",
+              "name": "Cramped padding",
+              "description": "Text is too close to the edge of its container. Two shapes: (1) an element with its own text where the space between the rendered text and the border box is too small for the font size, and (2) a wrapper whose children's text lands flush against a visible boundary (border, outline, or non-transparent background) with nothing to inset it. Add at least 8px (ideally 12–16px) of space inside bordered, outlined, or colored containers."
+            }
+          ]
+        },
+        {
+          "selector": "details:nth-of-type(4) > p > mark.pl",
+          "tagName": "mark",
+          "rect": {
+            "x": 672,
+            "y": 8644.375,
+            "width": 548.390625,
+            "height": 50.890625,
+            "top": 8644.375,
+            "right": 1220.390625,
+            "bottom": 8695.265625,
+            "left": 672
+          },
+          "isPageLevel": false,
+          "isHidden": true,
+          "findings": [
+            {
+              "type": "cramped-padding",
+              "category": "quality",
+              "severity": "warning",
+              "advisory": false,
+              "detail": "0px of space above and below the text (need ≥5.4px for 18px text)",
+              "ignoreValue": "",
+              "name": "Cramped padding",
+              "description": "Text is too close to the edge of its container. Two shapes: (1) an element with its own text where the space between the rendered text and the border box is too small for the font size, and (2) a wrapper whose children's text lands flush against a visible boundary (border, outline, or non-transparent background) with nothing to inset it. Add at least 8px (ideally 12–16px) of space inside bordered, outlined, or colored containers."
+            }
+          ]
+        },
+        {
+          "selector": "p.pied-sources",
+          "tagName": "p",
+          "rect": {
+            "x": 216,
+            "y": 9683.578125,
+            "width": 595.828125,
+            "height": 47.125,
+            "top": 9683.578125,
+            "right": 811.828125,
+            "bottom": 9730.703125,
+            "left": 216
+          },
+          "isPageLevel": false,
+          "isHidden": false,
+          "findings": [
+            {
+              "type": "line-length",
+              "category": "quality",
+              "severity": "warning",
+              "advisory": false,
+              "detail": "~86 chars on 2 of 2 rendered lines (aim for <80)",
+              "ignoreValue": "",
+              "name": "Line length too long",
+              "description": "Text lines wider than ~80 characters are hard to read. The eye loses its place tracking back to the start of the next line, so it is measured on the lines that rendered and charged when more than one of them runs long. Add a max-width (65ch to 75ch) to text containers."
+            }
+          ]
+        },
+        {
+          "selector": "body",
+          "tagName": "body",
+          "rect": null,
+          "isPageLevel": true,
+          "isHidden": false,
+          "findings": [
+            {
+              "type": "dark-glow",
+              "category": "slop",
+              "severity": "warning",
+              "advisory": false,
+              "detail": "Zero-offset box-shadow glow (#ffba00)",
+              "ignoreValue": "",
+              "name": "Glowing shadow accents",
+              "description": "Colored glow shadows — a zero-offset chromatic halo (box- or text-shadow) on any background, or any colored blurred shadow on a dark background — are the default \"cool\" look of AI-generated UIs. Use neutral elevation shadows and subtle, purposeful lighting instead."
+            }
+          ]
+        }
+      ]
+    },
+    "mesures": {
+      "sections": [
+        {
+          "section": "services",
+          "enfantDirectDeMain": true,
+          "paddingTop": 102.4,
+          "paddingBottom": 102.4,
+          "paddingLeft": 0,
+          "paddingRight": 0,
+          "borderTop": "1px rgb(228, 225, 217)",
+          "background": "rgba(0, 0, 0, 0)",
+          "colonne": {
+            "largeur": 1184,
+            "retraitGauche": 48,
+            "retraitDroite": 48,
+            "retraitHaut": 103.39,
+            "retraitBas": 102.39
+          },
+          "premierTitre": {
+            "texte": "Trois équipements, un seul électricien",
+            "distanceHaut": 103.39,
+            "distanceGauche": 48
+          }
+        },
+        {
+          "section": "etapes",
+          "enfantDirectDeMain": true,
+          "paddingTop": 102.4,
+          "paddingBottom": 102.4,
+          "paddingLeft": 0,
+          "paddingRight": 0,
+          "borderTop": "1px rgb(228, 225, 217)",
+          "background": "rgba(0, 0, 0, 0)",
+          "colonne": {
+            "largeur": 1184,
+            "retraitGauche": 48,
+            "retraitDroite": 48,
+            "retraitHaut": 103.39,
+            "retraitBas": 102.39
+          },
+          "premierTitre": {
+            "texte": "Comment ça se passe",
+            "distanceHaut": 103.39,
+            "distanceGauche": 569.33
+          }
+        },
+        {
+          "section": "zone",
+          "enfantDirectDeMain": true,
+          "paddingTop": 76.8,
+          "paddingBottom": 76.8,
+          "paddingLeft": 0,
+          "paddingRight": 0,
+          "borderTop": "1px rgb(228, 225, 217)",
+          "background": "rgba(0, 0, 0, 0)",
+          "colonne": {
+            "largeur": 1184,
+            "retraitGauche": 48,
+            "retraitDroite": 48,
+            "retraitHaut": 77.8,
+            "retraitBas": 91.98
+          },
+          "premierTitre": {
+            "texte": "Où nous intervenons",
+            "distanceHaut": 77.8,
+            "distanceGauche": 48
+          }
+        },
+        {
+          "section": "pourquoi",
+          "enfantDirectDeMain": true,
+          "paddingTop": 76.8,
+          "paddingBottom": 76.8,
+          "paddingLeft": 0,
+          "paddingRight": 0,
+          "borderTop": "1px rgb(228, 225, 217)",
+          "background": "rgba(0, 0, 0, 0)",
+          "colonne": {
+            "largeur": 1184,
+            "retraitGauche": 48,
+            "retraitDroite": 48,
+            "retraitHaut": 77.8,
+            "retraitBas": 76.8
+          },
+          "premierTitre": {
+            "texte": "Pourquoi un électricien de Castries",
+            "distanceHaut": 77.8,
+            "distanceGauche": 48
+          }
+        },
+        {
+          "section": "faq",
+          "enfantDirectDeMain": true,
+          "paddingTop": 76.8,
+          "paddingBottom": 76.8,
+          "paddingLeft": 0,
+          "paddingRight": 0,
+          "borderTop": "1px rgb(228, 225, 217)",
+          "background": "rgba(0, 0, 0, 0)",
+          "colonne": {
+            "largeur": 1184,
+            "retraitGauche": 48,
+            "retraitDroite": 48,
+            "retraitHaut": 77.8,
+            "retraitBas": 76.8
+          },
+          "premierTitre": {
+            "texte": "Questions fréquentes",
+            "distanceHaut": 77.8,
+            "distanceGauche": 48
+          }
+        },
+        {
+          "section": "contact",
+          "enfantDirectDeMain": true,
+          "paddingTop": 102.4,
+          "paddingBottom": 102.4,
+          "paddingLeft": 0,
+          "paddingRight": 0,
+          "borderTop": "0px rgb(252, 251, 247)",
+          "background": "rgb(20, 23, 28)",
+          "colonne": {
+            "largeur": 1184,
+            "retraitGauche": 48,
+            "retraitDroite": 48,
+            "retraitHaut": 102.39,
+            "retraitBas": 102.39
+          },
+          "premierTitre": {
+            "texte": "Parlons de votre maison",
+            "distanceHaut": 102.39,
+            "distanceGauche": 48
+          }
+        }
+      ],
+      "visionneuseFermee": {
+        "ouverte": false,
+        "display": "none",
+        "padding": "0px",
+        "background": "rgba(20, 23, 28, 0.96)",
+        "enfants": [
+          {
+            "balise": "div",
+            "classe": "visionneuse-contenu",
+            "texte": "1 / 4",
+            "position": "static"
+          },
+          {
+            "balise": "button",
+            "classe": "visionneuse-prec",
+            "texte": "",
+            "position": "fixed"
+          },
+          {
+            "balise": "button",
+            "classe": "visionneuse-suiv",
+            "texte": "",
+            "position": "fixed"
+          },
+          {
+            "balise": "button",
+            "classe": "visionneuse-fermer",
+            "texte": "",
+            "position": "fixed"
+          }
+        ],
+        "contenuPadding": {
+          "top": "72px",
+          "right": "48px",
+          "bottom": "24px",
+          "left": "48px"
+        }
+      },
+      "interlignesSerres": [
+        {
+          "selecteur": "span",
+          "texte": "Rap Énergies",
+          "fontSize": 20.8,
+          "lineHeight": "20.8px",
+          "ratioBrut": 1,
+          "ratio": 1,
+          "nbLignesTexte": 1,
+          "hauteurElement": 20.8,
+          "multiLigne": false
+        },
+        {
+          "selecteur": "h1#titre",
+          "texte": "Panneaux solaires, pompe à chaleur, chauffe-e",
+          "fontSize": 48.32,
+          "lineHeight": "49.2864px",
+          "ratioBrut": 1.02,
+          "ratio": 1.02,
+          "nbLignesTexte": 3,
+          "hauteurElement": 147.8,
+          "multiLigne": true
+        },
+        {
+          "selecteur": "a.bouton.bouton-plein",
+          "texte": "Appeler le 06 99 34 66 86",
+          "fontSize": 16.8,
+          "lineHeight": "18.48px",
+          "ratioBrut": 1.1,
+          "ratio": 1.1,
+          "nbLignesTexte": 1,
+          "hauteurElement": 52,
+          "multiLigne": true
+        },
+        {
+          "selecteur": "a.bouton.bouton-trait",
+          "texte": "Décrire mon projet",
+          "fontSize": 16.8,
+          "lineHeight": "18.48px",
+          "ratioBrut": 1.1,
+          "ratio": 1.1,
+          "nbLignesTexte": 1,
+          "hauteurElement": 52,
+          "multiLigne": true
+        },
+        {
+          "selecteur": "span.nom",
+          "texte": "Panneaux solaires photovoltaïques",
+          "fontSize": 26.4,
+          "lineHeight": "27.72px",
+          "ratioBrut": 1.05,
+          "ratio": 1.05,
+          "nbLignesTexte": 1,
+          "hauteurElement": 120.75,
+          "multiLigne": true
+        },
+        {
+          "selecteur": "h2#t-realisations",
+          "texte": "Nos chantiers, à Castries et autour",
+          "fontSize": 41.28,
+          "lineHeight": "43.344px",
+          "ratioBrut": 1.05,
+          "ratio": 1.05,
+          "nbLignesTexte": 2,
+          "hauteurElement": 86.69,
+          "multiLigne": true
+        },
+        {
+          "selecteur": "h2#t-services",
+          "texte": "Trois équipements, un seul électricien",
+          "fontSize": 41.28,
+          "lineHeight": "43.344px",
+          "ratioBrut": 1.05,
+          "ratio": 1.05,
+          "nbLignesTexte": 2,
+          "hauteurElement": 86.69,
+          "multiLigne": true
+        },
+        {
+          "selecteur": "h3#t-panneaux",
+          "texte": "Panneaux solaires photovoltaïques",
+          "fontSize": 30.4,
+          "lineHeight": "33.44px",
+          "ratioBrut": 1.0999999999999999,
+          "ratio": 1.1,
+          "nbLignesTexte": 2,
+          "hauteurElement": 96.47,
+          "multiLigne": true
+        },
+        {
+          "selecteur": "h3#t-pompe-a-chaleur",
+          "texte": "Pompe à chaleur (chauffage)",
+          "fontSize": 30.4,
+          "lineHeight": "33.44px",
+          "ratioBrut": 1.0999999999999999,
+          "ratio": 1.1,
+          "nbLignesTexte": 1,
+          "hauteurElement": 63.03,
+          "multiLigne": true
+        },
+        {
+          "selecteur": "h3#t-chauffe-eau",
+          "texte": "Chauffe-eau thermodynamique",
+          "fontSize": 30.4,
+          "lineHeight": "33.44px",
+          "ratioBrut": 1.0999999999999999,
+          "ratio": 1.1,
+          "nbLignesTexte": 1,
+          "hauteurElement": 63.03,
+          "multiLigne": true
+        },
+        {
+          "selecteur": "h3",
+          "texte": "Les trois ensemble",
+          "fontSize": 30.4,
+          "lineHeight": "33.44px",
+          "ratioBrut": 1.0999999999999999,
+          "ratio": 1.1,
+          "nbLignesTexte": 1,
+          "hauteurElement": 33.44,
+          "multiLigne": false
+        },
+        {
+          "selecteur": "h2#t-production",
+          "texte": "Ce qu'un toit produit ici",
+          "fontSize": 41.28,
+          "lineHeight": "43.344px",
+          "ratioBrut": 1.05,
+          "ratio": 1.05,
+          "nbLignesTexte": 1,
+          "hauteurElement": 43.34,
+          "multiLigne": false
+        },
+        {
+          "selecteur": "strong",
+          "texte": "1 500 kWh",
+          "fontSize": 56.32,
+          "lineHeight": "56.32px",
+          "ratioBrut": 1,
+          "ratio": 1,
+          "nbLignesTexte": 1,
+          "hauteurElement": 56.31,
+          "multiLigne": false
+        },
+        {
+          "selecteur": "span",
+          "texte": "par an pour 1 kWc plein sud, à Castries",
+          "fontSize": 18,
+          "lineHeight": "23.4px",
+          "ratioBrut": 1.2999999999999998,
+          "ratio": 1.3,
+          "nbLignesTexte": 2,
+          "hauteurElement": 46.78,
+          "multiLigne": true
+        },
+        {
+          "selecteur": "h2#t-etapes",
+          "texte": "Comment ça se passe",
+          "fontSize": 41.28,
+          "lineHeight": "43.344px",
+          "ratioBrut": 1.05,
+          "ratio": 1.05,
+          "nbLignesTexte": 1,
+          "hauteurElement": 43.34,
+          "multiLigne": false
+        },
+        {
+          "selecteur": "h2#t-zone",
+          "texte": "Où nous intervenons",
+          "fontSize": 41.28,
+          "lineHeight": "43.344px",
+          "ratioBrut": 1.05,
+          "ratio": 1.05,
+          "nbLignesTexte": 1,
+          "hauteurElement": 43.34,
+          "multiLigne": false
+        },
+        {
+          "selecteur": "li",
+          "texte": "Castries",
+          "fontSize": 35.2,
+          "lineHeight": "45.76px",
+          "ratioBrut": 1.2999999999999998,
+          "ratio": 1.3,
+          "nbLignesTexte": 1,
+          "hauteurElement": 45.75,
+          "multiLigne": false
+        },
+        {
+          "selecteur": "h2#t-pourquoi",
+          "texte": "Pourquoi un électricien de Castries",
+          "fontSize": 41.28,
+          "lineHeight": "43.344px",
+          "ratioBrut": 1.05,
+          "ratio": 1.05,
+          "nbLignesTexte": 2,
+          "hauteurElement": 86.69,
+          "multiLigne": true
+        },
+        {
+          "selecteur": "h2#t-questions",
+          "texte": "Questions fréquentes",
+          "fontSize": 41.28,
+          "lineHeight": "43.344px",
+          "ratioBrut": 1.05,
+          "ratio": 1.05,
+          "nbLignesTexte": 1,
+          "hauteurElement": 43.34,
+          "multiLigne": false
+        },
+        {
+          "selecteur": "h2#t-contact",
+          "texte": "Parlons de votre maison",
+          "fontSize": 41.28,
+          "lineHeight": "43.344px",
+          "ratioBrut": 1.05,
+          "ratio": 1.05,
+          "nbLignesTexte": 1,
+          "hauteurElement": 43.34,
+          "multiLigne": false
+        },
+        {
+          "selecteur": "a.tel-grand",
+          "texte": "06 99 34 66 86",
+          "fontSize": 44.8,
+          "lineHeight": "49.28px",
+          "ratioBrut": 1.1,
+          "ratio": 1.1,
+          "nbLignesTexte": 1,
+          "hauteurElement": 49.27,
+          "multiLigne": false
+        },
+        {
+          "selecteur": "button.bouton.bouton-envoyer",
+          "texte": "Envoyer ma demande",
+          "fontSize": 16.8,
+          "lineHeight": "18.48px",
+          "ratioBrut": 1.1,
+          "ratio": 1.1,
+          "nbLignesTexte": 1,
+          "hauteurElement": 52,
+          "multiLigne": true
+        }
+      ],
+      "marques": {
+        "total": 20,
+        "visibles": 20,
+        "parTaille": {
+          "18px": 12,
+          "15.2px": 8
+        },
+        "exemples": [
+          {
+            "texte": "[À CONFIRMER]",
+            "fontSize": "18px",
+            "paddingTop": "0px",
+            "paddingBottom": "0px",
+            "paddingLeft": "3.6px",
+            "background": "rgb(255, 241, 191)",
+            "display": "inline",
+            "parent": "p.intro"
+          },
+          {
+            "texte": "[À COMPLÉTER : commune]",
+            "fontSize": "15.2px",
+            "paddingTop": "0px",
+            "paddingBottom": "0px",
+            "paddingLeft": "3.04px",
+            "background": "rgb(255, 241, 191)",
+            "display": "inline",
+            "parent": "span.legende"
+          },
+          {
+            "texte": "[À COMPLÉTER : commune]",
+            "fontSize": "15.2px",
+            "paddingTop": "0px",
+            "paddingBottom": "0px",
+            "paddingLeft": "3.04px",
+            "background": "rgb(255, 241, 191)",
+            "display": "inline",
+            "parent": "span.legende"
+          }
+        ]
+      },
+      "axeGraphique": {
+        "selecteur": "ol.barres",
+        "borderBottom": "1px rgb(20, 23, 28)",
+        "paddingBottom": "0px",
+        "display": "grid",
+        "mois": {
+          "hauteurBoite": 28.8,
+          "paddingTop": "5.6px",
+          "paddingBottom": "0px",
+          "lineHeight": "23.56px",
+          "fontSize": "15.2px",
+          "basTexteVersFilet": 2.2,
+          "basBoiteVersFilet": 0
+        }
+      },
+      "longueursDeLigne": [
+        {
+          "selecteur": "p.pied-sources",
+          "lignes": 2,
+          "caracteres": 172,
+          "parLigne": 86,
+          "maxWidth": "595.84px",
+          "largeur": 595.83,
+          "fontSize": "15.2px",
+          "texte": "Sources : PVGIS (Commission européenne), Qualifele"
+        }
+      ],
+      "overlay": {
+        "nbNoeudsAjoutes": 41,
+        "noeudsAjoutes": [
+          {
+            "selecteur": "script",
+            "position": "static",
+            "zIndex": "auto",
+            "shadow": false,
+            "parent": "head"
+          },
+          {
+            "selecteur": "style",
+            "position": "static",
+            "zIndex": "auto",
+            "shadow": false,
+            "parent": "head"
+          },
+          {
+            "selecteur": "div.impeccable-overlay.impeccable-visible",
+            "position": "absolute",
+            "zIndex": "99999",
+            "shadow": false,
+            "parent": "body#haut"
+          },
+          {
+            "selecteur": "div.impeccable-label",
+            "position": "absolute",
+            "zIndex": "auto",
+            "shadow": false,
+            "parent": "div.impeccable-overlay.impeccable-visible"
+          },
+          {
+            "selecteur": "span",
+            "position": "static",
+            "zIndex": "auto",
+            "shadow": false,
+            "parent": "div.impeccable-label"
+          },
+          {
+            "selecteur": "div.impeccable-overlay.impeccable-visible",
+            "position": "absolute",
+            "zIndex": "99999",
+            "shadow": false,
+            "parent": "body#haut"
+          },
+          {
+            "selecteur": "div.impeccable-label",
+            "position": "absolute",
+            "zIndex": "auto",
+            "shadow": false,
+            "parent": "div.impeccable-overlay.impeccable-visible"
+          },
+          {
+            "selecteur": "span",
+            "position": "static",
+            "zIndex": "auto",
+            "shadow": false,
+            "parent": "div.impeccable-label"
+          },
+          {
+            "selecteur": "div.impeccable-overlay.impeccable-visible",
+            "position": "absolute",
+            "zIndex": "99999",
+            "shadow": false,
+            "parent": "body#haut"
+          },
+          {
+            "selecteur": "div.impeccable-label",
+            "position": "absolute",
+            "zIndex": "auto",
+            "shadow": false,
+            "parent": "div.impeccable-overlay.impeccable-visible"
+          },
+          {
+            "selecteur": "span",
+            "position": "static",
+            "zIndex": "auto",
+            "shadow": false,
+            "parent": "div.impeccable-label"
+          },
+          {
+            "selecteur": "div.impeccable-overlay.impeccable-visible",
+            "position": "absolute",
+            "zIndex": "99999",
+            "shadow": false,
+            "parent": "body#haut"
+          },
+          {
+            "selecteur": "div.impeccable-label",
+            "position": "absolute",
+            "zIndex": "auto",
+            "shadow": false,
+            "parent": "div.impeccable-overlay.impeccable-visible"
+          },
+          {
+            "selecteur": "span",
+            "position": "static",
+            "zIndex": "auto",
+            "shadow": false,
+            "parent": "div.impeccable-label"
+          },
+          {
+            "selecteur": "div.impeccable-overlay.impeccable-visible",
+            "position": "absolute",
+            "zIndex": "99999",
+            "shadow": false,
+            "parent": "body#haut"
+          },
+          {
+            "selecteur": "div.impeccable-label",
+            "position": "absolute",
+            "zIndex": "auto",
+            "shadow": false,
+            "parent": "div.impeccable-overlay.impeccable-visible"
+          },
+          {
+            "selecteur": "span",
+            "position": "static",
+            "zIndex": "auto",
+            "shadow": false,
+            "parent": "div.impeccable-label"
+          },
+          {
+            "selecteur": "div.impeccable-overlay.impeccable-visible",
+            "position": "absolute",
+            "zIndex": "99999",
+            "shadow": false,
+            "parent": "body#haut"
+          },
+          {
+            "selecteur": "div.impeccable-label",
+            "position": "absolute",
+            "zIndex": "auto",
+            "shadow": false,
+            "parent": "div.impeccable-overlay.impeccable-visible"
+          },
+          {
+            "selecteur": "span",
+            "position": "static",
+            "zIndex": "auto",
+            "shadow": false,
+            "parent": "div.impeccable-label"
+          },
+          {
+            "selecteur": "div.impeccable-overlay.impeccable-visible",
+            "position": "absolute",
+            "zIndex": "99999",
+            "shadow": false,
+            "parent": "body#haut"
+          },
+          {
+            "selecteur": "div.impeccable-label",
+            "position": "absolute",
+            "zIndex": "auto",
+            "shadow": false,
+            "parent": "div.impeccable-overlay.impeccable-visible"
+          },
+          {
+            "selecteur": "span",
+            "position": "static",
+            "zIndex": "auto",
+            "shadow": false,
+            "parent": "div.impeccable-label"
+          },
+          {
+            "selecteur": "div.impeccable-overlay.impeccable-visible",
+            "position": "absolute",
+            "zIndex": "99999",
+            "shadow": false,
+            "parent": "body#haut"
+          },
+          {
+            "selecteur": "div.impeccable-label",
+            "position": "absolute",
+            "zIndex": "auto",
+            "shadow": false,
+            "parent": "div.impeccable-overlay.impeccable-visible"
+          },
+          {
+            "selecteur": "span",
+            "position": "static",
+            "zIndex": "auto",
+            "shadow": false,
+            "parent": "div.impeccable-label"
+          },
+          {
+            "selecteur": "div.impeccable-overlay.impeccable-visible",
+            "position": "absolute",
+            "zIndex": "99999",
+            "shadow": false,
+            "parent": "body#haut"
+          },
+          {
+            "selecteur": "div.impeccable-label",
+            "position": "absolute",
+            "zIndex": "auto",
+            "shadow": false,
+            "parent": "div.impeccable-overlay.impeccable-visible"
+          },
+          {
+            "selecteur": "span",
+            "position": "static",
+            "zIndex": "auto",
+            "shadow": false,
+            "parent": "div.impeccable-label"
+          },
+          {
+            "selecteur": "div.impeccable-overlay.impeccable-visible",
+            "position": "absolute",
+            "zIndex": "99999",
+            "shadow": false,
+            "parent": "body#haut"
+          },
+          {
+            "selecteur": "div.impeccable-label",
+            "position": "absolute",
+            "zIndex": "auto",
+            "shadow": false,
+            "parent": "div.impeccable-overlay.impeccable-visible"
+          },
+          {
+            "selecteur": "span",
+            "position": "static",
+            "zIndex": "auto",
+            "shadow": false,
+            "parent": "div.impeccable-label"
+          },
+          {
+            "selecteur": "div.impeccable-overlay",
+            "position": "absolute",
+            "zIndex": "99999",
+            "shadow": false,
+            "parent": "body#haut"
+          },
+          {
+            "selecteur": "div.impeccable-label",
+            "position": "absolute",
+            "zIndex": "auto",
+            "shadow": false,
+            "parent": "div.impeccable-overlay"
+          },
+          {
+            "selecteur": "span",
+            "position": "static",
+            "zIndex": "auto",
+            "shadow": false,
+            "parent": "div.impeccable-label"
+          },
+          {
+            "selecteur": "div.impeccable-overlay",
+            "position": "absolute",
+            "zIndex": "99999",
+            "shadow": false,
+            "parent": "body#haut"
+          },
+          {
+            "selecteur": "div.impeccable-label",
+            "position": "absolute",
+            "zIndex": "auto",
+            "shadow": false,
+            "parent": "div.impeccable-overlay"
+          },
+          {
+            "selecteur": "span",
+            "position": "static",
+            "zIndex": "auto",
+            "shadow": false,
+            "parent": "div.impeccable-label"
+          },
+          {
+            "selecteur": "div.impeccable-overlay.impeccable-visible",
+            "position": "absolute",
+            "zIndex": "99999",
+            "shadow": false,
+            "parent": "body#haut"
+          },
+          {
+            "selecteur": "div.impeccable-label",
+            "position": "absolute",
+            "zIndex": "auto",
+            "shadow": false,
+            "parent": "div.impeccable-overlay.impeccable-visible"
+          }
+        ],
+        "noeudsNommesImpeccable": 26,
+        "globalesImpeccable": [
+          "__testInjectionImpeccable",
+          "impeccableDetect",
+          "impeccableDetectAsync",
+          "impeccableScan",
+          "impeccableScanAsync",
+          "impeccableMeasureHiddenText",
+          "impeccableCollectVisualContrastCandidates",
+          "impeccableAnalyzeVisualContrast",
+          "impeccableGetLastVisualContrastAnalyses",
+          "impeccableSnapshotCapture",
+          "impeccableDetectFromSnapshot"
+        ],
+        "erreurCoeur": null,
+        "scriptsDetect": [
+          "http://localhost:8400/detect.js"
+        ]
+      }
+    },
+    "visionneuseOuverte": {
+      "ouverte": true,
+      "dialogPadding": "0px",
+      "largeurDialog": 1280,
+      "hauteurDialog": 800,
+      "contenuPadding": {
+        "top": "72px",
+        "right": "48px",
+        "bottom": "24px",
+        "left": "48px"
+      },
+      "retraitContenuGauche": 0,
+      "retraitContenuDroite": 0,
+      "compteur": {
+        "texte": "1 / 4",
+        "retraitGauche": 624,
+        "retraitDroite": 624,
+        "retraitBas": 24
+      },
+      "legendeVide": true,
+      "boutons": [
+        {
+          "classe": "visionneuse-prec",
+          "gauche": 16,
+          "droite": 1216,
+          "haut": 376,
+          "largeur": 48,
+          "texte": "",
+          "ariaLabel": "Photo précédente"
+        },
+        {
+          "classe": "visionneuse-suiv",
+          "gauche": 1216,
+          "droite": 16,
+          "haut": 376,
+          "largeur": 48,
+          "texte": "",
+          "ariaLabel": "Photo suivante"
+        },
+        {
+          "classe": "visionneuse-fermer",
+          "gauche": 1216,
+          "droite": 16,
+          "haut": 16,
+          "largeur": 48,
+          "texte": "",
+          "ariaLabel": "Fermer la photo"
+        }
+      ]
+    },
+    "captureVisionneuse": "C:\\Users\\hali\\dev\\sites-client\\rap-enerigie\\.impeccable\\critique\\captures-2\\overlay-template-1-visionneuse.png",
+    "erreursPage": [],
+    "requetesEchouees": [],
+    "reponsesErreur": [],
+    "consoleErreursAvertissements": [],
+    "consoleTotal": 16,
+    "consoleTout": [
+      {
+        "type": "info",
+        "texte": "Images loaded lazily and replaced with placeholders. Load events are deferred. See https://go.microsoft.com/fwlink/?linkid=2048113",
+        "source": "http://localhost:8500/template-1/index.html"
+      },
+      {
+        "type": "startGroup",
+        "texte": "%c[impeccable] 13 anti-patterns found color: oklch(84% 0.19 80.46); font-weight: bold",
+        "source": "http://localhost:8400/detect.js"
+      },
+      {
+        "type": "log",
+        "texte": "%ccramped-padding%c 0px of space above and below the text (need ≥4.6px for 15.2px text) color: oklch(84% 0.19 80.46); font-weight: bold color: inherit JSHandle@node",
+        "source": "http://localhost:8400/detect.js"
+      },
+      {
+        "type": "log",
+        "texte": "%ccramped-padding%c 0px of space above and below the text (need ≥4.6px for 15.2px text) color: oklch(84% 0.19 80.46); font-weight: bold color: inherit JSHandle@node",
+        "source": "http://localhost:8400/detect.js"
+      },
+      {
+        "type": "log",
+        "texte": "%ccramped-padding%c 0px of space above and below the text (need ≥5.4px for 18px text) color: oklch(84% 0.19 80.46); font-weight: bold color: inherit JSHandle@node",
+        "source": "http://localhost:8400/detect.js"
+      },
+      {
+        "type": "log",
+        "texte": "%ccramped-padding%c 0px of space above and below the text (need ≥5.4px for 18px text) color: oklch(84% 0.19 80.46); font-weight: bold color: inherit JSHandle@node",
+        "source": "http://localhost:8400/detect.js"
+      },
+      {
+        "type": "log",
+        "texte": "%ccramped-padding%c 0px of space above and below the text (need ≥4.6px for 15.2px text) color: oklch(84% 0.19 80.46); font-weight: bold color: inherit JSHandle@node",
+        "source": "http://localhost:8400/detect.js"
+      },
+      {
+        "type": "log",
+        "texte": "%ccramped-padding%c <ol> \"barres\": children flush against border-bottom on bottom (no inset) color: oklch(84% 0.19 80.46); font-weight: bold color: inherit JSHandle@node",
+        "source": "http://localhost:8400/detect.js"
+      },
+      {
+        "type": "log",
+        "texte": "%ccramped-padding%c 0px of space above and below the text (need ≥5.4px for 18px text) color: oklch(84% 0.19 80.46); font-weight: bold color: inherit JSHandle@node",
+        "source": "http://localhost:8400/detect.js"
+      },
+      {
+        "type": "log",
+        "texte": "%ccramped-padding%c 0px of space above and below the text (need ≥5.4px for 18px text) color: oklch(84% 0.19 80.46); font-weight: bold color: inherit JSHandle@node",
+        "source": "http://localhost:8400/detect.js"
+      },
+      {
+        "type": "log",
+        "texte": "%ccramped-padding%c 0px of space above and below the text (need ≥5.4px for 18px text) color: oklch(84% 0.19 80.46); font-weight: bold color: inherit JSHandle@node",
+        "source": "http://localhost:8400/detect.js"
+      },
+      {
+        "type": "log",
+        "texte": "%ccramped-padding%c 0px of space above and below the text (need ≥5.4px for 18px text) color: oklch(84% 0.19 80.46); font-weight: bold color: inherit JSHandle@node",
+        "source": "http://localhost:8400/detect.js"
+      },
+      {
+        "type": "log",
+        "texte": "%ccramped-padding%c 0px of space above and below the text (need ≥5.4px for 18px text) color: oklch(84% 0.19 80.46); font-weight: bold color: inherit JSHandle@node",
+        "source": "http://localhost:8400/detect.js"
+      },
+      {
+        "type": "log",
+        "texte": "%ccramped-padding%c 0px of space above and below the text (need ≥5.4px for 18px text) color: oklch(84% 0.19 80.46); font-weight: bold color: inherit JSHandle@node",
+        "source": "http://localhost:8400/detect.js"
+      },
+      {
+        "type": "log",
+        "texte": "%cline-length%c ~86 chars on 2 of 2 rendered lines (aim for <80) color: oklch(84% 0.19 80.46); font-weight: bold color: inherit JSHandle@node",
+        "source": "http://localhost:8400/detect.js"
+      },
+      {
+        "type": "endGroup",
+        "texte": "console.groupEnd",
+        "source": "http://localhost:8400/detect.js"
+      }
+    ]
+  },
+  {
+    "template": 2,
+    "url": "http://localhost:8500/template-2/index.html",
+    "detectJs": "http://localhost:8400/detect.js",
+    "statutHttp": 200,
+    "titre": "Panneaux solaires et pompes à chaleur à Castries | Rap Énergies",
+    "consoleAvantInjection": 1,
+    "testInjection": {
+      "titreModifiable": true,
+      "scriptExecute": true,
+      "possible": true,
+      "nbElementsAvant": 474
+    },
+    "injectionDetect": {
+      "ok": true
+    },
+    "consoleImpeccable": [
+      {
+        "type": "startGroup",
+        "texte": "%c[impeccable] 15 anti-patterns found color: oklch(84% 0.19 80.46); font-weight: bold",
+        "source": "http://localhost:8400/detect.js"
+      }
+    ],
+    "consoleApresInjection": [
+      {
+        "type": "startGroup",
+        "texte": "%c[impeccable] 15 anti-patterns found color: oklch(84% 0.19 80.46); font-weight: bold",
+        "source": "http://localhost:8400/detect.js"
+      },
+      {
+        "type": "log",
+        "texte": "%ccramped-padding%c 0px of space above and below the text (need ≥4.6px for 15.2px text) color: oklch(84% 0.19 80.46); font-weight: bold color: inherit JSHandle@node",
+        "source": "http://localhost:8400/detect.js"
+      },
+      {
+        "type": "log",
+        "texte": "%ccramped-padding%c 0px of space above and below the text (need ≥4.6px for 15.2px text) color: oklch(84% 0.19 80.46); font-weight: bold color: inherit JSHandle@node",
+        "source": "http://localhost:8400/detect.js"
+      },
+      {
+        "type": "log",
+        "texte": "%ccramped-padding%c 0px of space above and below the text (need ≥4.6px for 15.2px text) color: oklch(84% 0.19 80.46); font-weight: bold color: inherit JSHandle@node",
+        "source": "http://localhost:8400/detect.js"
+      },
+      {
+        "type": "log",
+        "texte": "%ccramped-padding%c 0px of space above and below the text (need ≥4.6px for 15.2px text) color: oklch(84% 0.19 80.46); font-weight: bold color: inherit JSHandle@node",
+        "source": "http://localhost:8400/detect.js"
+      },
+      {
+        "type": "log",
+        "texte": "%ccramped-padding%c 0px of space above and below the text (need ≥5.4px for 18px text) color: oklch(84% 0.19 80.46); font-weight: bold color: inherit JSHandle@node",
+        "source": "http://localhost:8400/detect.js"
+      },
+      {
+        "type": "log",
+        "texte": "%ccramped-padding%c 0px of space above and below the text (need ≥4.6px for 15.2px text) color: oklch(84% 0.19 80.46); font-weight: bold color: inherit JSHandle@node",
+        "source": "http://localhost:8400/detect.js"
+      },
+      {
+        "type": "log",
+        "texte": "%ccramped-padding%c 0px of space above and below the text (need ≥5.4px for 18px text) color: oklch(84% 0.19 80.46); font-weight: bold color: inherit JSHandle@node",
+        "source": "http://localhost:8400/detect.js"
+      },
+      {
+        "type": "log",
+        "texte": "%ccramped-padding%c 0px of space above and below the text (need ≥5.4px for 18px text) color: oklch(84% 0.19 80.46); font-weight: bold color: inherit JSHandle@node",
+        "source": "http://localhost:8400/detect.js"
+      },
+      {
+        "type": "log",
+        "texte": "%ccramped-padding%c 0px of space above and below the text (need ≥5.4px for 18px text) color: oklch(84% 0.19 80.46); font-weight: bold color: inherit JSHandle@node",
+        "source": "http://localhost:8400/detect.js"
+      },
+      {
+        "type": "log",
+        "texte": "%ctight-leading%c line-height 1.30x (need >=1.3) color: oklch(84% 0.19 80.46); font-weight: bold color: inherit JSHandle@node",
+        "source": "http://localhost:8400/detect.js"
+      },
+      {
+        "type": "log",
+        "texte": "%ccramped-padding%c 0px of space above and below the text (need ≥5.4px for 18px text) color: oklch(84% 0.19 80.46); font-weight: bold color: inherit JSHandle@node",
+        "source": "http://localhost:8400/detect.js"
+      },
+      {
+        "type": "log",
+        "texte": "%ctight-leading%c line-height 1.30x (need >=1.3) color: oklch(84% 0.19 80.46); font-weight: bold color: inherit JSHandle@node",
+        "source": "http://localhost:8400/detect.js"
+      },
+      {
+        "type": "log",
+        "texte": "%ccramped-padding%c 0px of space above and below the text (need ≥5.4px for 18px text) color: oklch(84% 0.19 80.46); font-weight: bold color: inherit JSHandle@node",
+        "source": "http://localhost:8400/detect.js"
+      },
+      {
+        "type": "log",
+        "texte": "%ctight-leading%c line-height 1.30x (need >=1.3) color: oklch(84% 0.19 80.46); font-weight: bold color: inherit JSHandle@node",
+        "source": "http://localhost:8400/detect.js"
+      },
+      {
+        "type": "log",
+        "texte": "%ccramped-padding%c 0px of space above and below the text (need ≥5.4px for 18px text) color: oklch(84% 0.19 80.46); font-weight: bold color: inherit JSHandle@node",
+        "source": "http://localhost:8400/detect.js"
+      },
+      {
+        "type": "endGroup",
+        "texte": "console.groupEnd",
+        "source": "http://localhost:8400/detect.js"
+      }
+    ],
+    "capture": "C:\\Users\\hali\\dev\\sites-client\\rap-enerigie\\.impeccable\\critique\\captures-2\\overlay-template-2.png",
+    "capturePleinePage": "C:\\Users\\hali\\dev\\sites-client\\rap-enerigie\\.impeccable\\critique\\captures-2\\overlay-template-2-page.png",
+    "apiDetect": {
+      "disponible": true,
+      "fonction": "impeccableDetectAsync",
+      "cles": [
+        "__testInjectionImpeccable",
+        "impeccableDetect",
+        "impeccableDetectAsync",
+        "impeccableScan",
+        "impeccableScanAsync",
+        "impeccableMeasureHiddenText",
+        "impeccableCollectVisualContrastCandidates",
+        "impeccableAnalyzeVisualContrast",
+        "impeccableGetLastVisualContrastAnalyses",
+        "impeccableSnapshotCapture",
+        "impeccableDetectFromSnapshot"
+      ],
+      "resultat": [
+        {
+          "selector": "li.galerie-item:nth-of-type(1) > figure > figcaption > span.legende > mark.pl",
+          "tagName": "mark",
+          "rect": {
+            "x": 67.546875,
+            "y": 1660.828125,
+            "width": 474.9375,
+            "height": 40.28125,
+            "top": 1660.828125,
+            "right": 542.484375,
+            "bottom": 1701.109375,
+            "left": 67.546875
+          },
+          "isPageLevel": false,
+          "isHidden": false,
+          "findings": [
+            {
+              "type": "cramped-padding",
+              "category": "quality",
+              "severity": "warning",
+              "advisory": false,
+              "detail": "0px of space above and below the text (need ≥4.6px for 15.2px text)",
+              "ignoreValue": "",
+              "name": "Cramped padding",
+              "description": "Text is too close to the edge of its container. Two shapes: (1) an element with its own text where the space between the rendered text and the border box is too small for the font size, and (2) a wrapper whose children's text lands flush against a visible boundary (border, outline, or non-transparent background) with nothing to inset it. Add at least 8px (ideally 12–16px) of space inside bordered, outlined, or colored containers."
+            }
+          ]
+        },
+        {
+          "selector": "li.galerie-item:nth-of-type(2) > figure > figcaption > span.legende > mark.pl",
+          "tagName": "mark",
+          "rect": {
+            "x": 675.546875,
+            "y": 1660.828125,
+            "width": 523.4375,
+            "height": 40.28125,
+            "top": 1660.828125,
+            "right": 1198.984375,
+            "bottom": 1701.109375,
+            "left": 675.546875
+          },
+          "isPageLevel": false,
+          "isHidden": false,
+          "findings": [
+            {
+              "type": "cramped-padding",
+              "category": "quality",
+              "severity": "warning",
+              "advisory": false,
+              "detail": "0px of space above and below the text (need ≥4.6px for 15.2px text)",
+              "ignoreValue": "",
+              "name": "Cramped padding",
+              "description": "Text is too close to the edge of its container. Two shapes: (1) an element with its own text where the space between the rendered text and the border box is too small for the font size, and (2) a wrapper whose children's text lands flush against a visible boundary (border, outline, or non-transparent background) with nothing to inset it. Add at least 8px (ideally 12–16px) of space inside bordered, outlined, or colored containers."
+            }
+          ]
+        },
+        {
+          "selector": "li.galerie-item:nth-of-type(3) > figure > figcaption > span.legende > mark.pl",
+          "tagName": "mark",
+          "rect": {
+            "x": 67.546875,
+            "y": 2207.5625,
+            "width": 540.578125,
+            "height": 40.28125,
+            "top": 2207.5625,
+            "right": 608.125,
+            "bottom": 2247.84375,
+            "left": 67.546875
+          },
+          "isPageLevel": false,
+          "isHidden": false,
+          "findings": [
+            {
+              "type": "cramped-padding",
+              "category": "quality",
+              "severity": "warning",
+              "advisory": false,
+              "detail": "0px of space above and below the text (need ≥4.6px for 15.2px text)",
+              "ignoreValue": "",
+              "name": "Cramped padding",
+              "description": "Text is too close to the edge of its container. Two shapes: (1) an element with its own text where the space between the rendered text and the border box is too small for the font size, and (2) a wrapper whose children's text lands flush against a visible boundary (border, outline, or non-transparent background) with nothing to inset it. Add at least 8px (ideally 12–16px) of space inside bordered, outlined, or colored containers."
+            }
+          ]
+        },
+        {
+          "selector": "li.galerie-item:nth-of-type(4) > figure > figcaption > span.legende > mark.pl",
+          "tagName": "mark",
+          "rect": {
+            "x": 675.546875,
+            "y": 2207.5625,
+            "width": 509.46875,
+            "height": 40.28125,
+            "top": 2207.5625,
+            "right": 1185.015625,
+            "bottom": 2247.84375,
+            "left": 675.546875
+          },
+          "isPageLevel": false,
+          "isHidden": false,
+          "findings": [
+            {
+              "type": "cramped-padding",
+              "category": "quality",
+              "severity": "warning",
+              "advisory": false,
+              "detail": "0px of space above and below the text (need ≥4.6px for 15.2px text)",
+              "ignoreValue": "",
+              "name": "Cramped padding",
+              "description": "Text is too close to the edge of its container. Two shapes: (1) an element with its own text where the space between the rendered text and the border box is too small for the font size, and (2) a wrapper whose children's text lands flush against a visible boundary (border, outline, or non-transparent background) with nothing to inset it. Add at least 8px (ideally 12–16px) of space inside bordered, outlined, or colored containers."
+            }
+          ]
+        },
+        {
+          "selector": "div.service-intro > p > mark.pl",
+          "tagName": "mark",
+          "rect": {
+            "x": 485.328125,
+            "y": 3235.25,
+            "width": 670.421875,
+            "height": 55.796875,
+            "top": 3235.25,
+            "right": 1155.75,
+            "bottom": 3291.046875,
+            "left": 485.328125
+          },
+          "isPageLevel": false,
+          "isHidden": false,
+          "findings": [
+            {
+              "type": "cramped-padding",
+              "category": "quality",
+              "severity": "warning",
+              "advisory": false,
+              "detail": "0px of space above and below the text (need ≥5.4px for 18px text)",
+              "ignoreValue": "",
+              "name": "Cramped padding",
+              "description": "Text is too close to the edge of its container. Two shapes: (1) an element with its own text where the space between the rendered text and the border box is too small for the font size, and (2) a wrapper whose children's text lands flush against a visible boundary (border, outline, or non-transparent background) with nothing to inset it. Add at least 8px (ideally 12–16px) of space inside bordered, outlined, or colored containers."
+            }
+          ]
+        },
+        {
+          "selector": "div.faisons > p.note > mark.pl",
+          "tagName": "mark",
+          "rect": {
+            "x": 485.328125,
+            "y": 3661.203125,
+            "width": 686.203125,
+            "height": 47.3125,
+            "top": 3661.203125,
+            "right": 1171.53125,
+            "bottom": 3708.515625,
+            "left": 485.328125
+          },
+          "isPageLevel": false,
+          "isHidden": false,
+          "findings": [
+            {
+              "type": "cramped-padding",
+              "category": "quality",
+              "severity": "warning",
+              "advisory": false,
+              "detail": "0px of space above and below the text (need ≥4.6px for 15.2px text)",
+              "ignoreValue": "",
+              "name": "Cramped padding",
+              "description": "Text is too close to the edge of its container. Two shapes: (1) an element with its own text where the space between the rendered text and the border box is too small for the font size, and (2) a wrapper whose children's text lands flush against a visible boundary (border, outline, or non-transparent background) with nothing to inset it. Add at least 8px (ideally 12–16px) of space inside bordered, outlined, or colored containers."
+            }
+          ]
+        },
+        {
+          "selector": "li:nth-of-type(3) > div.etape > mark.pl",
+          "tagName": "mark",
+          "rect": {
+            "x": 633.328125,
+            "y": 6427.828125,
+            "width": 572.875,
+            "height": 55.796875,
+            "top": 6427.828125,
+            "right": 1206.203125,
+            "bottom": 6483.625,
+            "left": 633.328125
+          },
+          "isPageLevel": false,
+          "isHidden": false,
+          "findings": [
+            {
+              "type": "cramped-padding",
+              "category": "quality",
+              "severity": "warning",
+              "advisory": false,
+              "detail": "0px of space above and below the text (need ≥5.4px for 18px text)",
+              "ignoreValue": "",
+              "name": "Cramped padding",
+              "description": "Text is too close to the edge of its container. Two shapes: (1) an element with its own text where the space between the rendered text and the border box is too small for the font size, and (2) a wrapper whose children's text lands flush against a visible boundary (border, outline, or non-transparent background) with nothing to inset it. Add at least 8px (ideally 12–16px) of space inside bordered, outlined, or colored containers."
+            }
+          ]
+        },
+        {
+          "selector": "li:nth-of-type(4) > div.etape > mark.pl",
+          "tagName": "mark",
+          "rect": {
+            "x": 633.328125,
+            "y": 6521.609375,
+            "width": 574.1875,
+            "height": 113.390625,
+            "top": 6521.609375,
+            "right": 1207.515625,
+            "bottom": 6635,
+            "left": 633.328125
+          },
+          "isPageLevel": false,
+          "isHidden": false,
+          "findings": [
+            {
+              "type": "cramped-padding",
+              "category": "quality",
+              "severity": "warning",
+              "advisory": false,
+              "detail": "0px of space above and below the text (need ≥5.4px for 18px text)",
+              "ignoreValue": "",
+              "name": "Cramped padding",
+              "description": "Text is too close to the edge of its container. Two shapes: (1) an element with its own text where the space between the rendered text and the border box is too small for the font size, and (2) a wrapper whose children's text lands flush against a visible boundary (border, outline, or non-transparent background) with nothing to inset it. Add at least 8px (ideally 12–16px) of space inside bordered, outlined, or colored containers."
+            }
+          ]
+        },
+        {
+          "selector": "li:nth-of-type(6) > div.etape > mark.pl",
+          "tagName": "mark",
+          "rect": {
+            "x": 633.328125,
+            "y": 6766.765625,
+            "width": 521.390625,
+            "height": 55.796875,
+            "top": 6766.765625,
+            "right": 1154.71875,
+            "bottom": 6822.5625,
+            "left": 633.328125
+          },
+          "isPageLevel": false,
+          "isHidden": false,
+          "findings": [
+            {
+              "type": "cramped-padding",
+              "category": "quality",
+              "severity": "warning",
+              "advisory": false,
+              "detail": "0px of space above and below the text (need ≥5.4px for 18px text)",
+              "ignoreValue": "",
+              "name": "Cramped padding",
+              "description": "Text is too close to the edge of its container. Two shapes: (1) an element with its own text where the space between the rendered text and the border box is too small for the font size, and (2) a wrapper whose children's text lands flush against a visible boundary (border, outline, or non-transparent background) with nothing to inset it. Add at least 8px (ideally 12–16px) of space inside bordered, outlined, or colored containers."
+            }
+          ]
+        },
+        {
+          "selector": "li:nth-of-type(2) > b",
+          "tagName": "b",
+          "rect": {
+            "x": 458.65625,
+            "y": 7791.0625,
+            "width": 362.671875,
+            "height": 54.0625,
+            "top": 7791.0625,
+            "right": 821.328125,
+            "bottom": 7845.125,
+            "left": 458.65625
+          },
+          "isPageLevel": false,
+          "isHidden": false,
+          "findings": [
+            {
+              "type": "tight-leading",
+              "category": "quality",
+              "severity": "warning",
+              "advisory": false,
+              "detail": "line-height 1.30x (need >=1.3)",
+              "ignoreValue": "",
+              "name": "Tight line height",
+              "description": "Line height below 1.3x the font size makes multi-line text hard to read. Use 1.5 to 1.7 for body text so lines have room to breathe."
+            }
+          ]
+        },
+        {
+          "selector": "li:nth-of-type(2) > span > mark.pl",
+          "tagName": "mark",
+          "rect": {
+            "x": 458.65625,
+            "y": 7994.703125,
+            "width": 345,
+            "height": 84.59375,
+            "top": 7994.703125,
+            "right": 803.65625,
+            "bottom": 8079.296875,
+            "left": 458.65625
+          },
+          "isPageLevel": false,
+          "isHidden": false,
+          "findings": [
+            {
+              "type": "cramped-padding",
+              "category": "quality",
+              "severity": "warning",
+              "advisory": false,
+              "detail": "0px of space above and below the text (need ≥5.4px for 18px text)",
+              "ignoreValue": "",
+              "name": "Cramped padding",
+              "description": "Text is too close to the edge of its container. Two shapes: (1) an element with its own text where the space between the rendered text and the border box is too small for the font size, and (2) a wrapper whose children's text lands flush against a visible boundary (border, outline, or non-transparent background) with nothing to inset it. Add at least 8px (ideally 12–16px) of space inside bordered, outlined, or colored containers."
+            }
+          ]
+        },
+        {
+          "selector": "li:nth-of-type(6) > b",
+          "tagName": "b",
+          "rect": {
+            "x": 869.328125,
+            "y": 8122.09375,
+            "width": 362.65625,
+            "height": 54.0625,
+            "top": 8122.09375,
+            "right": 1231.984375,
+            "bottom": 8176.15625,
+            "left": 869.328125
+          },
+          "isPageLevel": false,
+          "isHidden": false,
+          "findings": [
+            {
+              "type": "tight-leading",
+              "category": "quality",
+              "severity": "warning",
+              "advisory": false,
+              "detail": "line-height 1.30x (need >=1.3)",
+              "ignoreValue": "",
+              "name": "Tight line height",
+              "description": "Line height below 1.3x the font size makes multi-line text hard to read. Use 1.5 to 1.7 for body text so lines have room to breathe."
+            }
+          ]
+        },
+        {
+          "selector": "details:nth-of-type(2) > p > mark.pl",
+          "tagName": "mark",
+          "rect": {
+            "x": 48,
+            "y": 8684.671875,
+            "width": 607.015625,
+            "height": 55.796875,
+            "top": 8684.671875,
+            "right": 655.015625,
+            "bottom": 8740.46875,
+            "left": 48
+          },
+          "isPageLevel": false,
+          "isHidden": true,
+          "findings": [
+            {
+              "type": "cramped-padding",
+              "category": "quality",
+              "severity": "warning",
+              "advisory": false,
+              "detail": "0px of space above and below the text (need ≥5.4px for 18px text)",
+              "ignoreValue": "",
+              "name": "Cramped padding",
+              "description": "Text is too close to the edge of its container. Two shapes: (1) an element with its own text where the space between the rendered text and the border box is too small for the font size, and (2) a wrapper whose children's text lands flush against a visible boundary (border, outline, or non-transparent background) with nothing to inset it. Add at least 8px (ideally 12–16px) of space inside bordered, outlined, or colored containers."
+            }
+          ]
+        },
+        {
+          "selector": "details:nth-of-type(5) > summary > span",
+          "tagName": "span",
+          "rect": {
+            "x": 48,
+            "y": 8774.390625,
+            "width": 506.40625,
+            "height": 27.03125,
+            "top": 8774.390625,
+            "right": 554.40625,
+            "bottom": 8801.421875,
+            "left": 48
+          },
+          "isPageLevel": false,
+          "isHidden": false,
+          "findings": [
+            {
+              "type": "tight-leading",
+              "category": "quality",
+              "severity": "warning",
+              "advisory": false,
+              "detail": "line-height 1.30x (need >=1.3)",
+              "ignoreValue": "",
+              "name": "Tight line height",
+              "description": "Line height below 1.3x the font size makes multi-line text hard to read. Use 1.5 to 1.7 for body text so lines have room to breathe."
+            }
+          ]
+        },
+        {
+          "selector": "details:nth-of-type(6) > p > mark.pl",
+          "tagName": "mark",
+          "rect": {
+            "x": 48,
+            "y": 8966.09375,
+            "width": 536.53125,
+            "height": 55.796875,
+            "top": 8966.09375,
+            "right": 584.53125,
+            "bottom": 9021.890625,
+            "left": 48
+          },
+          "isPageLevel": false,
+          "isHidden": true,
+          "findings": [
+            {
+              "type": "cramped-padding",
+              "category": "quality",
+              "severity": "warning",
+              "advisory": false,
+              "detail": "0px of space above and below the text (need ≥5.4px for 18px text)",
+              "ignoreValue": "",
+              "name": "Cramped padding",
+              "description": "Text is too close to the edge of its container. Two shapes: (1) an element with its own text where the space between the rendered text and the border box is too small for the font size, and (2) a wrapper whose children's text lands flush against a visible boundary (border, outline, or non-transparent background) with nothing to inset it. Add at least 8px (ideally 12–16px) of space inside bordered, outlined, or colored containers."
+            }
+          ]
+        },
+        {
+          "selector": "body",
+          "tagName": "body",
+          "rect": null,
+          "isPageLevel": true,
+          "isHidden": false,
+          "findings": [
+            {
+              "type": "dark-glow",
+              "category": "slop",
+              "severity": "warning",
+              "advisory": false,
+              "detail": "Zero-offset box-shadow glow (#ffba00)",
+              "ignoreValue": "",
+              "name": "Glowing shadow accents",
+              "description": "Colored glow shadows — a zero-offset chromatic halo (box- or text-shadow) on any background, or any colored blurred shadow on a dark background — are the default \"cool\" look of AI-generated UIs. Use neutral elevation shadows and subtle, purposeful lighting instead."
+            }
+          ]
+        }
+      ]
+    },
+    "mesures": {
+      "sections": [
+        {
+          "section": "services",
+          "enfantDirectDeMain": true,
+          "paddingTop": 102.4,
+          "paddingBottom": 102.4,
+          "paddingLeft": 0,
+          "paddingRight": 0,
+          "borderTop": "1px rgb(42, 38, 32)",
+          "background": "rgba(0, 0, 0, 0)",
+          "colonne": {
+            "largeur": 1184,
+            "retraitGauche": 48,
+            "retraitDroite": 48,
+            "retraitHaut": 103.39,
+            "retraitBas": 102.39
+          },
+          "premierTitre": {
+            "texte": "Trois équipements, un seul électricien",
+            "distanceHaut": 103.39,
+            "distanceGauche": 48
+          }
+        },
+        {
+          "section": "etapes",
+          "enfantDirectDeMain": true,
+          "paddingTop": 102.4,
+          "paddingBottom": 102.4,
+          "paddingLeft": 0,
+          "paddingRight": 0,
+          "borderTop": "1px rgb(42, 38, 32)",
+          "background": "rgba(0, 0, 0, 0)",
+          "colonne": {
+            "largeur": 1184,
+            "retraitGauche": 48,
+            "retraitDroite": 48,
+            "retraitHaut": 103.39,
+            "retraitBas": 102.39
+          },
+          "premierTitre": {
+            "texte": "Comment ça se passe",
+            "distanceHaut": 103.39,
+            "distanceGauche": 569.33
+          }
+        },
+        {
+          "section": "zone",
+          "enfantDirectDeMain": true,
+          "paddingTop": 76.8,
+          "paddingBottom": 76.8,
+          "paddingLeft": 0,
+          "paddingRight": 0,
+          "borderTop": "1px rgb(42, 38, 32)",
+          "background": "rgba(0, 0, 0, 0)",
+          "colonne": {
+            "largeur": 1184,
+            "retraitGauche": 48,
+            "retraitDroite": 48,
+            "retraitHaut": 77.8,
+            "retraitBas": 91.98
+          },
+          "premierTitre": {
+            "texte": "Où nous intervenons",
+            "distanceHaut": 77.8,
+            "distanceGauche": 48
+          }
+        },
+        {
+          "section": "pourquoi",
+          "enfantDirectDeMain": true,
+          "paddingTop": 76.8,
+          "paddingBottom": 76.8,
+          "paddingLeft": 0,
+          "paddingRight": 0,
+          "borderTop": "1px rgb(42, 38, 32)",
+          "background": "rgba(0, 0, 0, 0)",
+          "colonne": {
+            "largeur": 1184,
+            "retraitGauche": 48,
+            "retraitDroite": 48,
+            "retraitHaut": 77.8,
+            "retraitBas": 76.8
+          },
+          "premierTitre": {
+            "texte": "Pourquoi un électricien de Castries",
+            "distanceHaut": 77.8,
+            "distanceGauche": 48
+          }
+        },
+        {
+          "section": "faq",
+          "enfantDirectDeMain": true,
+          "paddingTop": 76.8,
+          "paddingBottom": 76.8,
+          "paddingLeft": 0,
+          "paddingRight": 0,
+          "borderTop": "1px rgb(42, 38, 32)",
+          "background": "rgba(0, 0, 0, 0)",
+          "colonne": {
+            "largeur": 1184,
+            "retraitGauche": 48,
+            "retraitDroite": 48,
+            "retraitHaut": 77.8,
+            "retraitBas": 76.8
+          },
+          "premierTitre": {
+            "texte": "Questions fréquentes",
+            "distanceHaut": 77.8,
+            "distanceGauche": 48
+          }
+        },
+        {
+          "section": "contact",
+          "enfantDirectDeMain": true,
+          "paddingTop": 102.4,
+          "paddingBottom": 102.4,
+          "paddingLeft": 0,
+          "paddingRight": 0,
+          "borderTop": "0px rgb(21, 19, 14)",
+          "background": "rgb(240, 164, 60)",
+          "colonne": {
+            "largeur": 1184,
+            "retraitGauche": 48,
+            "retraitDroite": 48,
+            "retraitHaut": 102.39,
+            "retraitBas": 102.39
+          },
+          "premierTitre": {
+            "texte": "Parlons de votre maison",
+            "distanceHaut": 102.39,
+            "distanceGauche": 48
+          }
+        }
+      ],
+      "visionneuseFermee": {
+        "ouverte": false,
+        "display": "none",
+        "padding": "0px",
+        "background": "rgba(21, 19, 14, 0.97)",
+        "enfants": [
+          {
+            "balise": "div",
+            "classe": "visionneuse-contenu",
+            "texte": "1 / 4",
+            "position": "static"
+          },
+          {
+            "balise": "button",
+            "classe": "visionneuse-prec",
+            "texte": "",
+            "position": "fixed"
+          },
+          {
+            "balise": "button",
+            "classe": "visionneuse-suiv",
+            "texte": "",
+            "position": "fixed"
+          },
+          {
+            "balise": "button",
+            "classe": "visionneuse-fermer",
+            "texte": "",
+            "position": "fixed"
+          }
+        ],
+        "contenuPadding": {
+          "top": "72px",
+          "right": "48px",
+          "bottom": "24px",
+          "left": "48px"
+        }
+      },
+      "interlignesSerres": [
+        {
+          "selecteur": "a.evitement",
+          "texte": "Aller au contenu",
+          "fontSize": 16,
+          "lineHeight": "normal",
+          "ratioBrut": "normal",
+          "ratio": "normal",
+          "nbLignesTexte": 1,
+          "hauteurElement": 44,
+          "multiLigne": false
+        },
+        {
+          "selecteur": "span",
+          "texte": "Rap Énergies",
+          "fontSize": 20.8,
+          "lineHeight": "20.8px",
+          "ratioBrut": 1,
+          "ratio": 1,
+          "nbLignesTexte": 1,
+          "hauteurElement": 20.8,
+          "multiLigne": false
+        },
+        {
+          "selecteur": "h1#titre",
+          "texte": "Le soleil de Castries, installé chez vous.",
+          "fontSize": 55.68,
+          "lineHeight": "60.1344px",
+          "ratioBrut": 1.08,
+          "ratio": 1.08,
+          "nbLignesTexte": 2,
+          "hauteurElement": 120.28,
+          "multiLigne": true
+        },
+        {
+          "selecteur": "a.bouton.bouton-plein",
+          "texte": "Appeler le 06 99 34 66 86",
+          "fontSize": 16.8,
+          "lineHeight": "18.48px",
+          "ratioBrut": 1.1,
+          "ratio": 1.1,
+          "nbLignesTexte": 1,
+          "hauteurElement": 52,
+          "multiLigne": true
+        },
+        {
+          "selecteur": "a.bouton.bouton-trait",
+          "texte": "Décrire mon projet",
+          "fontSize": 16.8,
+          "lineHeight": "18.48px",
+          "ratioBrut": 1.1,
+          "ratio": 1.1,
+          "nbLignesTexte": 1,
+          "hauteurElement": 52,
+          "multiLigne": true
+        },
+        {
+          "selecteur": "h2#t-realisations",
+          "texte": "Nos chantiers, à Castries et autour",
+          "fontSize": 45.44,
+          "lineHeight": "49.0752px",
+          "ratioBrut": 1.08,
+          "ratio": 1.08,
+          "nbLignesTexte": 2,
+          "hauteurElement": 98.13,
+          "multiLigne": true
+        },
+        {
+          "selecteur": "h2#t-services",
+          "texte": "Trois équipements, un seul électricien",
+          "fontSize": 45.44,
+          "lineHeight": "49.0752px",
+          "ratioBrut": 1.08,
+          "ratio": 1.08,
+          "nbLignesTexte": 2,
+          "hauteurElement": 98.13,
+          "multiLigne": true
+        },
+        {
+          "selecteur": "h3.service-nom",
+          "texte": "Panneaux solaires photovoltaïques",
+          "fontSize": 34.24,
+          "lineHeight": "39.376px",
+          "ratioBrut": 1.15,
+          "ratio": 1.15,
+          "nbLignesTexte": 2,
+          "hauteurElement": 484.55,
+          "multiLigne": true
+        },
+        {
+          "selecteur": "h4",
+          "texte": "Ce que nous faisons :",
+          "fontSize": 18,
+          "lineHeight": "23.4px",
+          "ratioBrut": 1.2999999999999998,
+          "ratio": 1.3,
+          "nbLignesTexte": 1,
+          "hauteurElement": 23.39,
+          "multiLigne": false
+        },
+        {
+          "selecteur": "h3",
+          "texte": "Les trois ensemble",
+          "fontSize": 31.2,
+          "lineHeight": "35.88px",
+          "ratioBrut": 1.1500000000000001,
+          "ratio": 1.15,
+          "nbLignesTexte": 1,
+          "hauteurElement": 35.88,
+          "multiLigne": false
+        },
+        {
+          "selecteur": "h2#t-production",
+          "texte": "Ce qu'un toit produit ici",
+          "fontSize": 45.44,
+          "lineHeight": "49.0752px",
+          "ratioBrut": 1.08,
+          "ratio": 1.08,
+          "nbLignesTexte": 1,
+          "hauteurElement": 49.06,
+          "multiLigne": false
+        },
+        {
+          "selecteur": "strong",
+          "texte": "1 500 kWh",
+          "fontSize": 58.88,
+          "lineHeight": "58.88px",
+          "ratioBrut": 1,
+          "ratio": 1,
+          "nbLignesTexte": 1,
+          "hauteurElement": 58.88,
+          "multiLigne": false
+        },
+        {
+          "selecteur": "span",
+          "texte": "par an pour 1 kWc plein sud, à Castries",
+          "fontSize": 18,
+          "lineHeight": "23.4px",
+          "ratioBrut": 1.2999999999999998,
+          "ratio": 1.3,
+          "nbLignesTexte": 2,
+          "hauteurElement": 46.78,
+          "multiLigne": true
+        },
+        {
+          "selecteur": "h2#t-etapes",
+          "texte": "Comment ça se passe",
+          "fontSize": 45.44,
+          "lineHeight": "49.0752px",
+          "ratioBrut": 1.08,
+          "ratio": 1.08,
+          "nbLignesTexte": 1,
+          "hauteurElement": 49.06,
+          "multiLigne": false
+        },
+        {
+          "selecteur": "h2#t-zone",
+          "texte": "Où nous intervenons",
+          "fontSize": 45.44,
+          "lineHeight": "49.0752px",
+          "ratioBrut": 1.08,
+          "ratio": 1.08,
+          "nbLignesTexte": 1,
+          "hauteurElement": 49.06,
+          "multiLigne": false
+        },
+        {
+          "selecteur": "h2#t-pourquoi",
+          "texte": "Pourquoi un électricien de Castries",
+          "fontSize": 45.44,
+          "lineHeight": "49.0752px",
+          "ratioBrut": 1.08,
+          "ratio": 1.08,
+          "nbLignesTexte": 2,
+          "hauteurElement": 98.13,
+          "multiLigne": true
+        },
+        {
+          "selecteur": "b",
+          "texte": "Électricien de métier.",
+          "fontSize": 20.8,
+          "lineHeight": "27.04px",
+          "ratioBrut": 1.2999999999999998,
+          "ratio": 1.3,
+          "nbLignesTexte": 1,
+          "hauteurElement": 27.03,
+          "multiLigne": false
+        },
+        {
+          "selecteur": "h2#t-questions",
+          "texte": "Questions fréquentes",
+          "fontSize": 45.44,
+          "lineHeight": "49.0752px",
+          "ratioBrut": 1.08,
+          "ratio": 1.08,
+          "nbLignesTexte": 1,
+          "hauteurElement": 49.06,
+          "multiLigne": false
+        },
+        {
+          "selecteur": "span",
+          "texte": "Mon toit convient-il aux panneaux solaires ?",
+          "fontSize": 20.8,
+          "lineHeight": "27.04px",
+          "ratioBrut": 1.2999999999999998,
+          "ratio": 1.3,
+          "nbLignesTexte": 1,
+          "hauteurElement": 27.03,
+          "multiLigne": false
+        },
+        {
+          "selecteur": "a.tel-grand",
+          "texte": "06 99 34 66 86",
+          "fontSize": 47.36,
+          "lineHeight": "52.096px",
+          "ratioBrut": 1.0999999999999999,
+          "ratio": 1.1,
+          "nbLignesTexte": 1,
+          "hauteurElement": 52.09,
+          "multiLigne": false
+        },
+        {
+          "selecteur": "h2#t-contact",
+          "texte": "Parlons de votre maison",
+          "fontSize": 45.44,
+          "lineHeight": "49.0752px",
+          "ratioBrut": 1.08,
+          "ratio": 1.08,
+          "nbLignesTexte": 2,
+          "hauteurElement": 98.13,
+          "multiLigne": true
+        },
+        {
+          "selecteur": "button.bouton.bouton-envoyer",
+          "texte": "Envoyer ma demande",
+          "fontSize": 16.8,
+          "lineHeight": "18.48px",
+          "ratioBrut": 1.1,
+          "ratio": 1.1,
+          "nbLignesTexte": 1,
+          "hauteurElement": 52,
+          "multiLigne": true
+        }
+      ],
+      "marques": {
+        "total": 20,
+        "visibles": 20,
+        "parTaille": {
+          "18px": 12,
+          "15.2px": 8
+        },
+        "exemples": [
+          {
+            "texte": "[À CONFIRMER]",
+            "fontSize": "18px",
+            "paddingTop": "0px",
+            "paddingBottom": "0px",
+            "paddingLeft": "3.6px",
+            "background": "rgb(58, 46, 18)",
+            "display": "inline",
+            "parent": "p.intro"
+          },
+          {
+            "texte": "[À COMPLÉTER : commune]",
+            "fontSize": "15.2px",
+            "paddingTop": "0px",
+            "paddingBottom": "0px",
+            "paddingLeft": "3.04px",
+            "background": "rgb(58, 46, 18)",
+            "display": "inline",
+            "parent": "span.legende"
+          },
+          {
+            "texte": "[À COMPLÉTER : commune]",
+            "fontSize": "15.2px",
+            "paddingTop": "0px",
+            "paddingBottom": "0px",
+            "paddingLeft": "3.04px",
+            "background": "rgb(58, 46, 18)",
+            "display": "inline",
+            "parent": "span.legende"
+          }
+        ]
+      },
+      "axeGraphique": {
+        "selecteur": "ol.barres",
+        "borderBottom": "0px rgb(241, 234, 217)",
+        "paddingBottom": "0px",
+        "display": "block",
+        "mois": {
+          "hauteurBoite": 24.31,
+          "paddingTop": "0px",
+          "paddingBottom": "0px",
+          "lineHeight": "24.32px",
+          "fontSize": "15.2px",
+          "basTexteVersFilet": 373.53,
+          "basBoiteVersFilet": 370.22
+        }
+      },
+      "longueursDeLigne": [
+        {
+          "selecteur": "li",
+          "lignes": 2,
+          "caracteres": 156,
+          "parLigne": 78,
+          "maxWidth": "none",
+          "largeur": 689.03,
+          "fontSize": "18px",
+          "texte": "démarches : déclaration préalable en mairie, deman"
+        },
+        {
+          "selecteur": "p.pied-sources",
+          "lignes": 2,
+          "caracteres": 172,
+          "parLigne": 86,
+          "maxWidth": "650.453px",
+          "largeur": 650.45,
+          "fontSize": "15.2px",
+          "texte": "Sources : PVGIS (Commission européenne), Qualifele"
+        }
+      ],
+      "overlay": {
+        "nbNoeudsAjoutes": 47,
+        "noeudsAjoutes": [
+          {
+            "selecteur": "script",
+            "position": "static",
+            "zIndex": "auto",
+            "shadow": false,
+            "parent": "head"
+          },
+          {
+            "selecteur": "style",
+            "position": "static",
+            "zIndex": "auto",
+            "shadow": false,
+            "parent": "head"
+          },
+          {
+            "selecteur": "div.impeccable-overlay.impeccable-visible",
+            "position": "absolute",
+            "zIndex": "99999",
+            "shadow": false,
+            "parent": "body#haut"
+          },
+          {
+            "selecteur": "div.impeccable-label",
+            "position": "absolute",
+            "zIndex": "auto",
+            "shadow": false,
+            "parent": "div.impeccable-overlay.impeccable-visible"
+          },
+          {
+            "selecteur": "span",
+            "position": "static",
+            "zIndex": "auto",
+            "shadow": false,
+            "parent": "div.impeccable-label"
+          },
+          {
+            "selecteur": "div.impeccable-overlay.impeccable-visible",
+            "position": "absolute",
+            "zIndex": "99999",
+            "shadow": false,
+            "parent": "body#haut"
+          },
+          {
+            "selecteur": "div.impeccable-label",
+            "position": "absolute",
+            "zIndex": "auto",
+            "shadow": false,
+            "parent": "div.impeccable-overlay.impeccable-visible"
+          },
+          {
+            "selecteur": "span",
+            "position": "static",
+            "zIndex": "auto",
+            "shadow": false,
+            "parent": "div.impeccable-label"
+          },
+          {
+            "selecteur": "div.impeccable-overlay.impeccable-visible",
+            "position": "absolute",
+            "zIndex": "99999",
+            "shadow": false,
+            "parent": "body#haut"
+          },
+          {
+            "selecteur": "div.impeccable-label",
+            "position": "absolute",
+            "zIndex": "auto",
+            "shadow": false,
+            "parent": "div.impeccable-overlay.impeccable-visible"
+          },
+          {
+            "selecteur": "span",
+            "position": "static",
+            "zIndex": "auto",
+            "shadow": false,
+            "parent": "div.impeccable-label"
+          },
+          {
+            "selecteur": "div.impeccable-overlay.impeccable-visible",
+            "position": "absolute",
+            "zIndex": "99999",
+            "shadow": false,
+            "parent": "body#haut"
+          },
+          {
+            "selecteur": "div.impeccable-label",
+            "position": "absolute",
+            "zIndex": "auto",
+            "shadow": false,
+            "parent": "div.impeccable-overlay.impeccable-visible"
+          },
+          {
+            "selecteur": "span",
+            "position": "static",
+            "zIndex": "auto",
+            "shadow": false,
+            "parent": "div.impeccable-label"
+          },
+          {
+            "selecteur": "div.impeccable-overlay.impeccable-visible",
+            "position": "absolute",
+            "zIndex": "99999",
+            "shadow": false,
+            "parent": "body#haut"
+          },
+          {
+            "selecteur": "div.impeccable-label",
+            "position": "absolute",
+            "zIndex": "auto",
+            "shadow": false,
+            "parent": "div.impeccable-overlay.impeccable-visible"
+          },
+          {
+            "selecteur": "span",
+            "position": "static",
+            "zIndex": "auto",
+            "shadow": false,
+            "parent": "div.impeccable-label"
+          },
+          {
+            "selecteur": "div.impeccable-overlay.impeccable-visible",
+            "position": "absolute",
+            "zIndex": "99999",
+            "shadow": false,
+            "parent": "body#haut"
+          },
+          {
+            "selecteur": "div.impeccable-label",
+            "position": "absolute",
+            "zIndex": "auto",
+            "shadow": false,
+            "parent": "div.impeccable-overlay.impeccable-visible"
+          },
+          {
+            "selecteur": "span",
+            "position": "static",
+            "zIndex": "auto",
+            "shadow": false,
+            "parent": "div.impeccable-label"
+          },
+          {
+            "selecteur": "div.impeccable-overlay.impeccable-visible",
+            "position": "absolute",
+            "zIndex": "99999",
+            "shadow": false,
+            "parent": "body#haut"
+          },
+          {
+            "selecteur": "div.impeccable-label",
+            "position": "absolute",
+            "zIndex": "auto",
+            "shadow": false,
+            "parent": "div.impeccable-overlay.impeccable-visible"
+          },
+          {
+            "selecteur": "span",
+            "position": "static",
+            "zIndex": "auto",
+            "shadow": false,
+            "parent": "div.impeccable-label"
+          },
+          {
+            "selecteur": "div.impeccable-overlay.impeccable-visible",
+            "position": "absolute",
+            "zIndex": "99999",
+            "shadow": false,
+            "parent": "body#haut"
+          },
+          {
+            "selecteur": "div.impeccable-label",
+            "position": "absolute",
+            "zIndex": "auto",
+            "shadow": false,
+            "parent": "div.impeccable-overlay.impeccable-visible"
+          },
+          {
+            "selecteur": "span",
+            "position": "static",
+            "zIndex": "auto",
+            "shadow": false,
+            "parent": "div.impeccable-label"
+          },
+          {
+            "selecteur": "div.impeccable-overlay.impeccable-visible",
+            "position": "absolute",
+            "zIndex": "99999",
+            "shadow": false,
+            "parent": "body#haut"
+          },
+          {
+            "selecteur": "div.impeccable-label",
+            "position": "absolute",
+            "zIndex": "auto",
+            "shadow": false,
+            "parent": "div.impeccable-overlay.impeccable-visible"
+          },
+          {
+            "selecteur": "span",
+            "position": "static",
+            "zIndex": "auto",
+            "shadow": false,
+            "parent": "div.impeccable-label"
+          },
+          {
+            "selecteur": "div.impeccable-overlay.impeccable-visible",
+            "position": "absolute",
+            "zIndex": "99999",
+            "shadow": false,
+            "parent": "body#haut"
+          },
+          {
+            "selecteur": "div.impeccable-label",
+            "position": "absolute",
+            "zIndex": "auto",
+            "shadow": false,
+            "parent": "div.impeccable-overlay.impeccable-visible"
+          },
+          {
+            "selecteur": "span",
+            "position": "static",
+            "zIndex": "auto",
+            "shadow": false,
+            "parent": "div.impeccable-label"
+          },
+          {
+            "selecteur": "div.impeccable-overlay.impeccable-visible",
+            "position": "absolute",
+            "zIndex": "99999",
+            "shadow": false,
+            "parent": "body#haut"
+          },
+          {
+            "selecteur": "div.impeccable-label",
+            "position": "absolute",
+            "zIndex": "auto",
+            "shadow": false,
+            "parent": "div.impeccable-overlay.impeccable-visible"
+          },
+          {
+            "selecteur": "span",
+            "position": "static",
+            "zIndex": "auto",
+            "shadow": false,
+            "parent": "div.impeccable-label"
+          },
+          {
+            "selecteur": "div.impeccable-overlay.impeccable-visible",
+            "position": "absolute",
+            "zIndex": "99999",
+            "shadow": false,
+            "parent": "body#haut"
+          },
+          {
+            "selecteur": "div.impeccable-label",
+            "position": "absolute",
+            "zIndex": "auto",
+            "shadow": false,
+            "parent": "div.impeccable-overlay.impeccable-visible"
+          },
+          {
+            "selecteur": "span",
+            "position": "static",
+            "zIndex": "auto",
+            "shadow": false,
+            "parent": "div.impeccable-label"
+          },
+          {
+            "selecteur": "div.impeccable-overlay",
+            "position": "absolute",
+            "zIndex": "99999",
+            "shadow": false,
+            "parent": "body#haut"
+          },
+          {
+            "selecteur": "div.impeccable-label",
+            "position": "absolute",
+            "zIndex": "auto",
+            "shadow": false,
+            "parent": "div.impeccable-overlay"
+          }
+        ],
+        "noeudsNommesImpeccable": 30,
+        "globalesImpeccable": [
+          "__testInjectionImpeccable",
+          "impeccableDetect",
+          "impeccableDetectAsync",
+          "impeccableScan",
+          "impeccableScanAsync",
+          "impeccableMeasureHiddenText",
+          "impeccableCollectVisualContrastCandidates",
+          "impeccableAnalyzeVisualContrast",
+          "impeccableGetLastVisualContrastAnalyses",
+          "impeccableSnapshotCapture",
+          "impeccableDetectFromSnapshot"
+        ],
+        "erreurCoeur": null,
+        "scriptsDetect": [
+          "http://localhost:8400/detect.js"
+        ]
+      }
+    },
+    "visionneuseOuverte": {
+      "ouverte": true,
+      "dialogPadding": "0px",
+      "largeurDialog": 1280,
+      "hauteurDialog": 800,
+      "contenuPadding": {
+        "top": "72px",
+        "right": "48px",
+        "bottom": "24px",
+        "left": "48px"
+      },
+      "retraitContenuGauche": 0,
+      "retraitContenuDroite": 0,
+      "compteur": {
+        "texte": "1 / 4",
+        "retraitGauche": 623,
+        "retraitDroite": 623,
+        "retraitBas": 24
+      },
+      "legendeVide": true,
+      "boutons": [
+        {
+          "classe": "visionneuse-prec",
+          "gauche": 16,
+          "droite": 1216,
+          "haut": 376,
+          "largeur": 48,
+          "texte": "",
+          "ariaLabel": "Photo précédente"
+        },
+        {
+          "classe": "visionneuse-suiv",
+          "gauche": 1216,
+          "droite": 16,
+          "haut": 376,
+          "largeur": 48,
+          "texte": "",
+          "ariaLabel": "Photo suivante"
+        },
+        {
+          "classe": "visionneuse-fermer",
+          "gauche": 1216,
+          "droite": 16,
+          "haut": 16,
+          "largeur": 48,
+          "texte": "",
+          "ariaLabel": "Fermer la photo"
+        }
+      ]
+    },
+    "captureVisionneuse": "C:\\Users\\hali\\dev\\sites-client\\rap-enerigie\\.impeccable\\critique\\captures-2\\overlay-template-2-visionneuse.png",
+    "erreursPage": [],
+    "requetesEchouees": [],
+    "reponsesErreur": [],
+    "consoleErreursAvertissements": [],
+    "consoleTotal": 18,
+    "consoleTout": [
+      {
+        "type": "info",
+        "texte": "Images loaded lazily and replaced with placeholders. Load events are deferred. See https://go.microsoft.com/fwlink/?linkid=2048113",
+        "source": "http://localhost:8500/template-2/index.html"
+      },
+      {
+        "type": "startGroup",
+        "texte": "%c[impeccable] 15 anti-patterns found color: oklch(84% 0.19 80.46); font-weight: bold",
+        "source": "http://localhost:8400/detect.js"
+      },
+      {
+        "type": "log",
+        "texte": "%ccramped-padding%c 0px of space above and below the text (need ≥4.6px for 15.2px text) color: oklch(84% 0.19 80.46); font-weight: bold color: inherit JSHandle@node",
+        "source": "http://localhost:8400/detect.js"
+      },
+      {
+        "type": "log",
+        "texte": "%ccramped-padding%c 0px of space above and below the text (need ≥4.6px for 15.2px text) color: oklch(84% 0.19 80.46); font-weight: bold color: inherit JSHandle@node",
+        "source": "http://localhost:8400/detect.js"
+      },
+      {
+        "type": "log",
+        "texte": "%ccramped-padding%c 0px of space above and below the text (need ≥4.6px for 15.2px text) color: oklch(84% 0.19 80.46); font-weight: bold color: inherit JSHandle@node",
+        "source": "http://localhost:8400/detect.js"
+      },
+      {
+        "type": "log",
+        "texte": "%ccramped-padding%c 0px of space above and below the text (need ≥4.6px for 15.2px text) color: oklch(84% 0.19 80.46); font-weight: bold color: inherit JSHandle@node",
+        "source": "http://localhost:8400/detect.js"
+      },
+      {
+        "type": "log",
+        "texte": "%ccramped-padding%c 0px of space above and below the text (need ≥5.4px for 18px text) color: oklch(84% 0.19 80.46); font-weight: bold color: inherit JSHandle@node",
+        "source": "http://localhost:8400/detect.js"
+      },
+      {
+        "type": "log",
+        "texte": "%ccramped-padding%c 0px of space above and below the text (need ≥4.6px for 15.2px text) color: oklch(84% 0.19 80.46); font-weight: bold color: inherit JSHandle@node",
+        "source": "http://localhost:8400/detect.js"
+      },
+      {
+        "type": "log",
+        "texte": "%ccramped-padding%c 0px of space above and below the text (need ≥5.4px for 18px text) color: oklch(84% 0.19 80.46); font-weight: bold color: inherit JSHandle@node",
+        "source": "http://localhost:8400/detect.js"
+      },
+      {
+        "type": "log",
+        "texte": "%ccramped-padding%c 0px of space above and below the text (need ≥5.4px for 18px text) color: oklch(84% 0.19 80.46); font-weight: bold color: inherit JSHandle@node",
+        "source": "http://localhost:8400/detect.js"
+      },
+      {
+        "type": "log",
+        "texte": "%ccramped-padding%c 0px of space above and below the text (need ≥5.4px for 18px text) color: oklch(84% 0.19 80.46); font-weight: bold color: inherit JSHandle@node",
+        "source": "http://localhost:8400/detect.js"
+      },
+      {
+        "type": "log",
+        "texte": "%ctight-leading%c line-height 1.30x (need >=1.3) color: oklch(84% 0.19 80.46); font-weight: bold color: inherit JSHandle@node",
+        "source": "http://localhost:8400/detect.js"
+      },
+      {
+        "type": "log",
+        "texte": "%ccramped-padding%c 0px of space above and below the text (need ≥5.4px for 18px text) color: oklch(84% 0.19 80.46); font-weight: bold color: inherit JSHandle@node",
+        "source": "http://localhost:8400/detect.js"
+      },
+      {
+        "type": "log",
+        "texte": "%ctight-leading%c line-height 1.30x (need >=1.3) color: oklch(84% 0.19 80.46); font-weight: bold color: inherit JSHandle@node",
+        "source": "http://localhost:8400/detect.js"
+      },
+      {
+        "type": "log",
+        "texte": "%ccramped-padding%c 0px of space above and below the text (need ≥5.4px for 18px text) color: oklch(84% 0.19 80.46); font-weight: bold color: inherit JSHandle@node",
+        "source": "http://localhost:8400/detect.js"
+      },
+      {
+        "type": "log",
+        "texte": "%ctight-leading%c line-height 1.30x (need >=1.3) color: oklch(84% 0.19 80.46); font-weight: bold color: inherit JSHandle@node",
+        "source": "http://localhost:8400/detect.js"
+      },
+      {
+        "type": "log",
+        "texte": "%ccramped-padding%c 0px of space above and below the text (need ≥5.4px for 18px text) color: oklch(84% 0.19 80.46); font-weight: bold color: inherit JSHandle@node",
+        "source": "http://localhost:8400/detect.js"
+      },
+      {
+        "type": "endGroup",
+        "texte": "console.groupEnd",
+        "source": "http://localhost:8400/detect.js"
+      }
+    ]
+  }
+]

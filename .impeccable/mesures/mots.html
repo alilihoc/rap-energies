@@ -1,0 +1,16 @@
+<!doctype html><meta charset="utf-8">
+<style>
+@font-face{font-family:B;src:url(../../node_modules/@fontsource-variable/bricolage-grotesque/files/bricolage-grotesque-latin-opsz-normal.woff2) format('woff2');font-weight:200 800}
+@font-face{font-family:L;src:url(../../node_modules/@fontsource-variable/literata/files/literata-latin-opsz-normal.woff2) format('woff2');font-weight:200 900}
+@font-face{font-family:H;src:url(../../node_modules/@fontsource-variable/hanken-grotesk/files/hanken-grotesk-latin-wght-normal.woff2) format('woff2');font-weight:100 900}
+@font-face{font-family:S;src:url(../../node_modules/@fontsource-variable/schibsted-grotesk/files/schibsted-grotesk-latin-wght-normal.woff2) format('woff2');font-weight:400 900}
+span{font-size:100px;white-space:nowrap;display:inline-block;font-optical-sizing:auto}
+</style>
+<div id="r"></div>
+<script>
+const mots=['thermodynamique','thermodynamique,','photovoltaïques','Panneaux','chauffe-eau','électricien','Castries.','Comment','Appeler le 06 99 34 66 86','Décrire mon projet'];
+const cfg=[['B',700],['B',800],['L',500],['L',600],['H',600],['S',600]];
+const out=[];
+for(const [f,w] of cfg){for(const m of mots){const s=document.createElement('span');s.style.fontFamily=f;s.style.fontWeight=w;s.textContent=m;document.getElementById('r').append(s);out.push({f,w,m,s});}}
+document.fonts.ready.then(()=>{window.__res=out.map(o=>`${o.f} ${o.w} « ${o.m} » = ${(o.s.getBoundingClientRect().width/100).toFixed(2)} em`);document.title='ok';});
+</script>

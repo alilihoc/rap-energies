@@ -1,0 +1,379 @@
+/* Rap Énergies, template 2 « Le soir, la maison chauffe » : page sombre, un seul accent ambre. */
+
+@font-face {
+  font-family: "Literata";
+  src: url("fonts/literata-latin-opsz-normal.woff2") format("woff2-variations");
+  font-weight: 200 900;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Schibsted Grotesk";
+  src: url("fonts/schibsted-grotesk-latin-wght-normal.woff2") format("woff2-variations");
+  font-weight: 400 900;
+  font-display: swap;
+}
+
+:root {
+  --nuit: #15130e;
+  --nuit-relevee: #1f1b15;
+  --creme: #f1ead9;
+  --creme-eteinte: #bfb49c;
+  --filet: #2a2620;
+  --filet-clair: #4a4232;
+  --ambre: #f0a43c;
+  --ambre-appuye: #e0942c;
+  --encre: #15130e;
+  --aide-champ: #8f8674;
+  --surligne: #3a2e12;
+  --surligne-ambre: #fff0cc;
+  --titres: "Literata", Georgia, "Times New Roman", serif;
+  --texte: "Literata", Georgia, "Times New Roman", serif;
+  --ui: "Schibsted Grotesk", "Segoe UI", system-ui, sans-serif;
+  --marge: clamp(1.25rem, 4vw, 3rem);
+  --largeur: 75rem;
+  --bloc: clamp(3.5rem, 8vw, 6.5rem);
+  --sortie: cubic-bezier(0.16, 1, 0.3, 1);
+  color-scheme: dark;
+}
+
+/* Surfaces du navigateur */
+html {
+  scrollbar-color: var(--creme-eteinte) var(--nuit);
+  accent-color: var(--ambre);
+  scroll-padding-top: 5rem;
+  -webkit-text-size-adjust: 100%;
+}
+html.motion { scroll-behavior: smooth; }
+::selection { background: var(--ambre); color: var(--encre); }
+:focus-visible { outline: 3px solid var(--ambre); outline-offset: 3px; }
+.contact :focus-visible { outline-color: var(--nuit); }
+
+*, *::before, *::after { box-sizing: border-box; }
+body {
+  margin: 0;
+  font: 400 1.125rem/1.6 var(--texte);
+  color: var(--creme);
+  background: var(--nuit);
+  font-optical-sizing: auto;
+}
+img { max-width: 100%; height: auto; display: block; }
+a { color: inherit; text-underline-offset: 0.18em; text-decoration-thickness: 1px; }
+p { margin: 0 0 1em; }
+ul, ol { margin: 0; padding-left: 1.25rem; }
+h1, h2, h3, h4 { font-family: var(--titres); font-weight: 500; letter-spacing: -0.01em; margin: 0; text-wrap: balance; }
+h2 { font-size: clamp(1.9rem, 1.4rem + 1.8vw, 3rem); line-height: 1.08; margin-bottom: 1.5rem; max-width: 22ch; }
+h3 { font-size: clamp(1.45rem, 1.15rem + 1vw, 2.1rem); line-height: 1.15; }
+h4 { font: 600 0.95rem/1.4 var(--ui); letter-spacing: 0.01em; margin-bottom: 0.4rem; color: var(--creme-eteinte); }
+.note { color: var(--creme-eteinte); font-size: 0.95rem; }
+li::marker { color: var(--creme-eteinte); }
+input, textarea { caret-color: var(--ambre); }
+.colonne { width: min(100% - 2 * var(--marge), var(--largeur)); margin-inline: auto; }
+/* Crochets [À CONFIRMER] : une note d'édition encadrée en pointillé, lue hors du texte, sans emprunter l'ambre. */
+mark.pl { background: transparent; color: var(--creme-eteinte); outline: 1px dashed var(--creme-eteinte); outline-offset: 1px; padding: 0.05em 0.25em; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
+.contact mark.pl { color: var(--encre); outline-color: var(--encre); }
+
+/* Évitement et sentinelle */
+.evitement { position: absolute; left: var(--marge); top: -4rem; background: var(--ambre); color: var(--encre); padding: 0.75rem 1rem; font: 600 1rem var(--ui); z-index: 20; text-decoration: none; }
+.evitement:focus { top: 0.5rem; }
+.sentinelle { position: absolute; top: 0; left: 0; height: 4.5rem; width: 1px; pointer-events: none; }
+
+/* Bandeau */
+.bandeau { position: sticky; top: 0; z-index: 10; background: var(--nuit); border-bottom: 1px solid var(--filet); font-family: var(--ui); }
+.bandeau-grille { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 0.75rem 2rem; min-height: 4.5rem; }
+.marque { display: inline-flex; align-items: center; gap: 0.7rem; text-decoration: none; font: 600 1.3rem/1 var(--titres); letter-spacing: -0.01em; }
+.marque img { width: 2.75rem; height: 2.75rem; transform-origin: left center; transition: transform 0.35s var(--sortie); }
+/* Bandeau réduit au défilement : seul le symbole change d'échelle (pas de hauteur animée, pas d'à-coup). */
+.bandeau.reduite .marque img { transform: scale(0.75); }
+.nav ul { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 0.25rem 1.6rem; font-weight: 500; justify-content: center; }
+.nav a { text-decoration: none; padding: 0.4rem 0; display: inline-block; }
+.nav a:hover { text-decoration: underline; }
+.nav a[aria-current="true"] { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 0.3em; text-decoration-color: var(--ambre); }
+.tel { display: inline-flex; align-items: center; gap: 0.5rem; min-height: 2.75rem; font-weight: 700; text-decoration: none; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.nav-court { display: none; }
+.tel:hover { text-decoration: underline; }
+.ico { width: 1.25em; height: 1.25em; flex: none; }
+
+/* Boutons */
+.actions { display: flex; flex-wrap: wrap; gap: 0.75rem 1rem; margin: 0 0 1rem; }
+.bouton {
+  display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
+  min-height: 3.25rem; padding: 0.75rem 1.5rem;
+  font: 600 1.05rem/1.1 var(--ui); text-decoration: none; white-space: nowrap;
+  border: 2px solid var(--creme); border-radius: 0; cursor: pointer;
+  transition: scale 0.15s var(--sortie), background-color 0.2s;
+}
+.bouton-plein { background: var(--ambre); color: var(--encre); border-color: var(--ambre); }
+.bouton-plein:hover { background: var(--ambre-appuye); border-color: var(--ambre-appuye); }
+.bouton-trait { background: transparent; color: var(--creme); }
+.bouton-trait:hover { background: rgb(241 234 217 / 0.08); }
+.bouton-envoyer { background: var(--nuit); color: var(--creme); border-color: var(--nuit); }
+.bouton-envoyer:hover { background: #000; border-color: #000; }
+.bouton:active { scale: 0.98; }
+
+/* Accroche : photo du soir plein écran, panneau nuit ancré en bas à gauche */
+.accroche { position: relative; min-height: calc(100vh - 4.5rem); min-height: calc(100dvh - 4.5rem); display: grid; align-items: end; padding-top: 0; padding-bottom: 0; }
+.accroche-photo { position: absolute; inset: 0; overflow: hidden; }
+.accroche-photo picture { display: block; height: 100%; }
+.accroche-photo img { width: 100%; height: 100%; object-fit: cover; }
+html.motion .accroche-photo img { animation: allumer 1.2s var(--sortie) both; }
+@keyframes allumer { from { opacity: 0; filter: brightness(0.3); } to { opacity: 1; filter: brightness(1); } }
+.accroche-grille { position: relative; padding-top: clamp(11rem, 30vh, 20rem); }
+.panneau { background: var(--nuit); padding: clamp(1.5rem, 3vw, 2.75rem) clamp(1.5rem, 3vw, 2.75rem) clamp(1.75rem, 3vw, 2.5rem); max-width: 56rem; container-type: inline-size; }
+/* Titre court (« Le soleil de Castries, installé chez vous. ») : plus grand que les titres de section, borné par « Castries, ». */
+.panneau h1 {
+  font-size: min(clamp(2.2rem, 1.4rem + 2.6vw, 4rem), calc(100cqi / 6.2));
+  line-height: 1.08;
+  margin-bottom: 1.25rem;
+  max-width: 22ch;
+}
+.accroche-p { font-size: 1.15rem; max-width: 60ch; margin-bottom: 1.5rem; color: var(--creme); }
+.ligne { color: var(--creme-eteinte); margin: 0; font-family: var(--ui); font-size: 1rem; }
+/* Le moment d'ouverture : pendant que la photo s'allume, le panneau se pose en quatre temps. */
+html.motion .panneau > * { animation: poser 0.55s var(--sortie) both; }
+html.motion .panneau h1 { animation-delay: 0.15s; }
+html.motion .panneau .accroche-p { animation-delay: 0.25s; }
+html.motion .panneau .actions { animation-delay: 0.33s; }
+html.motion .panneau .ligne { animation-delay: 0.41s; }
+@keyframes poser { from { opacity: 0; translate: 0 14px; } to { opacity: 1; translate: 0 0; } }
+
+/* Sections */
+main > section { padding-top: var(--bloc); padding-bottom: var(--bloc); }
+.intro { max-width: 60ch; }
+/* Rythme : les chapitres gardent le bloc entier, les sections de lecture respirent moins. */
+.zone, .pourquoi, .faq { padding-top: calc(var(--bloc) * 0.75); padding-bottom: calc(var(--bloc) * 0.75); }
+
+/* Réalisations : cadres uniformes sur trois colonnes, légendes dans le cadre */
+.galerie { list-style: none; padding: 0; margin: 2rem auto 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+/* Deux ou quatre photos : deux grands cadres par rangée plutôt qu'une rangée à trou. */
+/* :where() garde la spécificité d'une classe, pour que les réductions (deux colonnes sous 60 rem, une sous 40 rem) l'emportent. */
+.galerie:where(:has(> li:nth-child(2):last-child), :has(> li:nth-child(4):last-child)) { grid-template-columns: 1fr 1fr; gap: 2rem; }
+.galerie figure { margin: 0; }
+.galerie picture { display: block; aspect-ratio: 4 / 3; background: var(--filet); }
+.galerie img { width: 100%; height: 100%; object-fit: cover; }
+/* À l'approche, le cadre s'allume : l'ambre marque ce qui appelle. */
+.photo-lien { display: block; padding: 0.6rem; background: var(--nuit-relevee); border: 1px solid var(--filet-clair); cursor: zoom-in; transition: border-color 0.25s var(--sortie); }
+.photo-lien:hover, .photo-lien:focus-visible { border-color: var(--ambre); }
+.galerie figure:hover .legende { text-decoration: underline; text-underline-offset: 0.15em; }
+.galerie-note { margin: 0.25rem 0 0; max-width: 60ch; }
+.galerie figcaption { display: grid; grid-template-columns: auto 1fr; gap: 0.1rem 0.6rem; padding: 0.75rem 0.1rem 0; font: 400 1rem/1.4 var(--ui); color: var(--creme-eteinte); }
+.repere { width: 0.55em; height: 0.55em; margin-top: 0.45em; background: var(--ambre); }
+.galerie .legende { color: var(--creme); font-weight: 600; }
+.galerie .detail { grid-column: 2; }
+
+/* Visionneuse */
+.visionneuse { border: 0; padding: 0; margin: 0; width: 100vw; height: 100vh; max-width: 100vw; max-height: 100vh; background: rgb(21 19 14 / 0.97); color: var(--creme); inset: 0; font-family: var(--ui); }
+.visionneuse::backdrop { background: rgb(21 19 14 / 0.96); }
+.visionneuse-contenu { height: 100%; display: grid; grid-template-rows: 1fr auto auto; gap: 0.5rem; padding: 4.5rem var(--marge) 1.5rem; justify-items: center; align-items: center; }
+.visionneuse-image { min-height: 0; height: 100%; width: 100%; display: flex; justify-content: center; align-items: center; }
+.visionneuse-image picture { display: contents; }
+.visionneuse-image img { max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain; border: 1px solid var(--filet-clair); }
+.visionneuse-legende, .visionneuse-compteur { margin: 0; text-align: center; }
+.visionneuse-compteur { font-variant-numeric: tabular-nums; color: var(--creme-eteinte); font-size: 0.95rem; }
+.visionneuse button { position: fixed; width: 3rem; height: 3rem; display: grid; place-items: center; background: var(--creme); color: var(--nuit); border: 0; cursor: pointer; padding: 0; }
+.visionneuse button:hover { background: var(--ambre); }
+.visionneuse button .ico { width: 1.5rem; height: 1.5rem; }
+.visionneuse-fermer { top: 1rem; right: 1rem; }
+.visionneuse-prec { left: 1rem; top: 50%; translate: 0 -50%; }
+.visionneuse-suiv { right: 1rem; top: 50%; translate: 0 -50%; }
+
+/* Services : liste à filets, nom à gauche, texte à droite */
+.services { border-top: 1px solid var(--filet); }
+.services-liste { border-top: 1px solid var(--filet); }
+.service { display: grid; grid-template-columns: 4fr 8fr; gap: 1.5rem 4rem; padding-top: 2.5rem; padding-bottom: 2.5rem; border-bottom: 1px solid var(--filet); }
+.service-nom { font-size: clamp(1.5rem, 1.1rem + 1.3vw, 2.3rem); }
+.service-corps { max-width: 66ch; }
+.service-corps p:last-child { margin-bottom: 0; }
+.faisons { margin-top: 1.5rem; }
+.faisons h4 { font: 500 1.125rem/1.3 var(--titres); letter-spacing: 0; color: var(--creme); margin-bottom: 0.35rem; }
+.faisons ul { list-style: none; padding: 0; }
+.faisons li { margin: 0; padding: 0.5rem 0; border-top: 1px solid var(--filet); }
+.faisons li:last-child { border-bottom: 1px solid var(--filet); }
+.faisons .note { margin: 1rem 0 0; }
+.ensemble { margin-top: 3rem; max-width: 46rem; }
+.ensemble h3 { margin-bottom: 1rem; }
+.ensemble p { font-size: clamp(1.25rem, 1rem + 0.9vw, 1.7rem); line-height: 1.4; margin: 0; }
+
+/* Bande photo */
+.bande { margin: 0; }
+.bande picture { display: block; height: clamp(15rem, 38vw, 27rem); }
+.bande img { width: 100%; height: 100%; object-fit: cover; }
+
+/* Production PVGIS : douze barres horizontales Ambre */
+.production-texte { max-width: 60ch; }
+.graphique { margin: 2.5rem 0 0; font-family: var(--ui); }
+.chiffre { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.25rem 0.75rem; margin: 0 0 1.25rem; font-family: var(--texte); }
+.chiffre strong { font: 500 clamp(2.6rem, 1.6rem + 2.6vw, 4rem)/1 var(--titres); color: var(--ambre); font-variant-numeric: tabular-nums; letter-spacing: -0.01em; }
+.chiffre span { color: var(--creme-eteinte); line-height: 1.3; max-width: 26ch; }
+.unite { margin: 0 0 0.35rem; font-size: 0.95rem; color: var(--creme-eteinte); }
+.graphique-horizontal .barres { list-style: none; padding: 0; margin: 0; }
+/* La valeur suit sa barre au lieu d'être alignée loin à droite. */
+.graphique-horizontal .barres li { display: flex; align-items: center; gap: 0.8rem; padding-top: 0.28rem; padding-bottom: 0.28rem; }
+.graphique-horizontal .mois { order: -1; flex: 0 0 6.5rem; font-size: 1rem; color: var(--creme-eteinte); }
+.graphique-horizontal .barre { display: block; flex: none; height: 1.05rem; width: calc(var(--v) / var(--max) * (100% - 11.5rem)); background: var(--ambre); }
+.graphique-horizontal .val { flex: none; font-weight: 600; font-variant-numeric: tabular-nums; font-size: 1rem; }
+.production-texte .actions { margin-top: 1.5rem; }
+.mois-court { display: none; text-decoration: none; }
+@media (min-width: 64rem) {
+  .production .colonne { display: grid; grid-template-columns: 5fr 7fr; gap: 1rem 4rem; align-items: start; }
+  .production h2 { grid-column: 1 / -1; }
+  .graphique { margin-top: 0; }
+}
+/* La mesure : les barres poussent une fois, à leur entrée dans l'écran (CSS pur ; sans prise en charge, barres fixes). */
+@supports (animation-timeline: view()) {
+  html.motion .graphique-horizontal .barre { transform-origin: left; animation: mesurer 1s var(--sortie) both; animation-timeline: view(); animation-range: entry 0% cover 25%; }
+}
+@keyframes mesurer { from { scale: 0 1; } to { scale: 1 1; } }
+.graphique figcaption { margin-top: 1rem; font-size: 0.95rem; color: var(--creme-eteinte); max-width: 70ch; font-family: var(--texte); }
+
+/* Comment ça se passe : photo encadrée à gauche, étapes à droite */
+.etapes { border-top: 1px solid var(--filet); }
+.etapes-grille { display: grid; grid-template-columns: 5fr 7fr; gap: 3rem; align-items: start; }
+.etapes-photo { border: 1px solid var(--filet-clair); background: var(--nuit-relevee); padding: 0.6rem; position: sticky; top: 5.5rem; }
+.etapes-photo picture { display: block; aspect-ratio: 4 / 5; }
+.etapes-photo img { width: 100%; height: 100%; object-fit: cover; }
+.etapes-liste { list-style: none; padding: 0; counter-reset: etape; }
+.etapes-liste li { counter-increment: etape; display: grid; grid-template-columns: 3rem 1fr; gap: 1rem; padding-top: 1.1rem; padding-bottom: 1.1rem; border-top: 1px solid var(--filet); }
+.etapes-liste li::before { content: counter(etape); font: 500 2rem/1 var(--titres); color: var(--ambre); font-variant-numeric: tabular-nums; }
+.etapes-liste b { font-weight: 600; }
+.etape { min-width: 0; }
+
+/* Zone : le texte, puis les communes en Literata */
+.zone { border-top: 1px solid var(--filet); }
+.zone p { max-width: 60ch; }
+.communes { list-style: none; padding: 0; margin: 1.25rem 0 1.75rem; display: flex; flex-wrap: wrap; gap: 0.3rem 1em; font: 500 clamp(1.3rem, 1rem + 1.2vw, 2rem)/1.3 var(--titres); max-width: 60rem; }
+.communes li:first-child { color: var(--ambre); }
+
+/* Pourquoi : liste à filets, une colonne de lecture */
+.pourquoi { border-top: 1px solid var(--filet); }
+.points { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 0 3rem; }
+.points li { padding: 1.25rem 0; border-top: 1px solid var(--filet); }
+.points b { display: block; font: 500 1.3rem/1.32 var(--titres); margin-bottom: 0.35rem; }
+
+/* Questions fréquentes : une colonne, questions en Literata */
+.faq { border-top: 1px solid var(--filet); }
+.questions { max-width: 50rem; }
+/* Sur bureau, le rappel de l'appel accompagne les questions dans une colonne collante ; sous 64 rem, le contact suit juste après. */
+.faq-appel { display: none; }
+@media (min-width: 64rem) {
+  .faq .colonne { display: grid; grid-template-columns: 7fr 5fr; gap: 1rem 4rem; align-items: start; }
+  .faq h2 { grid-column: 1 / -1; }
+  .questions { max-width: none; }
+  .faq-appel { display: block; position: sticky; top: 6rem; padding-left: 2rem; border-left: 1px solid var(--filet); }
+  .faq-appel p { max-width: 30ch; }
+  .faq-appel .tel-grand { color: var(--ambre); margin-top: 0; }
+}
+details { border-top: 1px solid var(--filet); }
+details:last-child { border-bottom: 1px solid var(--filet); }
+/* Le retrait est sur summary, pas sur details : toute la hauteur de la question est cliquable. */
+summary { display: flex; justify-content: space-between; gap: 1rem; align-items: start; cursor: pointer; list-style: none; padding: 1rem 0; font: 500 1.3rem/1.32 var(--titres); }
+summary::-webkit-details-marker { display: none; }
+summary:hover { text-decoration: underline; }
+summary .ico { flex: none; margin-top: 0.2em; color: var(--ambre); transition: rotate 0.3s var(--sortie); }
+details[open] summary .ico { rotate: 45deg; }
+details p { margin: 0 0 1rem; max-width: 60ch; }
+
+/* Contact : la fenêtre allumée, champ Ambre pleine largeur */
+.contact { background: var(--ambre); color: var(--encre); }
+.contact-grille { display: grid; grid-template-columns: 5fr 7fr; gap: 3rem 4rem; }
+.contact h2 { color: var(--encre); }
+.contact a { color: var(--encre); }
+.tel-grand { display: inline-block; font: 500 clamp(1.9rem, 1.2rem + 2.2vw, 3.2rem)/1.1 var(--titres); text-decoration: none; font-variant-numeric: tabular-nums; margin: 0.5rem 0 0.75rem; }
+.tel-grand:hover { text-decoration: underline; text-decoration-thickness: 2px; }
+.contact .note { color: var(--encre); opacity: 0.85; }
+.formulaire { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem 1.5rem; font-family: var(--ui); }
+.champ { margin: 0; display: grid; gap: 0.4rem; }
+.champ-large { grid-column: 1 / -1; }
+.formulaire label, .formulaire legend { font-weight: 600; }
+.aide { font-weight: 400; font-size: 0.95rem; }
+.formulaire input, .formulaire textarea { font: inherit; padding: 0.7rem 0.9rem; background: var(--nuit-relevee); color: var(--creme); border: 1px solid var(--filet-clair); border-radius: 0; width: 100%; margin: 0; }
+.formulaire input:focus-visible, .formulaire textarea:focus-visible { outline: 3px solid var(--nuit); outline-offset: 2px; }
+.formulaire textarea { resize: vertical; min-height: 7rem; }
+.formulaire ::placeholder { color: var(--aide-champ); opacity: 1; }
+/* Champ laissé invalide après saisie : marqué durablement, pas seulement par la bulle du navigateur. */
+.formulaire :user-invalid { border: 2px solid var(--creme); }
+.formulaire button[disabled] { opacity: 0.75; cursor: progress; }
+.cases-groupe { border: 0; padding: 0; min-width: 0; }
+.cases-groupe legend { padding: 0; margin-bottom: 0.5rem; }
+.cases { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem 1.25rem; }
+.cases label { display: flex; align-items: center; gap: 0.6rem; font-weight: 400; min-height: 2.75rem; }
+.cases input { appearance: none; width: 1.25rem; height: 1.25rem; margin: 0; flex: none; border: 2px solid var(--nuit); background: transparent; display: grid; place-content: center; cursor: pointer; }
+.cases input::before { content: ""; width: 0.65rem; height: 0.65rem; background: var(--nuit); transform: scale(0); transition: transform 0.12s var(--sortie); }
+.cases input:checked::before { transform: scale(1); }
+.consentement { display: block; font-size: 1rem; }
+.envoi { justify-items: start; }
+.form-etat { grid-column: 1 / -1; margin: 1.5rem 0 0; padding: 1rem 1.25rem; background: var(--nuit); color: var(--creme); font: 600 1.05rem/1.4 var(--ui); }
+.form-etat.erreur { background: var(--creme); color: var(--encre); }
+.form-etat.info { background: transparent; color: var(--encre); border: 1px solid var(--encre); }
+
+/* Pied de page */
+.pied { background: var(--nuit); color: var(--creme-eteinte); padding-top: 2.5rem; padding-bottom: 3rem; border-top: 1px solid var(--filet); font: 400 0.95rem/1.5 var(--ui); }
+.pied-grille { display: grid; grid-template-columns: auto 1fr; gap: 2rem 3rem; align-items: start; }
+.pied-logo { width: 7.5rem; height: auto; }
+.pied-texte p { margin-bottom: 0.6rem; max-width: 60ch; }
+.pied a { color: var(--creme); }
+.pied-liens { font-weight: 600; }
+.pied-liens a { display: inline-block; padding-block: 0.35rem; }
+
+/* Pages légales */
+.legale { padding-top: var(--bloc); padding-bottom: var(--bloc); max-width: 60ch; }
+.legale h1 { font-size: clamp(2rem, 1.4rem + 2vw, 3.2rem); line-height: 1.1; margin-bottom: 1.5rem; }
+.confid { margin: 0; }
+.confid dt { font: 500 1.25rem/1.3 var(--titres); margin-top: 1.25rem; color: var(--ambre); }
+.confid dd { margin: 0.35rem 0 0; }
+.retour { margin-top: 2.5rem; font: 600 1rem var(--ui); }
+
+/* Réductions */
+@media (max-width: 64rem) {
+  .service, .etapes-grille, .contact-grille { grid-template-columns: 1fr; gap: 1.5rem; }
+  .etapes-photo { position: static; }
+  .etapes-photo picture { aspect-ratio: 16 / 10; }
+  .points { grid-template-columns: 1fr; }
+}
+@media (max-width: 60rem) {
+  .galerie { grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+}
+@media (max-width: 48rem) {
+  .accroche { min-height: 0; display: block; }
+  /* Premier écran mobile : photo plus courte, boutons sous le titre, adresse remise au contact. */
+  .accroche-photo { position: static; height: 30vh; min-height: 12rem; }
+  .accroche-grille { padding-top: 0; width: 100%; }
+  .panneau { max-width: none; padding: clamp(1.5rem, 5vw, 2.5rem) var(--marge); display: flex; flex-direction: column; }
+  .panneau h1 { order: 0; margin-bottom: 1rem; }
+  .panneau .actions { order: 1; margin-bottom: 1.25rem; }
+  .panneau .accroche-p { order: 2; margin-bottom: 0; }
+  .ligne { display: none; }
+  .graphique-horizontal .barres li { gap: 0.6rem; }
+  .graphique-horizontal .mois { flex-basis: 3.4rem; }
+  .graphique-horizontal .barre { width: calc(var(--v) / var(--max) * (100% - 8rem)); }
+  .mois-long { display: none; }
+  .mois-court { display: inline; }
+  .formulaire, .cases { grid-template-columns: 1fr; }
+  .pied-grille { grid-template-columns: 1fr; }
+}
+@media (max-width: 40rem) {
+  /* La rangée des ancres défile avec la page (top négatif), la marque et le téléphone restent collés. */
+  .bandeau { --nav-h: 2.95rem; position: sticky; top: calc(-1 * var(--nav-h)); }
+  .bandeau-grille { grid-template-columns: 1fr auto; grid-template-rows: auto 3.5rem; gap: 0 1rem; padding-top: 0; padding-bottom: 0; min-height: 0; }
+  .nav { grid-row: 1; grid-column: 1 / -1; padding: 0.45rem 0 0.2rem; }
+  /* Une seule rangée d'ancres, qui défile latéralement ; le fondu à droite dit qu'il y en a d'autres. */
+  .nav ul { display: flex; flex-wrap: nowrap; gap: 0 0.8rem; white-space: nowrap; justify-content: start; font-size: 0.875rem; overflow-x: auto; scrollbar-width: none; }
+  .nav ul::-webkit-scrollbar { display: none; }
+  .nav.deborde ul { padding-right: 2.5rem; mask-image: linear-gradient(to right, #000 calc(100% - 2.5rem), transparent); }
+  /* Libellés courts (« Chantiers », « Étapes ») pour que les cinq ancres tiennent dans la rangée. */
+  .nav-long { display: none; }
+  .nav-court { display: inline; }
+  .nav a { padding: 0.45rem 0; }
+  .marque { font-size: 1.05rem; grid-row: 2; grid-column: 1; }
+  .marque img { width: 2.25rem; height: 2.25rem; }
+  .tel { grid-row: 2; grid-column: 2; justify-self: end; align-self: stretch; padding-left: 0.5rem; font-size: 0.95rem; }
+  .galerie { grid-template-columns: 1fr; }
+  .accroche-p { font-size: 1.1rem; }
+  .bouton { width: 100%; }
+}
+@media (max-width: 22.5rem) {
+  .bandeau { --nav-h: 2.95rem; }
+  .marque span { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+}
+
+/* Pot de miel du formulaire : champ invisible que seuls les robots remplissent. */
+.piege { display: none !important; }

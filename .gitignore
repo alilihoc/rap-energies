@@ -1,0 +1,18 @@
+node_modules/
+.impeccable/review/
+.impeccable/candidates/
+# Captures et journaux de relecture : volumineux et régénérables (les rapports .md et .json de critique sont suivis)
+.impeccable/critique/captures/
+.impeccable/critique/captures-2/
+.impeccable/critique/apres/
+.impeccable/critique/retouche/
+.impeccable/live/
+.impeccable/mesures/*.log
+.impeccable/mesures/cookies*.txt
+.impeccable/mesures/index-*.html
+archives/admin-node/config.json
+images/corbeille/
+dist/
+src/prod/config.php
+src/prod/admin-config.php
+src/prod/admin-mot-de-passe.txt
