@@ -10,7 +10,7 @@ web
 
 ## Stack
 
-delegated : HTML, CSS et JavaScript statiques, sans framework ni dépendance à l'exécution, parce que le site doit être un dossier autonome ouvrable directement depuis le disque (`template-1/` ; le second template est archivé dans `archives/template-2/`). L'administration des réalisations est une page PHP sans base de données (`src/prod/admin/`), déployée dans `/admin/` chez l'hébergeur, qui réécrit la galerie de la page statique. Un petit outillage Node (`outils/`) génère les dérivés d'images (AVIF, WebP, plusieurs largeurs) et applique la typographie française aux textes au moment de la construction ; il n'est pas nécessaire pour consulter le résultat. Polices variables auto-hébergées. Aucune ressource chargée depuis un autre domaine, aucun cookie ni stockage, aucun traceur.
+delegated : HTML, CSS et JavaScript statiques, sans framework ni dépendance à l'exécution, parce que le site doit être un dossier autonome ouvrable directement depuis le disque (`template-1/` ; le second template est archivé dans `archives/template-2/`). Une administration PHP des photos a existé quelques jours en ligne ; le client n'en a pas voulu, elle est archivée dans `archives/admin-php/`. Un petit outillage Node (`outils/`) génère les dérivés d'images (AVIF, WebP, plusieurs largeurs) et applique la typographie française aux textes au moment de la construction ; il n'est pas nécessaire pour consulter le résultat. Polices variables auto-hébergées. Aucune ressource chargée depuis un autre domaine, aucun cookie ni stockage, aucun traceur.
 
 ## Users
 
@@ -30,7 +30,7 @@ Un électricien de métier, de Castries, qualifié RGE Qualifelec pour les trois
 
 - Le visiteur compare des devis et vérifie la qualification RGE (condition des aides publiques).
 - Le contact se fait par téléphone (lien `tel:`) ou par un formulaire court qui aboutit à rapenergies@gmail.com ; la solution d'envoi sera celle de maf-menuiserie.fr (à renseigner à la mise en ligne).
-- Le client enverra ses photos de chantiers ; en attendant, des photos provisoires signalées, à remplacer, tiennent la place.
+- Le client a choisi (novembre 2026) de garder des photos de banque d'images : la galerie les présente comme des photos d'illustration, jamais comme ses chantiers. Le principe « prouver par les chantiers » reste l'intention, à reprendre s'il envoie un jour de vraies photos.
 - Mon Petit Site (mon-petit-site.fr) réalise le site ; prix convenu 149 €, une page, sans abonnement.
 
 ## Capabilities and Constraints
@@ -47,7 +47,9 @@ Un électricien de métier, de Castries, qualifié RGE Qualifelec pour les trois
 - Nom : « Rap Énergies » dans les textes (avec accent, comme sur le logo), « RAP ENERGIES SAS » dans les mentions légales.
 - Logos fournis dans `images/` : variante carrée (carré arrondi bleu, orange, jaune, feuille verte, nom en capitales grasses dessous ; 800 × 800 à fond crème opaque, et 143 × 143 à fond transparent) et variante ronde (anneau de vagues vert, orange, jaune, bleu, nom au centre). Les deux templates utilisent la variante carrée, le petit fichier transparent sert de favicon et de logo réduit. Le fond crème des grands fichiers doit être retiré ou assorti.
 - Ton : engageant, concret, orienté bénéfices client, sans formules creuses ; vouvoiement ; un électricien qui parle.
-- Coordonnées : 570 avenue de la Royale, 34160 Castries ; 06 99 34 66 86 ; rapenergies@gmail.com.
+- Coordonnées : 320 rue de la Garriguette, 34130 Saint-Aunès (adresse donnée par le client le 6 novembre 2026 ; le registre indiquait encore le siège au 570 avenue de la Royale, 34160 Castries) ; 06 99 34 66 86 ; rapenergies@gmail.com.
+- Logo retenu par le client le 6 novembre 2026 : la variante ronde. Le logo entier, avec « RAP ÉNERGIES » au centre, sert dans le bandeau, pour l'icône du site et dans le pied de page.
+- Services au-delà des trois équipements, d'après sa carte de visite : chauffage, climatisation, plomberie, électricité, service après-vente ; l'entreprise entretient les installations qu'elle pose.
 
 ## Evidence on Hand
 

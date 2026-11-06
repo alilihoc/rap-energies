@@ -48,7 +48,7 @@ components:
 
 # Design System: Rap Énergies, « Plein midi »
 
-Un seul système depuis le 3 novembre 2026 : « Plein midi », retenu par le studio pour la mise en ligne (le client tranchera sur cette base). Sa fiche complète, avec l'historique des relectures, est dans `docs/systemes/design-1.md`. Le second système, « Le soir, la maison chauffe », est archivé avec ses sources, sa fiche et son contrat dans `archives/template-2/`. L'administration en ligne (`src/prod/admin/`) applique ce même système.
+Un seul système depuis le 3 novembre 2026 : « Plein midi », retenu par le studio pour la mise en ligne (le client tranchera sur cette base). Sa fiche complète, avec l'historique des relectures, est dans `docs/systemes/design-1.md`. Le second système, « Le soir, la maison chauffe », est archivé avec ses sources, sa fiche et son contrat dans `archives/template-2/`. L'administration en ligne des photos, retirée à la demande du client, est archivée dans `archives/admin-php/` ; elle appliquait ce même système.
 
 ## Overview
 
@@ -70,7 +70,7 @@ La page refuse la page générique de la catégorie : pas de dégradé bleu-vert
 Palette mesurée (`.impeccable/outils/contraste.mjs`), un seul sens par couleur.
 
 ### Primary
-- **Encre** (`#14171c`) : texte, bouton plein, champ de clôture (contact et pied), bandeau de l'administration.
+- **Encre** (`#14171c`) : texte, bouton plein, champ de clôture (contact et pied).
 
 ### Secondary
 - **Soleil** (`#f2b41a`), **Chaleur** (`#ef6b1c`), **Eau** (`#1f66cc`) : les trois équipements, dans le triptyque, les barres de titre de service, les repères de légende et les carrés des intertitres ; encre dessus pour Soleil (9,68:1) et Chaleur (5,81:1), Blanc de midi dessus pour Eau (5,48:1).
@@ -82,8 +82,7 @@ Palette mesurée (`.impeccable/outils/contraste.mjs`), un seul sens par couleur.
 - **Sur Encre, second** (`#b8b2a6`) : texte secondaire sur le champ Encre.
 
 ### Named Rules
-**La règle d'une couleur, un équipement.** Soleil, Chaleur et Eau ne désignent que leur équipement ; le jaune garde une seule exception, prévue par le contrat : les barres de production. Sur le champ Encre, bouton d'envoi, message d'état et cases à cocher sont en Blanc de midi. Les messages de l'administration marquent leur nature par un carré (Soleil : fait ; Chaleur : erreur ; Eau : information), jamais par une couleur nouvelle.
-
+**La règle d'une couleur, un équipement.** Soleil, Chaleur et Eau ne désignent que leur équipement ; le jaune garde une seule exception, prévue par le contrat : les barres de production. Sur le champ Encre, bouton d'envoi, message d'état et cases à cocher sont en Blanc de midi.
 ## Typography
 
 **Display Font:** Bricolage Grotesque 800 (fichier `opsz`), avec Segoe UI puis system-ui en repli.
@@ -118,20 +117,19 @@ Rayons nuls partout : boutons, champs, images, notes d'édition. Les repères de
 ## Components
 
 ### Buttons
-- **Shape:** rectangles sans rayon, bordure de 2 px, hauteur minimale 3,25 rem (3 rem dans l'administration), libellé sur une ligne.
+- **Shape:** rectangles sans rayon, bordure de 2 px, hauteur minimale 3,25 rem, libellé sur une ligne.
 - **Primary:** Encre, texte Blanc de midi ; au survol, inversé (fond Blanc de midi, texte Encre, bordure conservée).
 - **Outline:** bordure Encre, fond transparent, léger voile au survol.
 - **Send:** Blanc de midi à texte Encre sur le champ Encre.
 - **Focus / Active:** anneau de focus de 3 px Eau (Blanc de midi sur l'Encre), `scale: 0.98` à l'appui.
 
 ### Cards / Containers
-Aucune carte comme structure : les photos sont nues dans la mosaïque, légende dessous avec un repère carré de la couleur de l'équipement. Dans l'administration, chaque réalisation est un bloc ouvert par un filet Encre de 2 px, photo 4:3, légende en Bricolage, actions au trait.
-
+Aucune carte comme structure : les photos sont nues dans la mosaïque, légende dessous avec un repère carré de la couleur de l'équipement.
 ### Inputs / Fields
-Fond Blanc de midi, texte Encre, bordure transparente de 2 px (Filet dans l'administration), texte indicatif Second plan ; focus : anneau Eau ; champ laissé invalide : bordure Second plan et fond Filet (site), bordure Chaleur (administration). Étiquettes au-dessus, aide entre parenthèses, cases à cocher dessinées (`appearance: none`, bord de 2 px et coche carrée).
+Fond Blanc de midi, texte Encre, bordure transparente de 2 px, texte indicatif Second plan ; focus : anneau Eau ; champ laissé invalide : bordure Second plan et fond Filet. Étiquettes au-dessus, aide entre parenthèses, cases à cocher dessinées (`appearance: none`, bord de 2 px et coche carrée).
 
 ### Navigation
-Bandeau collant de 4,5 rem, symbole réduit à l'échelle 0,75 après 72 px de défilement (hauteur constante) ; symbole + nom, cinq ancres avec la section courante soulignée (`aria-current`), téléphone avec icône Phosphor. Sous 40 rem : `top` négatif égal à la hauteur réelle de la rangée des ancres (variable `--nav-h`, repli CSS 2,95 rem), rangée qui défile latéralement, libellés courts. Lien d'évitement en premier dans le document.
+Bandeau collant de 4,5 rem ; logo rond entier (« RAP ÉNERGIES » au centre, 3,75 rem, 3 rem sous 40 rem) réduit à l'échelle 0,85 après 72 px de défilement (hauteur constante, le nom suit le logo) ; logo + nom, cinq ancres avec la section courante soulignée (`aria-current`), téléphone avec icône Phosphor. Sous 40 rem : `top` négatif égal à la hauteur réelle de la rangée des ancres (variable `--nav-h`, repli CSS 2,95 rem), rangée qui défile latéralement, libellés courts. Lien d'évitement en premier dans le document.
 
 ### Signature Components
 - **Triptyque bichromie :** trois champs Soleil, Chaleur, Eau de 5/4/3 colonnes, photo en niveaux de gris multipliée par le champ, nom de l'équipement sous la photo ; se lève à l'ouverture après le titre ; à l'approche, la couleur revient.

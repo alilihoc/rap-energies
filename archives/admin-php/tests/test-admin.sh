@@ -57,6 +57,15 @@ verif "monter : la fiche d'essai n'est plus dernière" '[ "$(node -e "const l=JS
 page -F action=descendre -F csrf="$T" -F i=$((I-1)) "$A" >/dev/null
 verif "descendre : elle est de nouveau dernière" '[ "$(node -e "const l=JSON.parse(require(\"fs\").readFileSync(\"dist/template-1/admin/realisations.json\",\"utf8\"));console.log(l.findIndex(p=>p.fichier===\"$SLUG\"))")" -eq $I ]'
 
+echo "== Remplacement de la photo"
+verif "photo remplacée sur la fiche d'essai" 'page -F action=enregistrer -F csrf="$T" -F i=$I -F equipement=pompe-a-chaleur -F titre= -F "lieu=unité extérieure sur dalle" -F commune=Teyran -F "detail=Essai modifié." -F "alt=Essai" -F "position=50% 30%" -F "photo=@images/sources/ombre-midi.jpg;type=image/jpeg" "$A" | grep -q "enregistrée"'
+SLUG2="$(node -e "const l=JSON.parse(require('fs').readFileSync('dist/template-1/admin/realisations.json','utf8'));console.log(l[l.length-1].fichier)")"
+echo "  nouveau fichier : $SLUG2"
+verif "la photo remplacée change de nom (cache d'un an sur les images)" '[ -n "$SLUG2" ] && [ "$SLUG2" != "$SLUG" ]'
+verif "anciens dérivés effacés, nouveaux présents, ancienne source à la corbeille" '[ "$(ls dist/template-1/images | grep -c "^$SLUG-")" -eq 0 ] && [ -f "dist/template-1/images/$SLUG2-1200.jpg" ] && ls dist/template-1/admin/corbeille | grep -q "^$SLUG-"'
+verif "index.html pointe vers la nouvelle photo seulement" 'grep -q "images/$SLUG2-1200.jpg" dist/template-1/index.html && ! grep -q "images/$SLUG-" dist/template-1/index.html'
+SLUG="$SLUG2"
+
 echo "== Retrait"
 verif "retrait de la fiche d'essai" 'page -F action=supprimer -F csrf="$T" -F i=$I "$A" | grep -q "retirée"'
 verif "fiches revenues au nombre initial" '[ "$(fiches)" -eq "$N0" ]'

@@ -72,6 +72,12 @@ function slug_unique(string $base, array $liste, ?string $actuel): string {
     while ($pris($s)) $s = $base . '-' . $n++;
     return $s;
 }
+/** Nom de fichier neuf à chaque photo envoyée : les images sont servies avec un cache d'un an (navigateurs et CDN),
+ *  une photo ajoutée ou remplacée doit donc toujours avoir une adresse qui n'a jamais servi. */
+function nouveau_fichier(array $p, array $liste): string {
+    $base = substr(slug(($p['titre'] ?? '') . '-' . ($p['lieu'] ?? '') . '-' . ($p['commune'] ?? '')), 0, 56);
+    return slug_unique(rtrim($base, '-') . '-' . bin2hex(random_bytes(3)), $liste, null);
+}
 function fichier_valide(string $f): bool { return (bool)preg_match('/^[a-z0-9][a-z0-9-]{0,70}$/', $f); }
 
 /* ---------- Données ---------- */

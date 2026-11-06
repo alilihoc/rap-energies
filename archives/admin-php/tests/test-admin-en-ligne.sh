@@ -49,7 +49,8 @@ verif "retrait de la réalisation d'essai" 'page -F action=supprimer -F csrf="$T
 verif "liste revenue au nombre initial" '[ "$(compte)" -eq "$N0" ]'
 curl -s "$BASE/" > .impeccable/mesures/index-ligne-fin.html
 verif "page publique revenue à l'identique" 'cmp -s .impeccable/mesures/index-ligne-avant.html .impeccable/mesures/index-ligne-fin.html'
-verif "dérivés de l'essai retirés (404)" '[ -z "$SRC" ] || [ "$(code "$BASE/$SRC")" = 404 ]'
+# Paramètre ajouté à l'adresse : le CDN garde l'image un an en cache, seule une adresse neuve interroge le serveur.
+verif "dérivés de l'essai retirés du serveur (404)" '[ -z "$SRC" ] || [ "$(code "$BASE/$SRC?sans-cache=$(date +%s)")" = 404 ]'
 
 echo "== Déconnexion"
 verif "déconnecté" 'page -F action=deconnexion -F csrf="$T" "$A" | grep -q "mot_de_passe"'

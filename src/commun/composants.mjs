@@ -51,7 +51,6 @@ export function tete({ titre, description, canonical, polices, jsonld = false, l
         telephone: '+33699346686',
         email: C.coordonnees.email,
         address: { '@type': 'PostalAddress', streetAddress: C.coordonnees.adresse, postalCode: C.coordonnees.codePostal, addressLocality: C.coordonnees.ville, addressCountry: 'FR' },
-        geo: { '@type': 'GeoCoordinates', latitude: C.coordonnees.geo.lat, longitude: C.coordonnees.geo.lon },
         areaServed: C.zone.communes.map((c) => ({ '@type': 'City', name: c })),
       })}</script>`
     : '';
@@ -133,9 +132,7 @@ ${picture(p.fichier, { alt: p.alt, sizes, position: p.position, dims })}
     .join('\n');
   // La mention « photos provisoires » est dite une fois, sous l'introduction, et non sous chaque photo.
   const provisoire = photos.some((p) => p.provisoire) ? `\n<p class="note galerie-note">${t(C.realisations.provisoire)}</p>` : '';
-  // Les repères encadrent ce que l'administration en ligne (src/prod/admin/lib.php) réécrit à chaque enregistrement.
-  return `<!-- realisations:debut -->
-<section class="${classeSection}" id="realisations" aria-labelledby="t-realisations">
+  return `<section class="${classeSection}" id="realisations" aria-labelledby="t-realisations">
 <div class="colonne realisations-tete">
 <h2 id="t-realisations">${t(C.realisations.titre)}</h2>
 <p class="intro">${t(C.realisations.texte)}</p>${provisoire}
@@ -144,7 +141,6 @@ ${picture(p.fichier, { alt: p.alt, sizes, position: p.position, dims })}
 ${items}
 </ul>
 </section>
-<!-- realisations:fin -->
 <dialog class="visionneuse" aria-label="Photo agrandie">
 <div class="visionneuse-contenu">
 <div class="visionneuse-image"></div>
@@ -167,12 +163,31 @@ export function ensemble() {
   return `<div class="ensemble"><h3>${t(C.services.ensemble.titre)}</h3><p>${t(C.services.ensemble.texte)}</p></div>`;
 }
 
+// Autres services (liste en grand) et entretien des installations posées, mis en avant sous les trois couleurs des équipements.
+export function autresServices() {
+  const A = C.autres;
+  return `<section class="autres" id="autres-services" aria-labelledby="t-autres">
+<div class="colonne">
+<h2 id="t-autres">${t(A.titre)}</h2>
+<p>${t(A.intro)}</p>
+<ul class="metiers">${A.liste.map((m) => `<li>${t(m)}</li>`).join('')}</ul>
+<div class="entretien">
+<div class="entretien-barres" aria-hidden="true"><span></span><span></span><span></span></div>
+<h3>${t(A.entretien.titre)}</h3>
+<p>${t(A.entretien.texte)}</p>
+</div>
+</div>
+</section>`;
+}
+
 // Graphique PVGIS : liste de douze mois, barres en CSS (hauteur ou largeur selon le template), valeurs visibles.
+// Les mois sont toujours abrégés : une colonne sur douze n'a jamais la place d'un nom entier (« Septembre » débordait
+// sur « Octobre » sur grand écran) ; le nom entier reste dans le title de l'abréviation.
 export function production({ orientation }) {
   const max = 170;
   const barres = C.production.mois
     .map(
-      (m) => `<li style="--v:${m.kwh}"><span class="barre" aria-hidden="true"></span><span class="val">${m.kwh}</span><span class="mois"><span class="mois-long">${t(m.nom)}</span><abbr class="mois-court" title="${t(m.nom)}">${m.court}</abbr></span></li>`,
+      (m) => `<li style="--v:${m.kwh}"><span class="barre" aria-hidden="true"></span><span class="val">${m.kwh}</span><span class="mois"><abbr title="${t(m.nom)}">${m.court}</abbr></span></li>`,
     )
     .join('');
   return `<section class="production" id="production" aria-labelledby="t-production">
@@ -212,8 +227,7 @@ export function zone() {
 <h2 id="t-zone">${t(C.zone.titre)}</h2>
 <p>${t(C.zone.avant)}</p>
 <ul class="communes">${communes}</ul>
-<p>${t(C.zone.apres)}</p>
-<p class="note">${t(C.zone.note)}</p>
+<p>${t(C.zone.apres)}</p>${C.zone.note ? `\n<p class="note">${t(C.zone.note)}</p>` : ''}
 </div>
 </section>`;
 }
@@ -255,8 +269,7 @@ export function contact({ classeBouton = 'bouton bouton-envoyer', endpoint = '' 
 <h2 id="t-contact">${t(C.contact.titre)}</h2>
 <p>${t(C.contact.texte)}</p>
 <p><a class="tel-grand" href="${C.coordonnees.telHref}">${fr(C.coordonnees.tel)}</a></p>
-<p class="coord"><a href="mailto:${C.coordonnees.email}">${C.coordonnees.email}</a><br>${t(`${C.coordonnees.adresse}, ${C.coordonnees.codePostal} ${C.coordonnees.ville}`)}</p>
-<p class="note">${t(C.contact.horaires)}</p>
+<p class="coord"><a href="mailto:${C.coordonnees.email}">${C.coordonnees.email}</a><br>${t(`${C.coordonnees.adresse}, ${C.coordonnees.codePostal} ${C.coordonnees.ville}`)}</p>${C.contact.horaires ? `\n<p class="note">${t(C.contact.horaires)}</p>` : ''}
 </div>
 <form class="formulaire" method="post"${action} data-endpoint="${esc(endpoint)}" data-courriel="${C.coordonnees.email}" data-sujet="${esc(C.contact.sujetCourriel)}" data-confirmation="${esc(fr(C.contact.confirmation))}" data-erreur="${esc(fr(C.contact.erreur))}" data-ouverture="${esc(fr(C.contact.ouverture))}" data-envoi="${esc(fr(C.contact.envoiEnCours))}">
 <p class="piege" aria-hidden="true"><label for="f-site-web">Site web (laisser vide)</label><input id="f-site-web" name="site-web" type="text" tabindex="-1" autocomplete="off"></p>
@@ -276,9 +289,12 @@ export function contact({ classeBouton = 'bouton bouton-envoyer', endpoint = '' 
 
 export function pied({ logo = 'logo.png', prefixe = '' } = {}) {
   const liens = C.pied.liens.map((l) => `<a href="${prefixe}${l.href}">${t(l.libelle)}</a>`).join(' · ');
+  // Dimensions lues dans l'en-tête du PNG (images/logo/, produit par outils/logo.mjs) : pas de valeur à tenir à jour.
+  const png = readFileSync(`images/logo/${logo}`);
+  const largeur = png.readUInt32BE(16), hauteur = png.readUInt32BE(20);
   return `<footer class="pied">
 <div class="colonne pied-grille">
-<img class="pied-logo" src="images/${logo}" width="601" height="539" alt="${esc(C.marque.nom)}">
+<img class="pied-logo" src="images/${logo}" width="${largeur}" height="${hauteur}" alt="${esc(C.marque.nom)}">
 <div class="pied-texte">
 <p>${t(C.pied.ligne)}</p>
 <p>${t(C.pied.rge)}</p>

@@ -1,11 +1,13 @@
 // Construction du site (template 1 « Plein midi » ; le template 2 est archivé dans archives/template-2/).
 //   node outils/build.mjs                                       → template-1/ (consultation locale, formulaire mailto)
 //   node outils/build.mjs --prod --domaine rap-energies.fr      → dist/template-1/ (Hostinger : envoyer.php, .htaccess,
-//                                                                  merci.html, 404.html, administration PHP dans admin/)
+//                                                                  merci.html, 404.html)
 //   … --chemin design2  → copie destinée à un sous-dossier d'aperçu : adresses en /design2/, pages en noindex,
 //                          .htaccess du sous-dossier, sans robots.txt ni sitemap.xml
 // Les dérivés d'images sont produits par outils/images.mjs (à lancer avant, indépendant).
+// L'administration PHP en ligne, retirée à la demande du client, est archivée dans archives/admin-php/.
 import { readdirSync, readFileSync, mkdirSync, writeFileSync, copyFileSync, existsSync, cpSync, rmSync } from 'node:fs';
+import { createHash } from 'node:crypto';
 import sharp from 'sharp';
 import * as C from '../src/contenu.mjs';
 
@@ -34,23 +36,32 @@ for (const f of readdirSync('images/sources')) {
 const POLICES = {
   'template-1': ['bricolage-grotesque/files/bricolage-grotesque-latin-opsz-normal.woff2', 'hanken-grotesk/files/hanken-grotesk-latin-wght-normal.woff2'],
 };
-// Attributs sizes de la galerie, par template : repris dans admin/gabarit.json pour que l'administration en ligne
-// produise exactement le même balisage.
-const GALERIE = { 'template-1': { sizes: '(min-width: 75rem) 600px, (min-width: 48rem) 50vw, 100vw', mosaique: true } };
 
-const provisoires = C.realisations.photos.filter((p) => p.provisoire);
-const aRemplacer = () => `# Photos provisoires à remplacer
+// En production, les fichiers qui gardent leur nom d'un déploiement à l'autre (feuille de style, script, logo et
+// symbole) reçoivent une empreinte de leur contenu dans leur adresse (?v=…). Les pages HTML sont toujours revalidées,
+// les autres fichiers sont gardés en cache un jour (CSS, JS) ou un an (images) par les navigateurs et le CDN : sans
+// cette empreinte, un visiteur déjà venu garderait l'ancien logo ou l'ancienne mise en page.
+const empreinte = (fichier) => createHash('sha1').update(readFileSync(fichier)).digest('hex').slice(0, 8);
+const LOGOS_VERSIONNES = ['logo.png', 'logo-clair.png', 'symbole.png', 'symbole-64.png', 'symbole-180.png', 'symbole-512.png'];
+function versionner(html, tpl) {
+  let out = html
+    .replace('href="style.css"', `href="style.css?v=${empreinte(`src/${tpl}/style.css`)}"`)
+    .replace('src="script.js"', `src="script.js?v=${empreinte('src/commun/script.js')}"`);
+  for (const l of LOGOS_VERSIONNES) out = out.replaceAll(`images/${l}"`, `images/${l}?v=${empreinte(`images/logo/${l}`)}"`);
+  return out;
+}
 
-Les photos de la galerie marquées « provisoire » sont des réservations prises sur Pexels en attendant les photos de chantiers de Rap Énergies. Liste, titres, auteurs et licence : \`docs/images.md\` à la racine du projet. Elles ne montrent ni Castries ni des chantiers de l'entreprise, et la galerie le dit une fois sous son introduction.
+const illustrations = C.realisations.photos.filter((p) => p.provisoire);
+const aRemplacer = () => `# Photos d'illustration
 
-Le plus simple pour les remplacer : l'administration en ligne (https://rap-energies.fr/admin/), qui redimensionne la photo, retire ses métadonnées, met à jour la fiche et la galerie du site ; \`outils/recuperer.sh\` rapatrie ensuite ces changements dans le projet.
+Le client a choisi de garder les photos de banque d'images (Pexels) : la section de la galerie s'intitule « Les équipements en images » et annonce des photos d'illustration, les mentions légales le disent aussi. Liste, titres, auteurs et licence : \`docs/images.md\` à la racine du projet. Elles ne montrent ni Castries ni des chantiers de l'entreprise.
 
-Photos provisoires encore en place, dans l'ordre de la galerie :
-${provisoires.length ? provisoires.map((p, i) => `${i + 1}. ${C.legende(p)} : ${p.detail} (fichier \`${p.fichier}\`)`).join('\n') : 'Aucune : toutes les photos de la galerie sont celles du client.'}
+Photos d'illustration de la galerie, dans l'ordre :
+${illustrations.length ? illustrations.map((p, i) => `${i + 1}. ${C.legende(p)} (fichier \`${p.fichier}\`)`).join('\n') : 'Aucune : toutes les photos de la galerie sont celles du client.'}
 
-Et pour les trois photos du triptyque du premier écran, reprises en couleur dans la section Services : un toit de tuiles avec panneaux en plein soleil (\`tri-panneaux\`), une pompe à chaleur extérieure (\`tri-pompe\`), un chauffe-eau thermodynamique (\`chauffe-eau-salle-de-bain\`). Pour la bande : un toit de tuiles en plein soleil (\`ombre-midi\`). Pour les étapes : des mains au travail sur un rail ou un tableau, sans visage (\`mains-rail\`).
+Les trois photos du triptyque du premier écran, reprises en couleur dans la section Services (\`tri-panneaux\`, \`tri-pompe\`, \`chauffe-eau-salle-de-bain\`), la bande (\`ombre-midi\`) et la photo des étapes (\`mains-rail\`) sont aussi des photos d'illustration.
 
-Règles pour chaque photo : aucun visage reconnaissable de client, aucune plaque d'immatriculation, aucune adresse lisible ; la commune suffit dans la légende. Pour chacune, le client indique la commune, l'équipement et un détail (type de toit, ce que l'appareil remplace). Sans l'administration : déposer le JPEG dans \`images/sources/\`, mettre à jour \`src/realisations.json\`, lancer \`node outils/images.mjs\` puis \`node outils/build.mjs\`. Quand plus aucune photo n'est provisoire, retirer le paragraphe « photos provisoires » des mentions légales.
+Si le client envoie un jour de vraies photos de chantiers : aucun visage reconnaissable, aucune plaque d'immatriculation, aucune adresse lisible ; déposer le JPEG dans \`images/sources/\`, mettre à jour \`src/realisations.json\` (commune, équipement, détail, \`provisoire: false\`), lancer \`node outils/images.mjs\` puis \`node outils/build.mjs\`. Quand plus aucune photo n'est d'illustration, remettre le titre « Nos chantiers, à Castries et autour » dans \`src/contenu.mjs\` et corriger le paragraphe des photographies dans les mentions légales.
 `;
 
 for (const tpl of cibles) {
@@ -67,13 +78,13 @@ for (const tpl of cibles) {
     const sortie = chemin && !html.includes('name="robots"')
       ? html.replace('<meta name="viewport" content="width=device-width, initial-scale=1">', '$&\n<meta name="robots" content="noindex, follow">')
       : html;
-    writeFileSync(`${dest}/${nom}`, sortie, 'utf8');
+    writeFileSync(`${dest}/${nom}`, prod ? versionner(sortie, tpl) : sortie, 'utf8');
   }
   copyFileSync(`src/${tpl}/style.css`, `${dest}/style.css`);
   copyFileSync('src/commun/script.js', `${dest}/script.js`);
   if (!chemin) {
-    // robots.txt et sitemap.xml n'ont de sens qu'à la racine. L'administration est hors index.
-    writeFileSync(`${dest}/robots.txt`, `User-agent: *\nAllow: /\nDisallow: /merci.html\nDisallow: /admin/\nSitemap: ${C.coordonnees.site}sitemap.xml\n`);
+    // robots.txt et sitemap.xml n'ont de sens qu'à la racine.
+    writeFileSync(`${dest}/robots.txt`, `User-agent: *\nAllow: /\nDisallow: /merci.html\nSitemap: ${C.coordonnees.site}sitemap.xml\n`);
     writeFileSync(
       `${dest}/sitemap.xml`,
       `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n<url><loc>${C.coordonnees.site}</loc></url>\n<url><loc>${C.coordonnees.site}mentions-legales.html</loc></url>\n<url><loc>${C.coordonnees.site}confidentialite.html</loc></url>\n</urlset>\n`,
@@ -93,14 +104,8 @@ for (const tpl of cibles) {
     }
     writeFileSync(`${dest}/.htaccess`, htaccess);
     if (existsSync('src/prod/config.php')) copyFileSync('src/prod/config.php', `${dest}/config.php`);
-    // Administration en ligne (PHP) : page, bibliothèque, feuille de style, protections, données initiales, gabarit
-    // de la galerie (mêmes textes et mêmes attributs que la page construite ici), mot de passe haché s'il existe.
-    cpSync('src/prod/admin', `${dest}/admin`, { recursive: true });
-    copyFileSync('src/realisations.json', `${dest}/admin/realisations.json`);
-    writeFileSync(`${dest}/admin/gabarit.json`, JSON.stringify({ titre: C.realisations.titre, texte: C.realisations.texte, provisoire: C.realisations.provisoire, ...GALERIE[tpl] }, null, 2) + '\n', 'utf8');
-    if (existsSync('src/prod/admin-config.php')) copyFileSync('src/prod/admin-config.php', `${dest}/admin/config.php`);
   } else {
     writeFileSync(`${dest}/images/A-REMPLACER.md`, aRemplacer(), 'utf8');
   }
-  console.log(`${tpl} → ${dest}/ : ${Object.keys(pages).join(', ')}${prod ? ', envoyer.php, .htaccess, admin/' : ''} (${C.coordonnees.site})`);
+  console.log(`${tpl} → ${dest}/ : ${Object.keys(pages).join(', ')}${prod ? ', envoyer.php, .htaccess' : ''} (${C.coordonnees.site})`);
 }

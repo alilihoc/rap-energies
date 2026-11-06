@@ -1,5 +1,5 @@
 // Template 1, « Plein midi » : page claire, palette complète tirée du logo, triptyque bichromie en premier écran.
-import { C, t, fr, tete, bandeau, boutons, picture, galerie, serviceCorps, ensemble, production, etapes, zone, pourquoi, questions, contact, pied, pageLegale, pagesMessage } from '../commun/composants.mjs';
+import { C, t, fr, tete, bandeau, boutons, picture, galerie, serviceCorps, ensemble, autresServices, production, etapes, zone, pourquoi, questions, contact, pied, pageLegale, pagesMessage } from '../commun/composants.mjs';
 
 const THEME = '#FCFBF7';
 
@@ -51,6 +51,8 @@ ${services}
 ${ensemble()}
 </div>
 </section>
+
+${autresServices()}
 
 <figure class="bande">${picture('ombre-midi', { alt: 'Toit de tuiles rouges portant son ombre sur un mur blanc sous un ciel bleu', sizes: '100vw', position: '50% 60%', dims })}</figure>
 

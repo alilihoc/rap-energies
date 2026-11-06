@@ -33,8 +33,10 @@ Remarques d'honnêteté : la photo « chauffe-eau » du triptyque du template 1 
 
 ## Logos (`images/logo/`)
 
-Détourés par `outils/logo.mjs` à partir de `images/6817aee43100005fc5761b66.png` (fourni par le client, fond crème opaque) : `logo.png` (symbole et nom, fond transparent), `logo-clair.png` (nom en crème pour les fonds sombres), `symbole.png` et `symbole-64/180/512.png` (favicon, navigation réduite). La variante ronde `images/68225512310000ec387824ff.png` n'est pas utilisée ; le client choisira.
+Détourés par `outils/logo.mjs` à partir de la variante ronde `images/68225512310000ec387824ff.png`, choisie par le client le 6 novembre 2026 (anneau de vagues, « RAP ÉNERGIES » au centre, fond crème opaque) : `logo.png` et `logo-clair.png` (logo entier, extérieur de l'anneau transparent, centre clair conservé, pour le pied de page), `symbole.png` et `symbole-64/180/512.png` (le même logo entier en carré, pour le bandeau et l'icône du site), `anneau.png` (l'anneau seul, non utilisé). La variante carrée à la feuille `images/6817aee43100005fc5761b66.png` n'est plus utilisée.
 
 ## Photos candidates écartées
 
 Planches contact dans le dossier de travail de la session (`planches/lot1-*.png`, `lot2-*.png`, `lot3-*.png`). Écartées : visages reconnaissables (9875405, 9875414, 9875415, 9875418, 9875419, 9875422, 27928762, 30285845, 32497161, 34938439, 4254164), tenues de marque lisible (toutes les photos Elite Power Group), toits industriels (11644973, 14613939, 137602), styles trop nord-américains pour une accroche (4933643, 13558357, 12284244).
+
+Décision du client, 6 novembre 2026 : les photos de banque d'images sont conservées. La galerie s'intitule « Les équipements en images », annonce « Photos d'illustration. », et les mentions légales précisent qu'elles proviennent de Pexels et ne représentent pas des chantiers de Rap Énergies. L'administration en ligne qui devait servir à les remplacer est archivée (`archives/admin-php/`).

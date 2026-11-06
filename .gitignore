@@ -14,5 +14,5 @@ archives/admin-node/config.json
 images/corbeille/
 dist/
 src/prod/config.php
-src/prod/admin-config.php
-src/prod/admin-mot-de-passe.txt
+archives/admin-php/admin-config.php
+archives/admin-php/admin-mot-de-passe.txt

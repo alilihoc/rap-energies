@@ -1,15 +1,13 @@
-# Photos provisoires à remplacer
+# Photos d'illustration
 
-Les photos de la galerie marquées « provisoire » sont des réservations prises sur Pexels en attendant les photos de chantiers de Rap Énergies. Liste, titres, auteurs et licence : `docs/images.md` à la racine du projet. Elles ne montrent ni Castries ni des chantiers de l'entreprise, et la galerie le dit une fois sous son introduction.
+Le client a choisi de garder les photos de banque d'images (Pexels) : la section de la galerie s'intitule « Les équipements en images » et annonce des photos d'illustration, les mentions légales le disent aussi. Liste, titres, auteurs et licence : `docs/images.md` à la racine du projet. Elles ne montrent ni Castries ni des chantiers de l'entreprise.
 
-Le plus simple pour les remplacer : l'administration en ligne (https://rap-energies.fr/admin/), qui redimensionne la photo, retire ses métadonnées, met à jour la fiche et la galerie du site ; `outils/recuperer.sh` rapatrie ensuite ces changements dans le projet.
+Photos d'illustration de la galerie, dans l'ordre :
+1. Panneaux photovoltaïques · toit en tuiles canal (fichier `pose-tuiles-canal`)
+2. Pompe à chaleur air-eau · unité extérieure côté jardin (fichier `pompe-a-chaleur-gravier`)
+3. Panneaux photovoltaïques · toits de tuiles et cheminées (fichier `toits-cheminees`)
+4. Pompe à chaleur air-eau · unité extérieure sur plots (fichier `pompe-a-chaleur-mur`)
 
-Photos provisoires encore en place, dans l'ordre de la galerie :
-1. Panneaux photovoltaïques · toit en tuiles canal · [À COMPLÉTER : commune] : Pose en cours, panneau présenté sur les tuiles. (fichier `pose-tuiles-canal`)
-2. Pompe à chaleur air-eau · unité extérieure côté jardin · [À COMPLÉTER : commune] : Remplace une chaudière au fioul. (fichier `pompe-a-chaleur-gravier`)
-3. Panneaux photovoltaïques · toits de tuiles et cheminées · [À COMPLÉTER : commune] : Deux pans équipés, onduleur dans le garage. (fichier `toits-cheminees`)
-4. Pompe à chaleur air-eau · unité extérieure sur plots · [À COMPLÉTER : commune] : Remplace des convecteurs électriques. (fichier `pompe-a-chaleur-mur`)
+Les trois photos du triptyque du premier écran, reprises en couleur dans la section Services (`tri-panneaux`, `tri-pompe`, `chauffe-eau-salle-de-bain`), la bande (`ombre-midi`) et la photo des étapes (`mains-rail`) sont aussi des photos d'illustration.
 
-Et pour les trois photos du triptyque du premier écran, reprises en couleur dans la section Services : un toit de tuiles avec panneaux en plein soleil (`tri-panneaux`), une pompe à chaleur extérieure (`tri-pompe`), un chauffe-eau thermodynamique (`chauffe-eau-salle-de-bain`). Pour la bande : un toit de tuiles en plein soleil (`ombre-midi`). Pour les étapes : des mains au travail sur un rail ou un tableau, sans visage (`mains-rail`).
-
-Règles pour chaque photo : aucun visage reconnaissable de client, aucune plaque d'immatriculation, aucune adresse lisible ; la commune suffit dans la légende. Pour chacune, le client indique la commune, l'équipement et un détail (type de toit, ce que l'appareil remplace). Sans l'administration : déposer le JPEG dans `images/sources/`, mettre à jour `src/realisations.json`, lancer `node outils/images.mjs` puis `node outils/build.mjs`. Quand plus aucune photo n'est provisoire, retirer le paragraphe « photos provisoires » des mentions légales.
+Si le client envoie un jour de vraies photos de chantiers : aucun visage reconnaissable, aucune plaque d'immatriculation, aucune adresse lisible ; déposer le JPEG dans `images/sources/`, mettre à jour `src/realisations.json` (commune, équipement, détail, `provisoire: false`), lancer `node outils/images.mjs` puis `node outils/build.mjs`. Quand plus aucune photo n'est d'illustration, remettre le titre « Nos chantiers, à Castries et autour » dans `src/contenu.mjs` et corriger le paragraphe des photographies dans les mentions légales.

@@ -9,19 +9,19 @@ export const marque = {
 };
 
 export const coordonnees = {
-  adresse: '570 avenue de la Royale',
-  codePostal: '34160',
-  ville: 'Castries',
+  // Adresse donnée par le client le 6 novembre 2026 (le registre indiquait encore 570 avenue de la Royale, 34160 Castries).
+  adresse: '320 rue de la Garriguette',
+  codePostal: '34130',
+  ville: 'Saint-Aunès',
   tel: '06 99 34 66 86',
   telHref: 'tel:+33699346686',
   email: 'rapenergies@gmail.com',
   site: 'https://rap-energies.fr/',
-  geo: { lat: 43.6741, lon: 3.972 },
 };
 
 // court : libellé affiché sur mobile (une seule rangée d'ancres), quand il diffère.
 export const navigation = [
-  { libelle: 'Réalisations', court: 'Chantiers', href: '#realisations' },
+  { libelle: 'Photos', href: '#realisations' },
   { libelle: 'Services', href: '#services' },
   { libelle: 'Comment ça se passe', court: 'Étapes', href: '#etapes' },
   { libelle: 'Communes', href: '#zone' },
@@ -38,7 +38,7 @@ export const accroche = {
   titre: 'Panneaux solaires, pompe à chaleur, chauffe-eau thermodynamique : posés par un électricien de Castries.',
   texte:
     "Rap Énergies installe chez vous les trois équipements qui font baisser la facture d'énergie d'une maison, à Castries et dans les villages de l'est de Montpellier. Électricien de métier, qualifié RGE par Qualifelec pour chacun des trois.",
-  ligne: '570 avenue de la Royale, 34160 Castries · rapenergies@gmail.com',
+  ligne: '320 rue de la Garriguette, 34130 Saint-Aunès · rapenergies@gmail.com',
   // Variante courte, proposée dans la recherche, non utilisée par défaut.
   titreVariante: 'Le soleil de Castries, installé chez vous.',
   texteVariante:
@@ -54,11 +54,15 @@ import { dirname, join } from 'node:path';
 const ICI = dirname(fileURLToPath(import.meta.url));
 
 export const realisations = {
-  titre: 'Nos chantiers, à Castries et autour',
+  // Le client garde les photos de banque d'images (décision transmise en novembre 2026) : la section ne dit donc plus
+  // « Nos chantiers » et annonce des photos d'illustration. Si de vraies photos de chantiers arrivent un jour, remettre
+  // le titre « Nos chantiers, à Castries et autour » et retirer la mention.
+  titre: 'Les équipements en images',
   texte:
-    'Des toits équipés, des pompes à chaleur posées, des ballons remplacés dans les villages de la zone. Les photos sont prises sur nos chantiers [À CONFIRMER]. Cliquez sur une photo pour l\'agrandir.',
-  // Mention affichée une seule fois sous l'introduction tant qu'au moins une photo de la galerie est provisoire.
-  provisoire: 'Photos provisoires, à remplacer par des photos des chantiers de Rap Énergies.',
+    'Des panneaux sur un toit de tuiles, une pompe à chaleur côté jardin : voici à quoi ressemblent les équipements que nous posons. Cliquez sur une photo pour l\'agrandir.',
+  // Mention affichée une seule fois sous l'introduction tant qu'au moins une photo de la galerie est marquée « provisoire »
+  // (c'est-à-dire : photo d'illustration, pas un chantier de l'entreprise).
+  provisoire: "Photos d'illustration.",
   photos: JSON.parse(readFileSync(join(ICI, 'realisations.json'), 'utf8')),
 };
 // Légende d'une réalisation : « Titre · lieu · commune », les parties vides omises.
@@ -154,7 +158,6 @@ export const services = {
         'Démarches : mairie, Enedis, Consuel',
         'Mise en service et suivi de production',
       ],
-      note: '[À CONFIRMER : quelles démarches Rap Énergies prend en charge]',
     },
     {
       id: 'pompe-a-chaleur',
@@ -162,7 +165,7 @@ export const services = {
       titre: 'Pompe à chaleur (chauffage)',
       court: 'Pompe à chaleur',
       texte: [
-        "Une pompe à chaleur prend les calories de l'air extérieur pour chauffer l'eau de vos radiateurs ou de votre plancher chauffant [À CONFIRMER : et l'eau chaude sanitaire]. Elle remplace une chaudière au fioul ou au gaz, ou des convecteurs électriques. Le climat de l'Hérault lui convient : l'air y est rarement très froid, et c'est là qu'une pompe à chaleur rend le mieux.",
+        "Une pompe à chaleur prend les calories de l'air extérieur pour chauffer l'eau de vos radiateurs ou de votre plancher chauffant. Elle remplace une chaudière au fioul ou au gaz, ou des convecteurs électriques. Le climat de l'Hérault lui convient : l'air y est rarement très froid, et c'est là qu'une pompe à chaleur rend le mieux.",
       ],
       faisons: [
         'Visite et calcul de la puissance nécessaire',
@@ -170,7 +173,6 @@ export const services = {
         'Pose, raccordements, mise en service, réglages',
         'Explication du fonctionnement et de la programmation',
       ],
-      note: '[À CONFIRMER : Rap Énergies pose-t-elle aussi des climatisations réversibles (pompe à chaleur air-air) ? Si oui, ajouter une phrase.]',
     },
     {
       id: 'chauffe-eau',
@@ -193,6 +195,21 @@ export const services = {
     titre: 'Les trois ensemble',
     texte:
       "Panneaux le jour, chauffe-eau à midi, pompe à chaleur l'hiver : les trois équipements se complètent, et il vaut mieux qu'ils soient pensés ensemble, par un électricien qui connaît votre tableau et votre compteur. Vous pouvez aussi commencer par un seul et ajouter les autres plus tard : nous prévoyons la place et les câbles.",
+  },
+};
+
+// Autres services, d'après la carte de visite de l'entreprise transmise par le client le 6 novembre 2026
+// (« Solaire · Chauffage · Photovoltaïque · Climatisation · Pompe à chaleur · SAV · Plomberie · Électricité »), et
+// l'entretien des installations posées, que le client demande de mettre en avant. « Solaire » n'est pas repris ici
+// tant qu'on ne sait pas s'il désigne autre chose que le photovoltaïque déjà présenté.
+export const autres = {
+  titre: 'Nos autres services',
+  intro: 'Au-delà de ces trois équipements, nous intervenons aussi en :',
+  liste: ['Chauffage', 'Climatisation', 'Plomberie', 'Électricité'],
+  entretien: {
+    titre: 'Entretien et service après-vente',
+    texte:
+      "Nous entretenons les installations que nous posons : panneaux solaires, pompe à chaleur, chauffe-eau, chauffage et climatisation. Après la mise en service, vous gardez le même numéro pour l'entretien et le service après-vente.",
   },
 };
 
@@ -231,34 +248,38 @@ export const etapes = {
   liste: [
     { tete: 'Vous nous appelez, ou vous décrivez votre projet', suite: ' dans le formulaire. Nous vous rappelons pour convenir d\'une visite.' },
     { tete: 'Nous venons chez vous :', suite: ' toit, compteur, tableau électrique, chauffage et eau chaude actuels, dernières factures.' },
-    { tete: 'Vous recevez un devis détaillé', suite: ", avec l'estimation de production PVGIS pour votre adresse quand il s'agit de panneaux. [À CONFIRMER : le devis est-il gratuit ? Si oui, l'écrire ici.]" },
-    { tete: 'Nous nous occupons des démarches', suite: ' [À CONFIRMER : déclaration préalable en mairie, demande de raccordement Enedis, attestation Consuel, dossier d\'aides ; garder seulement ce que le client fait réellement].' },
+    // Réponses du client (novembre 2026) : le devis est gratuit ; toutes les démarches sont prises en charge.
+    { tete: 'Vous recevez un devis gratuit et détaillé', suite: ", avec l'estimation de production PVGIS pour votre adresse quand il s'agit de panneaux." },
+    { tete: 'Nous nous occupons des démarches :', suite: " déclaration préalable en mairie, demande de raccordement Enedis, attestation Consuel, dossiers d'aides." },
     { tete: 'Nous posons, mettons en service et vous expliquons', suite: ' le fonctionnement. Le chantier est laissé propre.' },
-    { tete: 'Après la pose, vous gardez notre numéro.', suite: ' [À CONFIRMER : entretien ou SAV proposé ?]' },
+    { tete: 'Après la pose, vous gardez notre numéro :', suite: " nous assurons l'entretien et le service après-vente de votre installation." },
   ],
 };
 
 export const zone = {
   titre: 'Où nous intervenons',
   avant:
-    "Rap Énergies est installée à Castries et intervient dans les communes voisines, à l'est de Montpellier, de la garrigue aux étangs :",
+    "Rap Énergies est installée à Saint-Aunès et intervient dans les communes voisines, à l'est de Montpellier, de la garrigue aux étangs :",
+  // La première commune est celle de l'entreprise (mise en avant par la feuille de style).
   communes: [
-    'Castries', 'Vendargues', 'Baillargues', 'Saint-Brès', 'Saint-Aunès', 'Le Crès', 'Jacou', 'Teyran', 'Clapiers',
+    'Saint-Aunès', 'Castries', 'Vendargues', 'Baillargues', 'Saint-Brès', 'Le Crès', 'Jacou', 'Teyran', 'Clapiers',
     'Assas', 'Guzargues', 'Saint-Drézéry', 'Sussargues', 'Beaulieu', 'Restinclières', 'Montaud', 'Montpellier',
   ],
   apres: "Votre commune n'est pas dans la liste ? Appelez quand même : à quelques kilomètres près, c'est souvent possible.",
-  note: '[À CONFIRMER : liste définitive des communes]',
+  note: '',
 };
 
 export const pourquoi = {
   titre: 'Pourquoi un électricien de Castries',
   points: [
     { tete: 'Électricien de métier.', texte: "Le photovoltaïque, la pompe à chaleur et le chauffe-eau thermodynamique sont d'abord des travaux électriques : tableau, protections, raccordement. C'est notre métier de base, pas une activité ajoutée." },
-    { tete: 'Qualifié RGE par Qualifelec pour les trois équipements.', texte: "Panneaux solaires photovoltaïques, pompe à chaleur chauffage, chauffe-eau thermodynamique. La qualification est contrôlée et suivie chaque année ; c'est aussi la condition pour que vos travaux ouvrent droit aux aides publiques. [À COMPLÉTER : numéro de qualification, lien vers le certificat]" },
+    { tete: 'Qualifié RGE par Qualifelec pour les trois équipements.', texte: "Panneaux solaires photovoltaïques, pompe à chaleur chauffage, chauffe-eau thermodynamique. La qualification est contrôlée et suivie chaque année ; c'est aussi la condition pour que vos travaux ouvrent droit aux aides publiques." },
     { tete: 'À quelques minutes de chez vous.', texte: 'Pour la visite, pour la pose, et si vous avez besoin de nous après.' },
-    { tete: 'Pas de démarchage.', texte: 'Nous ne faisons ni porte-à-porte ni appels : vous nous contactez quand vous êtes prêt. [À CONFIRMER]' },
+    { tete: 'Pas de démarchage.', texte: 'Nous ne faisons ni porte-à-porte ni appels : vous nous contactez quand vous êtes prêt.' },
     { tete: 'Des chiffres honnêtes.', texte: 'Les productions annoncées sont des estimations PVGIS pour votre adresse, pas des arguments de vente.' },
-    { tete: 'Une seule entreprise, du devis à la mise en service.', texte: '[À CONFIRMER : aucune sous-traitance ?]' },
+    // Point retiré le 6 novembre 2026 faute de confirmation (« Une seule entreprise, du devis à la mise en service. » :
+    // aucune sous-traitance ?) ; à remettre si le client le confirme.
+    { tete: 'Nous entretenons ce que nous posons.', texte: 'Entretien et service après-vente de vos équipements, après la mise en service.' },
   ],
 };
 
@@ -271,7 +292,7 @@ export const faq = {
     },
     {
       q: 'Faut-il une autorisation ?',
-      r: "Oui, une déclaration préalable de travaux en mairie pour des panneaux en toiture. Dans certaines rues de Castries, aux abords du château ou de l'aqueduc, l'architecte des Bâtiments de France donne aussi son avis. [À CONFIRMER : Rap Énergies prépare-t-elle le dossier ?]",
+      r: "Oui, une déclaration préalable de travaux en mairie pour des panneaux en toiture. Dans certaines rues de Castries, aux abords du château ou de l'aqueduc, l'architecte des Bâtiments de France donne aussi son avis. Nous préparons le dossier pour vous.",
     },
     {
       q: "Que devient l'électricité que je ne consomme pas ?",
@@ -279,7 +300,7 @@ export const faq = {
     },
     {
       q: 'Ai-je droit à des aides ?',
-      r: "Les aides dépendent de l'équipement, de votre logement et de vos revenus, et les règles ont changé en 2026. Une chose ne change pas : elles exigent une entreprise qualifiée RGE, ce que nous sommes pour les trois équipements. Nous vous disons au devis celles qui s'appliquent à votre projet. [À CONFIRMER : accompagnement dans les dossiers ?]",
+      r: "Les aides dépendent de l'équipement, de votre logement et de vos revenus, et les règles ont changé en 2026. Une chose ne change pas : elles exigent une entreprise qualifiée RGE, ce que nous sommes pour les trois équipements. Nous vous disons au devis celles qui s'appliquent à votre projet, et nous nous occupons des dossiers.",
     },
     {
       q: 'Une pompe à chaleur chauffe-t-elle assez en hiver ?',
@@ -287,7 +308,7 @@ export const faq = {
     },
     {
       q: "Et l'entretien ?",
-      r: "Des panneaux solaires demandent très peu d'entretien : la pluie les nettoie, et le suivi de production signale un défaut. Une pompe à chaleur doit être entretenue régulièrement ; un entretien tous les deux ans est obligatoire pour la plupart des pompes à chaleur de maison. [À CONFIRMER : Rap Énergies propose-t-elle l'entretien ?]",
+      r: "Des panneaux solaires demandent très peu d'entretien : la pluie les nettoie, et le suivi de production signale un défaut. Une pompe à chaleur doit être entretenue régulièrement ; un entretien tous les deux ans est obligatoire pour la plupart des pompes à chaleur de maison. Nous assurons l'entretien des installations que nous posons.",
     },
   ],
 };
@@ -295,7 +316,7 @@ export const faq = {
 export const contact = {
   titre: 'Parlons de votre maison',
   texte: 'Appelez, ou décrivez votre projet en deux lignes : nous vous rappelons pour fixer une visite.',
-  horaires: "[À COMPLÉTER : horaires d'appel, si le client en veut]",
+  horaires: '', // aucun horaire affiché par défaut ; à renseigner si le client en donne
   champs: {
     nom: 'Votre nom',
     tel: 'Téléphone',
@@ -318,13 +339,13 @@ export const contact = {
 };
 
 export const pied = {
-  ligne: 'RAP ENERGIES SAS · 570 avenue de la Royale, 34160 Castries · 06 99 34 66 86 · rapenergies@gmail.com',
+  ligne: 'RAP ENERGIES SAS · 320 rue de la Garriguette, 34130 Saint-Aunès · 06 99 34 66 86 · rapenergies@gmail.com',
   rge: 'Qualifiée RGE par Qualifelec : panneaux solaires photovoltaïques, pompe à chaleur chauffage, chauffe-eau thermodynamique.',
   liens: [
     { libelle: 'Mentions légales', href: 'mentions-legales.html' },
     { libelle: 'Confidentialité', href: 'confidentialite.html' },
   ],
-  sources: "Sources : PVGIS (Commission européenne), Qualifelec, annuaire des entreprises (INSEE). Crédits photos : Rap Énergies [À COMPLÉTER si des photos provisoires sont utilisées].",
+  sources: "Sources : PVGIS (Commission européenne), Qualifelec, annuaire des entreprises (INSEE). Photos d'illustration : Pexels.",
   realisation: { avant: 'Site réalisé par ', libelle: 'Mon Petit Site', href: 'https://mon-petit-site.fr/' },
 };
 
@@ -332,12 +353,12 @@ export const legal = {
   mentions: {
     titre: 'Mentions légales',
     paragraphes: [
-      "Éditeur du site : RAP ENERGIES, société par actions simplifiée au capital de 10 000 €, immatriculée au RCS de Montpellier sous le numéro 834 807 810, siège social 570 avenue de la Royale, 34160 Castries. Téléphone : 06 99 34 66 86. E-mail : rapenergies@gmail.com. Numéro de TVA intracommunautaire : FR36 834807810 [À VÉRIFIER].",
-      'Président et directeur de la publication : Kevin Hainaut [À CONFIRMER, voir recherche § 1.2].',
-      'Qualification : RGE Qualifelec (panneaux solaires photovoltaïques, pompe à chaleur chauffage, chauffe-eau thermodynamique) [À COMPLÉTER : numéro de qualification].',
-      'Hébergeur : [À COMPLÉTER : même solution que maf-menuiserie.fr, raison sociale, adresse, téléphone].',
+      "Éditeur du site : RAP ENERGIES, société par actions simplifiée au capital de 10 000 €, immatriculée au RCS de Montpellier sous le numéro 834 807 810. Adresse : 320 rue de la Garriguette, 34130 Saint-Aunès. Téléphone : 06 99 34 66 86. E-mail : rapenergies@gmail.com.",
+      'Président et directeur de la publication : Raphaël Madeddu.',
+      'Qualification : RGE Qualifelec (panneaux solaires photovoltaïques, pompe à chaleur chauffage, chauffe-eau thermodynamique).',
+      'Hébergeur : Hostinger International Ltd, 61 Lordou Vironos Street, 6023 Larnaca, Chypre, hostinger.fr.',
       'Réalisation : Mon Petit Site, mon-petit-site.fr.',
-      "Photographies : Rap Énergies, sauf mention contraire. Tant que des photos provisoires sont en ligne, elles proviennent de Pexels (licence Pexels, usage libre, sans attribution obligatoire) ; la liste des fichiers, titres et auteurs figure dans la documentation du site et sera retirée avec les photos [À COMPLÉTER si photos provisoires : auteur, source, licence].",
+      "Photographies : photos d'illustration provenant de Pexels (licence Pexels, usage libre, sans attribution obligatoire). Elles ne représentent pas des chantiers de Rap Énergies.",
       "Estimations de production : PVGIS, Commission européenne, Centre commun de recherche. Elles sont données à titre indicatif et ne constituent pas un engagement.",
       "Ce site n'utilise aucun cookie ni aucun outil de mesure d'audience.",
     ],
@@ -347,8 +368,8 @@ export const legal = {
     blocs: [
       { tete: 'Quelles données', texte: "lorsque vous remplissez le formulaire, nous recevons votre nom, votre téléphone, votre commune, le type de projet, et, si vous les indiquez, votre e-mail et votre message." },
       { tete: 'Pourquoi', texte: "uniquement pour vous rappeler et préparer la visite. Elles ne servent à aucune prospection et ne sont transmises à personne." },
-      { tete: 'Comment', texte: "le formulaire envoie un e-mail à rapenergies@gmail.com [À COMPLÉTER selon la solution d'envoi retenue : prestataire éventuel]." },
-      { tete: 'Combien de temps', texte: '[À CONFIRMER : par exemple douze mois après le dernier échange, puis suppression].' },
+      { tete: 'Comment', texte: "le formulaire envoie un e-mail à rapenergies@gmail.com depuis le serveur de l'hébergeur du site, sans prestataire tiers et sans copie conservée sur le serveur." },
+      { tete: 'Combien de temps', texte: 'douze mois après le dernier échange, puis suppression.' },
       { tete: 'Vos droits', texte: "vous pouvez demander l'accès, la rectification ou la suppression de ces données en écrivant à rapenergies@gmail.com. Vous pouvez aussi saisir la CNIL." },
       { tete: 'Cookies', texte: "ce site ne dépose aucun cookie et n'utilise aucun traceur." },
     ],

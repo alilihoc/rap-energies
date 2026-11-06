@@ -74,7 +74,7 @@ function lire_fiche(array $post, ?array $existante, array $liste): array {
         'provisoire' => !empty($post['provisoire']),
     ];
     if ($p['lieu'] === '' || $p['commune'] === '' || $p['alt'] === '') throw new InvalidArgumentException('Le lieu, la commune et le texte alternatif sont obligatoires.');
-    if (!$p['fichier']) $p['fichier'] = slug_unique(slug($p['titre'] . '-' . $p['lieu'] . '-' . $p['commune']), $liste, null);
+    if (!$p['fichier']) $p['fichier'] = nouveau_fichier($p, $liste);
     return $p;
 }
 function photo_envoyee(): ?array {
@@ -124,8 +124,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $p = lire_fiche($_POST, $existante, $liste);
             $photo = photo_envoyee();
             if (!$existante && !$photo) throw new InvalidArgumentException('Une photo est nécessaire pour une nouvelle réalisation.');
-            if ($photo) traiter_image($photo['tmp_name'], $p['fichier']);
+            // Photo remplacée : la nouvelle prend un nom neuf (cache d'un an sur les images), l'ancienne part à la corbeille.
+            $ancien = null;
+            if ($photo) {
+                if ($existante) { $ancien = (string)$existante['fichier']; $p['fichier'] = nouveau_fichier($p, $liste); }
+                traiter_image($photo['tmp_name'], $p['fichier']);
+            }
             $liste = modifier(function (array $l) use ($p, $i) { if ($i === 'nouvelle') $l[] = $p; else $l[(int)$i] = $p; return $l; });
+            if ($ancien !== null && $ancien !== $p['fichier']) { supprimer_derives($ancien); mettre_a_la_corbeille($ancien); }
             reecrire_index($liste);
             flash('ok', $i === 'nouvelle' ? 'Réalisation ajoutée : elle est en ligne dans la galerie.' : 'Réalisation enregistrée : la galerie du site est à jour.');
         } catch (InvalidArgumentException $e) {

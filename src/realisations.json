@@ -1,46 +1,46 @@
 [
-  {
-    "fichier": "pose-tuiles-canal",
-    "equipement": "panneaux",
-    "titre": "Panneaux photovoltaïques",
-    "lieu": "toit en tuiles canal",
-    "commune": "[À COMPLÉTER : commune]",
-    "detail": "Pose en cours, panneau présenté sur les tuiles.",
-    "alt": "Mains gantées posant un panneau photovoltaïque sur un toit de tuiles canal",
-    "position": "50% 40%",
-    "provisoire": true
-  },
-  {
-    "fichier": "pompe-a-chaleur-gravier",
-    "equipement": "pompe-a-chaleur",
-    "titre": "Pompe à chaleur air-eau",
-    "lieu": "unité extérieure côté jardin",
-    "commune": "[À COMPLÉTER : commune]",
-    "detail": "Remplace une chaudière au fioul.",
-    "alt": "Unité extérieure de pompe à chaleur posée sur du gravier blanc près d'arbustes",
-    "position": "50% 60%",
-    "provisoire": true
-  },
-  {
-    "fichier": "toits-cheminees",
-    "equipement": "panneaux",
-    "titre": "Panneaux photovoltaïques",
-    "lieu": "toits de tuiles et cheminées",
-    "commune": "[À COMPLÉTER : commune]",
-    "detail": "Deux pans équipés, onduleur dans le garage.",
-    "alt": "Panneaux photovoltaïques sur des toits de tuiles avec cheminées en brique",
-    "position": "50% 60%",
-    "provisoire": true
-  },
-  {
-    "fichier": "pompe-a-chaleur-mur",
-    "equipement": "pompe-a-chaleur",
-    "titre": "Pompe à chaleur air-eau",
-    "lieu": "unité extérieure sur plots",
-    "commune": "[À COMPLÉTER : commune]",
-    "detail": "Remplace des convecteurs électriques.",
-    "alt": "Unité extérieure de pompe à chaleur devant un mur de maison en pierre",
-    "position": "50% 65%",
-    "provisoire": true
-  }
+    {
+        "fichier": "pose-tuiles-canal",
+        "equipement": "panneaux",
+        "titre": "Panneaux photovoltaïques",
+        "lieu": "toit en tuiles canal",
+        "commune": "",
+        "detail": "",
+        "alt": "Mains gantées posant un panneau photovoltaïque sur un toit de tuiles canal",
+        "position": "50% 40%",
+        "provisoire": true
+    },
+    {
+        "fichier": "pompe-a-chaleur-gravier",
+        "equipement": "pompe-a-chaleur",
+        "titre": "Pompe à chaleur air-eau",
+        "lieu": "unité extérieure côté jardin",
+        "commune": "",
+        "detail": "",
+        "alt": "Unité extérieure de pompe à chaleur posée sur du gravier blanc près d'arbustes",
+        "position": "50% 60%",
+        "provisoire": true
+    },
+    {
+        "fichier": "toits-cheminees",
+        "equipement": "panneaux",
+        "titre": "Panneaux photovoltaïques",
+        "lieu": "toits de tuiles et cheminées",
+        "commune": "",
+        "detail": "",
+        "alt": "Panneaux photovoltaïques sur des toits de tuiles avec cheminées en brique",
+        "position": "50% 60%",
+        "provisoire": true
+    },
+    {
+        "fichier": "pompe-a-chaleur-mur",
+        "equipement": "pompe-a-chaleur",
+        "titre": "Pompe à chaleur air-eau",
+        "lieu": "unité extérieure sur plots",
+        "commune": "",
+        "detail": "",
+        "alt": "Unité extérieure de pompe à chaleur devant un mur de maison en pierre",
+        "position": "50% 65%",
+        "provisoire": true
+    }
 ]

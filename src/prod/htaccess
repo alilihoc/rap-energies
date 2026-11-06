@@ -20,10 +20,6 @@ DirectoryIndex index.html
 
   # Le destinataire d'essai du formulaire n'est jamais servi
   RewriteRule ^config\.php$ - [F,L]
-
-  # Administration : son dossier est servi tel quel (index.php) ; ses sources et sa corbeille jamais
-  RewriteRule ^admin/(sources|corbeille)(/|$) - [F,L]
-  RewriteRule ^admin/ - [L]
 </IfModule>
 
 <IfModule mod_headers.c>

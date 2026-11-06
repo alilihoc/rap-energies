@@ -78,10 +78,14 @@ mark.pl { background: transparent; color: var(--second); outline: 1px dashed var
 /* Bandeau */
 .bandeau { position: sticky; top: 0; z-index: 10; background: var(--fond); border-bottom: 1px solid var(--filet); }
 .bandeau-grille { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 0.75rem 2rem; min-height: 4.5rem; }
-.marque { display: inline-flex; align-items: center; gap: 0.7rem; text-decoration: none; font: 800 1.3rem/1 var(--titres); letter-spacing: -0.02em; }
-.marque img { width: 2.75rem; height: 2.75rem; transform-origin: left center; transition: transform 0.35s var(--sortie); }
-/* Bandeau réduit au défilement : seul le symbole change d'échelle (pas de hauteur animée, pas d'à-coup). */
-.bandeau.reduite .marque img { transform: scale(0.75); }
+.marque { --logo: 3.75rem; display: inline-flex; align-items: center; gap: 0.7rem; text-decoration: none; font: 800 1.3rem/1 var(--titres); letter-spacing: -0.02em; }
+/* Le logo rond entier, nom au centre : assez grand pour que « RAP » se lise, le nom complet est composé à côté. */
+.marque img { width: var(--logo); height: var(--logo); transform-origin: left center; transition: transform 0.35s var(--sortie); }
+.marque span { transition: transform 0.35s var(--sortie); }
+/* Bandeau réduit au défilement : seul le logo change d'échelle (pas de hauteur animée, pas d'à-coup) ; le nom suit le
+   logo pour ne pas laisser de vide entre les deux. */
+.bandeau.reduite .marque img { transform: scale(0.85); }
+.bandeau.reduite .marque span { transform: translateX(calc(var(--logo) * -0.15)); }
 .nav ul { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 0.25rem 1.6rem; font-weight: 600; justify-content: center; }
 .nav a { text-decoration: none; padding: 0.4rem 0; display: inline-block; }
 .nav a:hover { text-decoration: underline; }
@@ -214,6 +218,18 @@ main > section { padding-top: var(--bloc); padding-bottom: var(--bloc); }
 .ensemble h3 { margin-bottom: 1rem; }
 .ensemble p { font-size: clamp(1.2rem, 1rem + 0.7vw, 1.5rem); line-height: 1.4; margin: 0; }
 
+/* Autres services : les métiers en grand, puis l'entretien mis en avant sous les trois couleurs des équipements */
+.autres { border-top: 1px solid var(--filet); }
+.autres p { max-width: 62ch; }
+.metiers { list-style: none; padding: 0; margin: 1.25rem 0 0; display: flex; flex-wrap: wrap; gap: 0.35rem 1.1em; font: 700 clamp(1.35rem, 1rem + 1.5vw, 2.3rem)/1.3 var(--titres); letter-spacing: -0.02em; }
+.entretien { margin-top: 2.5rem; padding-top: 2.5rem; border-top: 1px solid var(--filet); }
+.entretien-barres { display: flex; width: 10.5rem; height: 0.75rem; margin-bottom: 1.1rem; }
+.entretien-barres span { flex: 1; background: var(--soleil); }
+.entretien-barres span:nth-child(2) { background: var(--chaleur); }
+.entretien-barres span:nth-child(3) { background: var(--eau); }
+.entretien h3 { margin-bottom: 1rem; }
+.entretien p { font-size: clamp(1.2rem, 1rem + 0.7vw, 1.5rem); line-height: 1.4; margin: 0; max-width: 52rem; }
+
 /* Bande photo */
 .bande { margin: 0; }
 .bande picture { display: block; height: clamp(16rem, 42vw, 30rem); }
@@ -232,16 +248,13 @@ main > section { padding-top: var(--bloc); padding-bottom: var(--bloc); }
   .graphique { margin-top: 0; }
 }
 .graphique-vertical .barres { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); grid-template-rows: 17rem; gap: 0.5rem; border-bottom: 1px solid var(--encre); }
-/* Sous 80 rem, la colonne du graphique (7/12) ne porte plus les noms de mois entiers : abréviations. */
-@media (max-width: 80rem) {
-  .graphique-vertical .mois-long { display: none; }
-  .graphique-vertical .mois-court { display: inline; }
-}
 .graphique-vertical .barres li { display: flex; flex-direction: column; justify-content: flex-end; height: 100%; }
 .graphique-vertical .barre { display: block; background: var(--soleil); height: calc(var(--v) / var(--max) * (100% - 3.9rem)); }
 .graphique-vertical .val { order: -1; text-align: center; font-weight: 700; font-size: 1rem; font-variant-numeric: tabular-nums; padding-bottom: 0.3rem; }
 .graphique-vertical .mois { text-align: center; font-size: 1rem; color: var(--second); padding-top: 0.35rem; padding-bottom: 0.3rem; height: 2.1rem; }
-.mois-court { display: none; text-decoration: none; }
+/* Mois toujours abrégés (janv., févr., …) : une colonne sur douze est plus étroite qu'un nom entier à toutes les largeurs. */
+.graphique-vertical .mois { white-space: nowrap; }
+.mois abbr { text-decoration: none; }
 /* La mesure : les barres poussent une fois, à leur entrée dans l'écran (CSS pur ; sans prise en charge, barres fixes). */
 @supports (animation-timeline: view()) {
   html.motion .graphique-vertical .barre { transform-origin: bottom; animation: mesurer 1s var(--sortie) both; animation-timeline: view(); animation-range: entry 0% cover 25%; }
@@ -356,8 +369,6 @@ details p { margin: 0 0 0.9rem; max-width: 60ch; }
   .galerie li.large { grid-column: span 2; }
   .galerie li.large picture { aspect-ratio: 16 / 9; }
   .graphique-vertical .barres { grid-template-rows: 13rem; gap: 0.3rem; }
-  .mois-long { display: none; }
-  .mois-court { display: inline; }
   .formulaire, .cases { grid-template-columns: 1fr; }
   .pied-grille { grid-template-columns: 1fr; }
 }
@@ -374,8 +385,7 @@ details p { margin: 0 0 0.9rem; max-width: 60ch; }
   .nav-long { display: none; }
   .nav-court { display: inline; }
   .nav a { padding: 0.45rem 0; }
-  .marque { font-size: 1.05rem; grid-row: 2; grid-column: 1; }
-  .marque img { width: 2.25rem; height: 2.25rem; }
+  .marque { --logo: 3rem; font-size: 1.05rem; grid-row: 2; grid-column: 1; }
   .tel { grid-row: 2; grid-column: 2; justify-self: end; align-self: stretch; padding-left: 0.5rem; font-size: 0.95rem; }
   .galerie { grid-template-columns: 1fr; }
   .galerie li.large { grid-column: span 1; }
@@ -387,8 +397,6 @@ details p { margin: 0 0 0.9rem; max-width: 60ch; }
   .graphique-vertical .barre { height: 1rem; width: calc(var(--v) / var(--max) * 100%); }
   .graphique-vertical .val { order: 0; text-align: right; padding: 0; }
   .graphique-vertical .mois { order: -1; text-align: left; height: auto; padding: 0; }
-  .mois-long { display: none; }
-  .mois-court { display: inline; }
 }
 @media (max-width: 22.5rem) {
   .bandeau { --nav-h: 2.95rem; }
